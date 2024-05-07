@@ -5,8 +5,8 @@ protocol EventType {
 }
 //: AnalyticEvent protocol:
 protocol AnalyticEvent {
-    associatedtype T: EventType
-    var type: T { get }
+    associatedtype Event: EventType
+    var type: Event { get }
     var parameters: [String: Any] { get }
 }
 
@@ -33,18 +33,49 @@ struct ScreenViewEvent: AnalyticEvent {
     var type: ScreenViewEventType
     var parameters: [String : Any]
 }
+
+// Existencional type
+struct AnyAnalyticEvent: AnalyticEvent {
+    let type: AnyEventType
+    let parameters: [String: Any]
+
+    init<E: AnalyticEvent>(_ event: E) where E.Event: EventType {
+        self.type = AnyEventType(name: event.type.name)
+        self.parameters = event.parameters
+    }
+}
+
+struct AnyEventType: EventType {
+    var name: String
+}
 //: AnalyticsService Protocol:
 protocol AnalyticsService {
     func logEvent<E: AnalyticEvent>(_ event: E)
 }
 //: Analytics Service Implementations:
 class ConsoleAnalyticsService: AnalyticsService {
-    var eventsLog: [Date: String] = [:]
+    var eventsLog: [Date: AnyAnalyticEvent] = [:]
     
     func logEvent<E: AnalyticEvent>(_ event: E) {
-        let logEntry = "Event: \(event.name), Parameters: \(event.parameters)\n"
-        print(logEntry)
-        eventsLog[Date()] = logEntry
+        let anyEvent = AnyAnalyticEvent(event)
+        let eventTime = Date()
+        print("Event: \(event.name), Parameters: \(event.parameters)\n")
+        eventsLog[eventTime] = anyEvent
+    }
+    
+    /* Opaque type
+    func createUserActionEvent(_ type: UserActionEventType, _ parameters: [String: Any]) -> some AnalyticEvent {
+        return UserActionEvent(type: type, parameters: parameters)
+    }
+    
+    func createScreenViewEvent(_ type: ScreenViewEventType, _ parameters: [String: Any]) -> some AnalyticEvent {
+        return ScreenViewEvent(type: type, parameters: parameters)
+    }
+    */
+    
+    func eventsLogDescription() {
+        print("Every events stored:")
+        eventsLog.forEach( {print("Event: \($0.value.name), Parameters: \($0.value.parameters)")} )
     }
 }
 //: Usage example:
@@ -72,11 +103,12 @@ func sample() {
         consoleAnalyticsService.logEvent(userActionEvent)
         
         // Print all events
-        print("Every events stored:")
-        consoleAnalyticsService.eventsLog.forEach({ print("Date: \($0.key), \nEvent: \($0.value)") })
+        consoleAnalyticsService.eventsLogDescription()
+        
     }
 }
 
+sample()
 
 
 
