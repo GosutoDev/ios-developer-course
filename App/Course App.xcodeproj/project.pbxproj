@@ -12,10 +12,19 @@
 		A81F21F82BDC1DB900A8A301 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A81F21F72BDC1DB900A8A301 /* Assets.xcassets */; };
 		A81F21FB2BDC1DB900A8A301 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A81F21FA2BDC1DB900A8A301 /* Preview Assets.xcassets */; };
 		A8830C1E2BED0315005CAFEA /* Course_App_UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8830C1D2BED0315005CAFEA /* Course_App_UnitTests.swift */; };
+		A8830C2B2BED03BB005CAFEA /* Course_App_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8830C2A2BED03BB005CAFEA /* Course_App_UITests.swift */; };
+		A8830C2D2BED03BB005CAFEA /* Course_App_UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8830C2C2BED03BB005CAFEA /* Course_App_UITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		A8830C1F2BED0315005CAFEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A81F21E82BDC1DB700A8A301 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A81F21EF2BDC1DB700A8A301;
+			remoteInfo = "Course App";
+		};
+		A8830C2E2BED03BB005CAFEA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A81F21E82BDC1DB700A8A301 /* Project object */;
 			proxyType = 1;
@@ -32,6 +41,9 @@
 		A81F21FA2BDC1DB900A8A301 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A8830C1B2BED0315005CAFEA /* Course App UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Course App UnitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8830C1D2BED0315005CAFEA /* Course_App_UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course_App_UnitTests.swift; sourceTree = "<group>"; };
+		A8830C282BED03BB005CAFEA /* Course App UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Course App UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8830C2A2BED03BB005CAFEA /* Course_App_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course_App_UITests.swift; sourceTree = "<group>"; };
+		A8830C2C2BED03BB005CAFEA /* Course_App_UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course_App_UITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +61,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A8830C252BED03BB005CAFEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -57,6 +76,7 @@
 			children = (
 				A81F21F22BDC1DB700A8A301 /* Course App */,
 				A8830C1C2BED0315005CAFEA /* Course App UnitTests */,
+				A8830C292BED03BB005CAFEA /* Course App UITests */,
 				A81F21F12BDC1DB700A8A301 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,6 +86,7 @@
 			children = (
 				A81F21F02BDC1DB700A8A301 /* Course App.app */,
 				A8830C1B2BED0315005CAFEA /* Course App UnitTests.xctest */,
+				A8830C282BED03BB005CAFEA /* Course App UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +116,15 @@
 				A8830C1D2BED0315005CAFEA /* Course_App_UnitTests.swift */,
 			);
 			path = "Course App UnitTests";
+			sourceTree = "<group>";
+		};
+		A8830C292BED03BB005CAFEA /* Course App UITests */ = {
+			isa = PBXGroup;
+			children = (
+				A8830C2A2BED03BB005CAFEA /* Course_App_UITests.swift */,
+				A8830C2C2BED03BB005CAFEA /* Course_App_UITestsLaunchTests.swift */,
+			);
+			path = "Course App UITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +165,24 @@
 			productReference = A8830C1B2BED0315005CAFEA /* Course App UnitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		A8830C272BED03BB005CAFEA /* Course App UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8830C302BED03BB005CAFEA /* Build configuration list for PBXNativeTarget "Course App UITests" */;
+			buildPhases = (
+				A8830C242BED03BB005CAFEA /* Sources */,
+				A8830C252BED03BB005CAFEA /* Frameworks */,
+				A8830C262BED03BB005CAFEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A8830C2F2BED03BB005CAFEA /* PBXTargetDependency */,
+			);
+			name = "Course App UITests";
+			productName = "Course App UITests";
+			productReference = A8830C282BED03BB005CAFEA /* Course App UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -149,6 +197,10 @@
 						CreatedOnToolsVersion = 15.3;
 					};
 					A8830C1A2BED0315005CAFEA = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = A81F21EF2BDC1DB700A8A301;
+					};
+					A8830C272BED03BB005CAFEA = {
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = A81F21EF2BDC1DB700A8A301;
 					};
@@ -169,6 +221,7 @@
 			targets = (
 				A81F21EF2BDC1DB700A8A301 /* Course App */,
 				A8830C1A2BED0315005CAFEA /* Course App UnitTests */,
+				A8830C272BED03BB005CAFEA /* Course App UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -184,6 +237,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A8830C192BED0315005CAFEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8830C262BED03BB005CAFEA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -210,6 +270,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A8830C242BED03BB005CAFEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8830C2B2BED03BB005CAFEA /* Course_App_UITests.swift in Sources */,
+				A8830C2D2BED03BB005CAFEA /* Course_App_UITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -217,6 +286,11 @@
 			isa = PBXTargetDependency;
 			target = A81F21EF2BDC1DB700A8A301 /* Course App */;
 			targetProxy = A8830C1F2BED0315005CAFEA /* PBXContainerItemProxy */;
+		};
+		A8830C2F2BED03BB005CAFEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A81F21EF2BDC1DB700A8A301 /* Course App */;
+			targetProxy = A8830C2E2BED03BB005CAFEA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -448,6 +522,48 @@
 			};
 			name = Release;
 		};
+		A8830C312BED03BB005CAFEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6A744UV7PU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tomasduchoslav.Course-App-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Course App";
+			};
+			name = Debug;
+		};
+		A8830C322BED03BB005CAFEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6A744UV7PU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tomasduchoslav.Course-App-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Course App";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -474,6 +590,15 @@
 			buildConfigurations = (
 				A8830C222BED0315005CAFEA /* Debug */,
 				A8830C232BED0315005CAFEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8830C302BED03BB005CAFEA /* Build configuration list for PBXNativeTarget "Course App UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8830C312BED03BB005CAFEA /* Debug */,
+				A8830C322BED03BB005CAFEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
