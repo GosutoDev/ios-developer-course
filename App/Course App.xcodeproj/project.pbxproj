@@ -45,6 +45,7 @@
 		A8830C2A2BED03BB005CAFEA /* Course_App_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course_App_UITests.swift; sourceTree = "<group>"; };
 		A8830C2C2BED03BB005CAFEA /* Course_App_UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course_App_UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A8830C332BED05F4005CAFEA /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
+		A8830C352BED07EF005CAFEA /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				A8830C332BED05F4005CAFEA /* Development.xcconfig */,
+				A8830C352BED07EF005CAFEA /* Production.xcconfig */,
 			);
 			path = Configurations;
 			sourceTree = "<group>";

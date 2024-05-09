@@ -1,0 +1,14 @@
+//
+//  Production.xcconfig
+//  Course App
+//
+//  Created by Tomáš Duchoslav on 09.05.2024.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+APP_BUNDLE_NAME = App Course
+APP_BUNDLE_IDENTIFIER = com.tomasduchoslav.Course-App
+API_JOKES_BASE_URL = https:/$()/api.chucknorris.io/
+API_IMAGES_BASE_URL = https:/$()/picsum.photos/
