@@ -6,5 +6,11 @@
 	<string>$(API_IMAGES_BASE_URL)</string>
 	<key>API_JOKES_BASE_URL</key>
 	<string>$(API_JOKES_BASE_URL)</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Poppins-Bold.ttf</string>
+		<string>Poppins-Regular.ttf</string>
+		<string>Poppins-MediumItalic.ttf</string>
+	</array>
 </dict>
 </plist>

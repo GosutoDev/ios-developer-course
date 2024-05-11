@@ -25,6 +25,16 @@ struct ContentView: View {
         .onAppear {
             logger.info("Images URL = \(imagesBaseURL)")
             logger.info("Jokes URL = \(jokesBaseURL)")
+            
+            
+            // Fonts identifier
+            let identifier: String = "[SYSTEM FONTS]"
+            for family in UIFont.familyNames as [String] {
+                debugPrint("\(identifier) FONT FAMILY: \(family)")
+                for name in UIFont.fontNames(forFamilyName: family) {
+                    debugPrint("\(identifier) FONT NAME: \(name)")
+                }
+            }
         }
     }
 }
