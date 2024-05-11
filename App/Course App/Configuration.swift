@@ -9,8 +9,8 @@ import Foundation
 
 struct Configuration: Decodable {
     private enum CodingKeys: String, CodingKey {
-        case imagesBaseURL = "APP_IMAGES_BASE_URL"
-        case jokesBaseURL = "APP_JOKES_BASE_URL"
+        case imagesBaseURL = "API_IMAGES_BASE_URL"
+        case jokesBaseURL = "API_JOKES_BASE_URL"
     }
     
     let jokesBaseURL: String
