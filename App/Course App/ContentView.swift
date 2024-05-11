@@ -23,9 +23,9 @@ struct ContentView: View {
         }
         .padding()
         .onAppear {
+            logger.info("ContentView Showed")
             logger.info("Images URL = \(imagesBaseURL)")
             logger.info("Jokes URL = \(jokesBaseURL)")
-            
             
             // Fonts identifier
             let identifier: String = "[SYSTEM FONTS]"
