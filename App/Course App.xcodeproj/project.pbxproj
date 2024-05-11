@@ -18,6 +18,9 @@
 		A8830C482BEF80FA005CAFEA /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8830C452BEF80FA005CAFEA /* Poppins-Regular.ttf */; };
 		A8830C492BEF80FA005CAFEA /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8830C462BEF80FA005CAFEA /* Poppins-Bold.ttf */; };
 		A8830C4A2BEF80FA005CAFEA /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8830C472BEF80FA005CAFEA /* Poppins-MediumItalic.ttf */; };
+		A8830C4C2BEF84BC005CAFEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8830C4B2BEF84BC005CAFEA /* GoogleService-Info.plist */; };
+		A8830C4F2BEF8565005CAFEA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A8830C4E2BEF8565005CAFEA /* FirebaseAuth */; };
+		A8830C512BEF8565005CAFEA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A8830C502BEF8565005CAFEA /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,7 @@
 		A8830C452BEF80FA005CAFEA /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Regular.ttf"; path = "../../Sources/Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		A8830C462BEF80FA005CAFEA /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Bold.ttf"; path = "../../Sources/Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		A8830C472BEF80FA005CAFEA /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-MediumItalic.ttf"; path = "../../Sources/Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		A8830C4B2BEF84BC005CAFEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8830C4F2BEF8565005CAFEA /* FirebaseAuth in Frameworks */,
+				A8830C512BEF8565005CAFEA /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,14 +112,15 @@
 		A81F21F22BDC1DB700A8A301 /* Course App */ = {
 			isa = PBXGroup;
 			children = (
-				A8830C462BEF80FA005CAFEA /* Poppins-Bold.ttf */,
-				A8830C472BEF80FA005CAFEA /* Poppins-MediumItalic.ttf */,
-				A8830C452BEF80FA005CAFEA /* Poppins-Regular.ttf */,
 				A81F21F72BDC1DB900A8A301 /* Assets.xcassets */,
 				A8830C3F2BED0EE0005CAFEA /* Configuration.swift */,
 				A81F21F52BDC1DB700A8A301 /* ContentView.swift */,
 				A81F21F32BDC1DB700A8A301 /* Course_AppApp.swift */,
 				A8830C3E2BED0E80005CAFEA /* Course-App-Info.plist */,
+				A8830C4B2BEF84BC005CAFEA /* GoogleService-Info.plist */,
+				A8830C462BEF80FA005CAFEA /* Poppins-Bold.ttf */,
+				A8830C472BEF80FA005CAFEA /* Poppins-MediumItalic.ttf */,
+				A8830C452BEF80FA005CAFEA /* Poppins-Regular.ttf */,
 				A81F21F92BDC1DB900A8A301 /* Preview Content */,
 			);
 			path = "Course App";
@@ -170,6 +177,10 @@
 				A8830C442BEF7B7E005CAFEA /* PBXTargetDependency */,
 			);
 			name = "Course App";
+			packageProductDependencies = (
+				A8830C4E2BEF8565005CAFEA /* FirebaseAuth */,
+				A8830C502BEF8565005CAFEA /* FirebaseFirestore */,
+			);
 			productName = "Course App";
 			productReference = A81F21F02BDC1DB700A8A301 /* App Course Dev.app */;
 			productType = "com.apple.product-type.application";
@@ -244,6 +255,7 @@
 			mainGroup = A81F21E72BDC1DB700A8A301;
 			packageReferences = (
 				A8830C422BEF7B17005CAFEA /* XCRemoteSwiftPackageReference "SwiftLint" */,
+				A8830C4D2BEF8565005CAFEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = A81F21F12BDC1DB700A8A301 /* Products */;
 			projectDirPath = "";
@@ -266,6 +278,7 @@
 				A81F21F82BDC1DB900A8A301 /* Assets.xcassets in Resources */,
 				A8830C492BEF80FA005CAFEA /* Poppins-Bold.ttf in Resources */,
 				A8830C4A2BEF80FA005CAFEA /* Poppins-MediumItalic.ttf in Resources */,
+				A8830C4C2BEF84BC005CAFEA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -937,6 +950,14 @@
 				minimumVersion = 0.54.0;
 			};
 		};
+		A8830C4D2BEF8565005CAFEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.25.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -944,6 +965,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A8830C422BEF7B17005CAFEA /* XCRemoteSwiftPackageReference "SwiftLint" */;
 			productName = "plugin:SwiftLintPlugin";
+		};
+		A8830C4E2BEF8565005CAFEA /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8830C4D2BEF8565005CAFEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		A8830C502BEF8565005CAFEA /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8830C4D2BEF8565005CAFEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
