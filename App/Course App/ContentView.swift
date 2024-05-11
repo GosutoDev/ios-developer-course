@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let imagesBaseURL = Configuration.default.imagesBaseURL
+    let jokesBaseURL = Configuration.default.jokesBaseURL
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -16,6 +20,10 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
+        .onAppear {
+            print(imagesBaseURL)
+            print(jokesBaseURL)
+        }
     }
 }
 
