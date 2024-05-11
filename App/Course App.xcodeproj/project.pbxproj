@@ -100,12 +100,12 @@
 		A81F21F22BDC1DB700A8A301 /* Course App */ = {
 			isa = PBXGroup;
 			children = (
-				A8830C3E2BED0E80005CAFEA /* Course-App-Info.plist */,
-				A81F21F32BDC1DB700A8A301 /* Course_AppApp.swift */,
-				A81F21F52BDC1DB700A8A301 /* ContentView.swift */,
 				A81F21F72BDC1DB900A8A301 /* Assets.xcassets */,
-				A81F21F92BDC1DB900A8A301 /* Preview Content */,
 				A8830C3F2BED0EE0005CAFEA /* Configuration.swift */,
+				A81F21F52BDC1DB700A8A301 /* ContentView.swift */,
+				A81F21F32BDC1DB700A8A301 /* Course_AppApp.swift */,
+				A8830C3E2BED0E80005CAFEA /* Course-App-Info.plist */,
+				A81F21F92BDC1DB900A8A301 /* Preview Content */,
 			);
 			path = "Course App";
 			sourceTree = "<group>";
