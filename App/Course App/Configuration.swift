@@ -20,7 +20,7 @@ struct Configuration: Decodable {
 extension Configuration {
     static let `default`: Configuration = {
         guard let propertyList = Bundle.main.infoDictionary else {
-            fatalError ("Unable to get property list.")
+            fatalError("Unable to get property list.")
         }
         
         guard let data = try? JSONSerialization.data(withJSONObject: propertyList, options: []) else {

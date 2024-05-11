@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    
     let imagesBaseURL = Configuration.default.imagesBaseURL
     let jokesBaseURL = Configuration.default.jokesBaseURL
     
