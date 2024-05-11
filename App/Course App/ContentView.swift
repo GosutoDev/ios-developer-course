@@ -5,11 +5,14 @@
 //  Created by Tomáš Duchoslav on 26.04.2024.
 //
 
+import os
 import SwiftUI
 
 struct ContentView: View {
     let imagesBaseURL = Configuration.default.imagesBaseURL
     let jokesBaseURL = Configuration.default.jokesBaseURL
+    
+    private let logger = Logger()
     
     var body: some View {
         VStack {
@@ -20,8 +23,8 @@ struct ContentView: View {
         }
         .padding()
         .onAppear {
-            print(imagesBaseURL)
-            print(jokesBaseURL)
+            logger.info("Images URL = \(imagesBaseURL)")
+            logger.info("Jokes URL = \(jokesBaseURL)")
         }
     }
 }
