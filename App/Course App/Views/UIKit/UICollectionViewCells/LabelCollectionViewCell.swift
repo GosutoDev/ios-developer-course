@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class LabelCollectionViewCell: UICollectionViewCell {
+final class LabelCollectionViewCell: UICollectionViewCell, ReusableIdentifier {
     
     lazy var nameLabel = UILabel()
  

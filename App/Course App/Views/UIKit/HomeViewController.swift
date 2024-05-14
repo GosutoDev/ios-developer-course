@@ -41,6 +41,7 @@ private extension HomeViewController {
         categoriesCollectionView.showsHorizontalScrollIndicator = false
         categoriesCollectionView.contentInsetAdjustmentBehavior = .never
         categoriesCollectionView.delegate = self
+        categoriesCollectionView.register(LabelCollectionViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader)
     }
 }
 
