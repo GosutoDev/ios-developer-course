@@ -10,7 +10,7 @@ import UIKit
 final class ImageCollectionViewCell: UICollectionViewCell, ReusableIdentifier {
     let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.layer.cornerRadius = Constatns.cornerRadius
+        imageView.layer.cornerRadius = Constants.cornerRadius
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView

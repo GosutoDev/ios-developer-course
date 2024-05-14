@@ -59,7 +59,7 @@ extension HomeViewController {
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var size: CGSize = .zero
-        size = CGSize(width: collectionView.bounds.width - Constatns.flowLayoutWidth, height: collectionView.bounds.height / Constatns.flowLayoutHeight)
+        size = CGSize(width: collectionView.bounds.width - Constants.flowLayoutWidth, height: collectionView.bounds.height / Constants.flowLayoutHeight)
         return size
     }
 }
@@ -92,11 +92,11 @@ extension HomeViewController {
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = Constatns.minimumLineSpacing
-        layout.minimumInteritemSpacing = Constatns.minimumInteritemSpacing
-        layout.sectionInset = UIEdgeInsets(top: 0, left: Constatns.sectionInset, bottom: 0, right: Constatns.sectionInset)
+        layout.minimumLineSpacing = Constants.minimumLineSpacing
+        layout.minimumInteritemSpacing = Constants.minimumInteritemSpacing
+        layout.sectionInset = UIEdgeInsets(top: 0, left: Constants.sectionInset, bottom: 0, right: Constants.sectionInset)
         layout.sectionHeadersPinToVisibleBounds = true
-        layout.headerReferenceSize = CGSize(width: categoriesCollectionView.contentSize.width, height: Constatns.headerReferenceSizeHeight)
+        layout.headerReferenceSize = CGSize(width: categoriesCollectionView.contentSize.width, height: Constants.headerReferenceSizeHeight)
         categoriesCollectionView.setCollectionViewLayout(layout, animated: false)
     }
 }
