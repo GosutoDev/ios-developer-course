@@ -22,11 +22,19 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 // swiftlint:disable:next type_name
 struct Course_AppApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    private var isUIKit = true
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                ContentView()
-            }
+            homeView
+        }
+    }
+    
+    @ViewBuilder
+    var homeView: some View {
+        if isUIKit {
+            //
+        } else {
+            //
         }
     }
 }
