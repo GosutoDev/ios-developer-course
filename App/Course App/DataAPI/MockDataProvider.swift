@@ -22,7 +22,7 @@ struct SectionData: Identifiable, Hashable {
 struct Joke: Identifiable, Hashable {
     let id = UUID()
     let text: String
-    let images = mockImages.randomElement()
+    let image = mockImages.randomElement()
 }
 
 final class MockDataProvider: ObservableObject {
@@ -38,7 +38,7 @@ final class MockDataProvider: ObservableObject {
     
     init() {
         data = localData
-//        updateData()
+        updateData()
     }
 }
 

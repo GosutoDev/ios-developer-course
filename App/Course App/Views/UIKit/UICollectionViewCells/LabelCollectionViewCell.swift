@@ -8,7 +8,6 @@
 import UIKit
 
 final class LabelCollectionViewCell: UICollectionViewCell, ReusableIdentifier {
-    
     lazy var nameLabel = UILabel()
  
     override init(frame: CGRect) {
@@ -20,7 +19,6 @@ final class LabelCollectionViewCell: UICollectionViewCell, ReusableIdentifier {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
 private extension LabelCollectionViewCell {
@@ -37,11 +35,12 @@ private extension LabelCollectionViewCell {
         nameLabel.textColor = .white
     }
     func setupConstraints() {
+        let constraintConstant: CGFloat = 5
         NSLayoutConstraint.activate([
-            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
-            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            nameLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5)
+            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: constraintConstant),
+            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: constraintConstant),
+            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -constraintConstant),
+            nameLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -constraintConstant)
         ])
     }
 }
