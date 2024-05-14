@@ -36,7 +36,7 @@ private extension HomeViewController {
         setupCollectionView()
     }
     func setupCollectionView() {
-        categoriesCollectionView.backgroundColor = UIColor.black
+        categoriesCollectionView.backgroundColor = .bg
         categoriesCollectionView.isPagingEnabled = true
         categoriesCollectionView.showsHorizontalScrollIndicator = false
         categoriesCollectionView.contentInsetAdjustmentBehavior = .never
