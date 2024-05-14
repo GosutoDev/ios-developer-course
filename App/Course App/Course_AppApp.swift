@@ -32,7 +32,7 @@ struct Course_AppApp: App {
     @ViewBuilder
     var homeView: some View {
         if isUIKit {
-            //
+            HomeView()
         } else {
             //
         }
