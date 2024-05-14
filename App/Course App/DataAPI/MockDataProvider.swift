@@ -44,7 +44,7 @@ final class MockDataProvider: ObservableObject {
 
 private extension MockDataProvider {
     func updateData() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+        DispatchQueue.main.asyncAfter(deadline: Constatns.deadline, execute: {
             if var section = self.localData.first {
                 section.jokes.remove(at: 1)
                 self.data = [section]

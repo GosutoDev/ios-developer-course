@@ -10,7 +10,7 @@ import UIKit
 final class ImageCollectionViewCell: UICollectionViewCell, ReusableIdentifier {
     let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.layer.cornerRadius = 10
+        imageView.layer.cornerRadius = Constatns.cornerRadius
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -22,6 +22,7 @@ final class ImageCollectionViewCell: UICollectionViewCell, ReusableIdentifier {
         setupUI()
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
