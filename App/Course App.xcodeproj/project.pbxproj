@@ -15,6 +15,7 @@
 		A845D9472BF365A60039AA1D /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A845D9452BF365A60039AA1D /* HomeViewController.xib */; };
 		A845D94A2BF36F780039AA1D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A845D9492BF36F780039AA1D /* Colors.xcassets */; };
 		A845D94C2BF3711D0039AA1D /* MockDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A845D94B2BF3711D0039AA1D /* MockDataProvider.swift */; };
+		A845D94F2BF373EE0039AA1D /* LabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A845D94E2BF373EE0039AA1D /* LabelCollectionViewCell.swift */; };
 		A8830C1E2BED0315005CAFEA /* Course_App_UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8830C1D2BED0315005CAFEA /* Course_App_UnitTests.swift */; };
 		A8830C2B2BED03BB005CAFEA /* Course_App_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8830C2A2BED03BB005CAFEA /* Course_App_UITests.swift */; };
 		A8830C2D2BED03BB005CAFEA /* Course_App_UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8830C2C2BED03BB005CAFEA /* Course_App_UITestsLaunchTests.swift */; };
@@ -54,6 +55,7 @@
 		A845D9452BF365A60039AA1D /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		A845D9492BF36F780039AA1D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		A845D94B2BF3711D0039AA1D /* MockDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataProvider.swift; sourceTree = "<group>"; };
+		A845D94E2BF373EE0039AA1D /* LabelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCollectionViewCell.swift; sourceTree = "<group>"; };
 		A8830C1B2BED0315005CAFEA /* Course App UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Course App UnitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8830C1D2BED0315005CAFEA /* Course_App_UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course_App_UnitTests.swift; sourceTree = "<group>"; };
 		A8830C282BED03BB005CAFEA /* Course App UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Course App UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +164,7 @@
 		A845D9422BF364480039AA1D /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				A845D94D2BF373CE0039AA1D /* UICollectionViewCells */,
 				A845D9442BF365A60039AA1D /* HomeViewController.swift */,
 				A845D9452BF365A60039AA1D /* HomeViewController.xib */,
 			);
@@ -182,6 +185,14 @@
 				A845D94B2BF3711D0039AA1D /* MockDataProvider.swift */,
 			);
 			path = DataAPI;
+			sourceTree = "<group>";
+		};
+		A845D94D2BF373CE0039AA1D /* UICollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				A845D94E2BF373EE0039AA1D /* LabelCollectionViewCell.swift */,
+			);
+			path = UICollectionViewCells;
 			sourceTree = "<group>";
 		};
 		A8830C1C2BED0315005CAFEA /* Course App UnitTests */ = {
@@ -368,6 +379,7 @@
 				A8830C402BED0EE0005CAFEA /* Configuration.swift in Sources */,
 				A81F21F62BDC1DB700A8A301 /* ContentView.swift in Sources */,
 				A845D94C2BF3711D0039AA1D /* MockDataProvider.swift in Sources */,
+				A845D94F2BF373EE0039AA1D /* LabelCollectionViewCell.swift in Sources */,
 				A81F21F42BDC1DB700A8A301 /* Course_AppApp.swift in Sources */,
 				A845D9462BF365A60039AA1D /* HomeViewController.swift in Sources */,
 			);
