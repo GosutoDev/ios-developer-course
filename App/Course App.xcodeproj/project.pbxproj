@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		A81F21F42BDC1DB700A8A301 /* Course_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F21F32BDC1DB700A8A301 /* Course_AppApp.swift */; };
 		A81F21F62BDC1DB700A8A301 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F21F52BDC1DB700A8A301 /* ContentView.swift */; };
-		A81F21F82BDC1DB900A8A301 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A81F21F72BDC1DB900A8A301 /* Assets.xcassets */; };
+		A81F21F82BDC1DB900A8A301 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A81F21F72BDC1DB900A8A301 /* Images.xcassets */; };
 		A81F21FB2BDC1DB900A8A301 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A81F21FA2BDC1DB900A8A301 /* Preview Assets.xcassets */; };
 		A845D9462BF365A60039AA1D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A845D9442BF365A60039AA1D /* HomeViewController.swift */; };
 		A845D9472BF365A60039AA1D /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A845D9452BF365A60039AA1D /* HomeViewController.xib */; };
+		A845D94A2BF36F780039AA1D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A845D9492BF36F780039AA1D /* Colors.xcassets */; };
 		A8830C1E2BED0315005CAFEA /* Course_App_UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8830C1D2BED0315005CAFEA /* Course_App_UnitTests.swift */; };
 		A8830C2B2BED03BB005CAFEA /* Course_App_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8830C2A2BED03BB005CAFEA /* Course_App_UITests.swift */; };
 		A8830C2D2BED03BB005CAFEA /* Course_App_UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8830C2C2BED03BB005CAFEA /* Course_App_UITestsLaunchTests.swift */; };
@@ -46,10 +47,11 @@
 		A81F21F02BDC1DB700A8A301 /* App Course Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "App Course Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A81F21F32BDC1DB700A8A301 /* Course_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course_AppApp.swift; sourceTree = "<group>"; };
 		A81F21F52BDC1DB700A8A301 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A81F21F72BDC1DB900A8A301 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A81F21F72BDC1DB900A8A301 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A81F21FA2BDC1DB900A8A301 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A845D9442BF365A60039AA1D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A845D9452BF365A60039AA1D /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		A845D9492BF36F780039AA1D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		A8830C1B2BED0315005CAFEA /* Course App UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Course App UnitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8830C1D2BED0315005CAFEA /* Course_App_UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course_App_UnitTests.swift; sourceTree = "<group>"; };
 		A8830C282BED03BB005CAFEA /* Course App UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Course App UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,8 +141,9 @@
 		A845D9402BF364410039AA1D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A81F21F72BDC1DB900A8A301 /* Assets.xcassets */,
+				A845D9492BF36F780039AA1D /* Colors.xcassets */,
 				A8830C592BEF8AF2005CAFEA /* Fonts */,
+				A81F21F72BDC1DB900A8A301 /* Images.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -329,9 +332,10 @@
 			files = (
 				A8830C482BEF80FA005CAFEA /* Poppins-Regular.ttf in Resources */,
 				A81F21FB2BDC1DB900A8A301 /* Preview Assets.xcassets in Resources */,
-				A81F21F82BDC1DB900A8A301 /* Assets.xcassets in Resources */,
+				A81F21F82BDC1DB900A8A301 /* Images.xcassets in Resources */,
 				A8830C492BEF80FA005CAFEA /* Poppins-Bold.ttf in Resources */,
 				A8830C4A2BEF80FA005CAFEA /* Poppins-MediumItalic.ttf in Resources */,
+				A845D94A2BF36F780039AA1D /* Colors.xcassets in Resources */,
 				A845D9472BF365A60039AA1D /* HomeViewController.xib in Resources */,
 				A8830C4C2BEF84BC005CAFEA /* GoogleService-Info.plist in Resources */,
 			);
