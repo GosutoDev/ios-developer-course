@@ -84,6 +84,17 @@ extension HomeViewController {
     }
 }
 
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
+        
+        let size = CGSize(width: collectionView.bounds.width - 8, height: collectionView.bounds.height / 3)
+        return size
+    }
+}
+
 // MARK: - UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -109,6 +120,15 @@ private extension HomeViewController {
         categoriesCollectionView.delegate = self
         categoriesCollectionView.register(ImageCollectionViewCell.self)
         categoriesCollectionView.register(LabelCollectionViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader)
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical //Change this to vertical
+        layout.minimumLineSpacing = 8 //Spacing here is not necessary, but adds a better inset for horizontal scrolling. Gives you a tiny peek of the background. Probably not great for vertical
+        layout.minimumInteritemSpacing = 10
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 4)
+        layout.sectionHeadersPinToVisibleBounds = true
+        layout.headerReferenceSize = CGSize(width: categoriesCollectionView.contentSize.width, height: 30)
+        categoriesCollectionView.setCollectionViewLayout(layout, animated: false)
     }
 }
 
