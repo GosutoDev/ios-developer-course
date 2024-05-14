@@ -112,13 +112,12 @@
 		A81F21F22BDC1DB700A8A301 /* Course App */ = {
 			isa = PBXGroup;
 			children = (
-				A81F21F72BDC1DB900A8A301 /* Assets.xcassets */,
-				A8830C3F2BED0EE0005CAFEA /* Configuration.swift */,
-				A81F21F52BDC1DB700A8A301 /* ContentView.swift */,
 				A81F21F32BDC1DB700A8A301 /* Course_AppApp.swift */,
 				A8830C3E2BED0E80005CAFEA /* Course-App-Info.plist */,
-				A8830C592BEF8AF2005CAFEA /* Fonts */,
 				A8830C4B2BEF84BC005CAFEA /* GoogleService-Info.plist */,
+				A8830C3F2BED0EE0005CAFEA /* Configuration.swift */,
+				A845D9402BF364410039AA1D /* Resources */,
+				A845D9412BF364450039AA1D /* Views */,
 				A81F21F92BDC1DB900A8A301 /* Preview Content */,
 			);
 			path = "Course App";
@@ -130,6 +129,39 @@
 				A81F21FA2BDC1DB900A8A301 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A845D9402BF364410039AA1D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A81F21F72BDC1DB900A8A301 /* Assets.xcassets */,
+				A8830C592BEF8AF2005CAFEA /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A845D9412BF364450039AA1D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A845D9432BF3644B0039AA1D /* SwiftUI */,
+				A845D9422BF364480039AA1D /* UIKit */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A845D9422BF364480039AA1D /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		A845D9432BF3644B0039AA1D /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				A81F21F52BDC1DB700A8A301 /* ContentView.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		A8830C1C2BED0315005CAFEA /* Course App UnitTests */ = {
