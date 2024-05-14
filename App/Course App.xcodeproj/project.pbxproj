@@ -55,9 +55,9 @@
 		A8830C352BED07EF005CAFEA /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		A8830C3E2BED0E80005CAFEA /* Course-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Course-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		A8830C3F2BED0EE0005CAFEA /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		A8830C452BEF80FA005CAFEA /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Regular.ttf"; path = "../../Sources/Poppins-Regular.ttf"; sourceTree = "<group>"; };
-		A8830C462BEF80FA005CAFEA /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Bold.ttf"; path = "../../Sources/Poppins-Bold.ttf"; sourceTree = "<group>"; };
-		A8830C472BEF80FA005CAFEA /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-MediumItalic.ttf"; path = "../../Sources/Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		A8830C452BEF80FA005CAFEA /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		A8830C462BEF80FA005CAFEA /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		A8830C472BEF80FA005CAFEA /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
 		A8830C4B2BEF84BC005CAFEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,10 +117,8 @@
 				A81F21F52BDC1DB700A8A301 /* ContentView.swift */,
 				A81F21F32BDC1DB700A8A301 /* Course_AppApp.swift */,
 				A8830C3E2BED0E80005CAFEA /* Course-App-Info.plist */,
+				A8830C592BEF8AF2005CAFEA /* Fonts */,
 				A8830C4B2BEF84BC005CAFEA /* GoogleService-Info.plist */,
-				A8830C462BEF80FA005CAFEA /* Poppins-Bold.ttf */,
-				A8830C472BEF80FA005CAFEA /* Poppins-MediumItalic.ttf */,
-				A8830C452BEF80FA005CAFEA /* Poppins-Regular.ttf */,
 				A81F21F92BDC1DB900A8A301 /* Preview Content */,
 			);
 			path = "Course App";
@@ -158,6 +156,16 @@
 				A8830C352BED07EF005CAFEA /* Production.xcconfig */,
 			);
 			path = Configurations;
+			sourceTree = "<group>";
+		};
+		A8830C592BEF8AF2005CAFEA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A8830C462BEF80FA005CAFEA /* Poppins-Bold.ttf */,
+				A8830C472BEF80FA005CAFEA /* Poppins-MediumItalic.ttf */,
+				A8830C452BEF80FA005CAFEA /* Poppins-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
