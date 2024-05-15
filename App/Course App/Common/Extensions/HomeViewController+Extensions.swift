@@ -11,7 +11,6 @@ import UIKit
 extension HomeViewController {
     func readData() {
         dataProvider.$data.sink { [weak self] data in
-            self?.logger.debug("\(data)")
             self?.applySnapshot(data: data, animatingDifferences: true)
         }
         .store(in: &cancellables)
@@ -19,6 +18,10 @@ extension HomeViewController {
     
     func applySnapshot(data: [SectionData], animatingDifferences: Bool = true) {
         guard dataSource.snapshot().numberOfSections == 0 else {
+            var snapshot = dataSource.snapshot()
+            snapshot.moveItem((data.first?.jokes.first)!, afterItem: (data.first?.jokes.last)!)
+            
+            dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
             return
         }
         
@@ -35,7 +38,6 @@ extension HomeViewController {
     func makeDataSource() -> DataSource {
         let dataSource = DataSource(collectionView: categoriesCollectionView) { collectionView, indexPath, _ in
             let section = self.dataSource.snapshot().sectionIdentifiers[indexPath.section]
-            
             let imageCell: ImageCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
             imageCell.imageView.image = section.jokes[indexPath.item].image
             return imageCell
@@ -51,6 +53,7 @@ extension HomeViewController {
             labelCell.nameLabel.text = section.title
             return labelCell
         }
+        
         return dataSource
     }
 }
@@ -90,13 +93,41 @@ extension HomeViewController {
         categoriesCollectionView.register(ImageCollectionViewCell.self)
         categoriesCollectionView.register(LabelCollectionViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader)
         
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = Constants.minimumLineSpacing
-        layout.minimumInteritemSpacing = Constants.minimumInteritemSpacing
-        layout.sectionInset = UIEdgeInsets(top: 0, left: Constants.sectionInset, bottom: 0, right: Constants.sectionInset)
-        layout.sectionHeadersPinToVisibleBounds = true
-        layout.headerReferenceSize = CGSize(width: categoriesCollectionView.contentSize.width, height: Constants.headerReferenceSizeHeight)
+        let layout = createCompositionalLayout()
         categoriesCollectionView.setCollectionViewLayout(layout, animated: false)
+    }
+    
+    func createCompositionalLayout() -> UICollectionViewLayout {
+        let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
+            let section = self.dataProvider.data[sectionIndex]
+            
+            switch section.title {
+            default:
+                return self.createSection(with: section)
+            }
+        }
+        
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+        config.interSectionSpacing = 20
+        layout.configuration = config
+        return layout
+    }
+    
+    func createSection(with section: SectionData) -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        
+        let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93), heightDimension: .estimated(250))
+        let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: layoutGroupSize, subitems: [layoutItem])
+        
+        let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
+        layoutSection.orthogonalScrollingBehavior = .groupPagingCentered
+        
+        let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(80))
+        let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
+        
+        return layoutSection
     }
 }

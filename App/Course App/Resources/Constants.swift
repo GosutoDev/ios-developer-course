@@ -17,4 +17,5 @@ enum Constants {
     static let deadline = DispatchTime(uptimeNanoseconds: seconds)
     static let seconds: UInt64 = 4_000_000_000
     static let cornerRadius: CGFloat = 10
+    static let numberOfImages = MockDataProvider().data.count
 }

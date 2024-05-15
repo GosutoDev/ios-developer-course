@@ -33,12 +33,17 @@ final class MockDataProvider: ObservableObject {
             Joke(text: "Chuck Norris can make hamburger out of ham."),
             Joke(text: "All your base are belong to Chuck Norris"),
             Joke(text: "Chuck Norris can hit a barn door with a broad's side.")
+        ]),
+        SectionData(title: "Next Section", jokes: [
+            Joke(text: "Joke one"),
+            Joke(text: "joke two"),
+            Joke(text: "Joke three")
         ])
     ]
     
     init() {
         data = localData
-        updateData()
+//        updateData()
     }
 }
 
