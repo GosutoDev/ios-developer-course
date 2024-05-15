@@ -98,7 +98,7 @@ extension HomeViewController {
     }
     
     func createCompositionalLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
+        let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
             let section = self.dataProvider.data[sectionIndex]
             
             switch section.title {
@@ -108,7 +108,7 @@ extension HomeViewController {
         }
         
         let config = UICollectionViewCompositionalLayoutConfiguration()
-        config.interSectionSpacing = 20
+        config.interSectionSpacing = Constants.interSectionSpacing
         layout.configuration = config
         return layout
     }
@@ -118,13 +118,13 @@ extension HomeViewController {
         
         let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93), heightDimension: .estimated(250))
+        let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(Constants.layoutWidth), heightDimension: .estimated(Constants.layoutGroupHeight))
         let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: layoutGroupSize, subitems: [layoutItem])
         
         let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
         layoutSection.orthogonalScrollingBehavior = .groupPagingCentered
         
-        let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(80))
+        let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(Constants.layoutWidth), heightDimension: .estimated(Constants.layoutHeaderHeight))
         let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
         layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
         
