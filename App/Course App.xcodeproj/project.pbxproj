@@ -19,7 +19,6 @@
 		A845D9532BF377250039AA1D /* ReusableIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A845D9522BF377250039AA1D /* ReusableIdentifier.swift */; };
 		A845D9552BF377A70039AA1D /* UICollectionView+ReusableIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A845D9542BF377A70039AA1D /* UICollectionView+ReusableIdentifier.swift */; };
 		A845D9572BF383760039AA1D /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A845D9562BF383760039AA1D /* ImageCollectionViewCell.swift */; };
-		A845D95A2BF3D14C0039AA1D /* HomeViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A845D9592BF3D14C0039AA1D /* HomeViewController+Extensions.swift */; };
 		A845D95D2BF3D4400039AA1D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A845D95C2BF3D4400039AA1D /* HomeView.swift */; };
 		A845D9602BF3D7620039AA1D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A845D95F2BF3D7620039AA1D /* Constants.swift */; };
 		A8830C1E2BED0315005CAFEA /* Course_App_UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8830C1D2BED0315005CAFEA /* Course_App_UnitTests.swift */; };
@@ -65,7 +64,6 @@
 		A845D9522BF377250039AA1D /* ReusableIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableIdentifier.swift; sourceTree = "<group>"; };
 		A845D9542BF377A70039AA1D /* UICollectionView+ReusableIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+ReusableIdentifier.swift"; sourceTree = "<group>"; };
 		A845D9562BF383760039AA1D /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
-		A845D9592BF3D14C0039AA1D /* HomeViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Extensions.swift"; sourceTree = "<group>"; };
 		A845D95C2BF3D4400039AA1D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A845D95F2BF3D7620039AA1D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A8830C1B2BED0315005CAFEA /* Course App UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Course App UnitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,11 +133,11 @@
 			isa = PBXGroup;
 			children = (
 				A845D9502BF376860039AA1D /* Common */,
-				A845D9482BF36F070039AA1D /* DataAPI */,
+				A8830C3F2BED0EE0005CAFEA /* Configuration.swift */,
 				A81F21F32BDC1DB700A8A301 /* Course_AppApp.swift */,
+				A845D9482BF36F070039AA1D /* DataAPI */,
 				A8830C3E2BED0E80005CAFEA /* Course-App-Info.plist */,
 				A8830C4B2BEF84BC005CAFEA /* GoogleService-Info.plist */,
-				A8830C3F2BED0EE0005CAFEA /* Configuration.swift */,
 				A845D9402BF364410039AA1D /* Resources */,
 				A845D9412BF364450039AA1D /* Views */,
 				A81F21F92BDC1DB900A8A301 /* Preview Content */,
@@ -214,19 +212,10 @@
 		A845D9502BF376860039AA1D /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				A845D9582BF3D1360039AA1D /* Extensions */,
 				A845D9522BF377250039AA1D /* ReusableIdentifier.swift */,
 				A845D9542BF377A70039AA1D /* UICollectionView+ReusableIdentifier.swift */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		A845D9582BF3D1360039AA1D /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				A845D9592BF3D14C0039AA1D /* HomeViewController+Extensions.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A845D95E2BF3D5970039AA1D /* UIViewRepresentable */ = {
@@ -427,7 +416,6 @@
 				A845D94F2BF373EE0039AA1D /* LabelCollectionViewCell.swift in Sources */,
 				A845D9602BF3D7620039AA1D /* Constants.swift in Sources */,
 				A845D9572BF383760039AA1D /* ImageCollectionViewCell.swift in Sources */,
-				A845D95A2BF3D14C0039AA1D /* HomeViewController+Extensions.swift in Sources */,
 				A81F21F42BDC1DB700A8A301 /* Course_AppApp.swift in Sources */,
 				A845D9462BF365A60039AA1D /* HomeViewController.swift in Sources */,
 			);
