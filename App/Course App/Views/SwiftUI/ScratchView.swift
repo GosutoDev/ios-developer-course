@@ -23,27 +23,30 @@ struct ScratchView: View {
     var body: some View {
         ZStack(alignment: .top) {
             image
-                .resizableBordered(cornerRadius: Constants.cornerRadius)
+                .resizable()
+                .bordered(cornerRadius: Constants.cornerRadius)
                 .scaledToFit()
-            
-            RoundedRectangle(cornerRadius: Constants.cornerRadius)
-                .fill(.bg)
+                .padding(1)
                 .overlay {
-                    Text(text)
-                        .foregroundStyle(.white)
-                        .multilineTextAlignment(.center)
-                        .padding()
-                }
-                .mask(
-                    Canvas { context, _ in
-                        for line in lines {
-                            var path = Path()
-                            path.addLines(line.points)
-                            context.stroke(path, with: .color(.white), style: StrokeStyle(lineWidth: line.lineWidth, lineCap: .round, lineJoin: .round))
+                    RoundedRectangle(cornerRadius: Constants.cornerRadius)
+                        .fill(.bg)
+                        .overlay {
+                            Text(text)
+                                .foregroundStyle(.white)
+                                .multilineTextAlignment(.center)
+                                .padding()
                         }
-                    }
-                )
-                .gesture(dragGesture)
+                        .mask(
+                            Canvas { context, _ in
+                                for line in lines {
+                                    var path = Path()
+                                    path.addLines(line.points)
+                                    context.stroke(path, with: .color(.white), style: StrokeStyle(lineWidth: line.lineWidth, lineCap: .round, lineJoin: .round))
+                                }
+                            }
+                        )
+                        .gesture(dragGesture)
+                }
         }
     }
     
