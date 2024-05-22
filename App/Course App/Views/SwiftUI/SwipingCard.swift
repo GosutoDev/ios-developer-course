@@ -63,9 +63,9 @@ struct SwipingCard: View {
             Spacer()
         }
         .background(color)
-        .cornerRadius(15)
-        .offset(x: offset.width, y: offset.height * 0.5)
-        .rotationEffect(.degrees(Double(offset.width / 40)))
+        .cornerRadius(GlobalConstants.cornerRadius15)
+        .offset(x: offset.width, y: offset.height * GlobalConstants.offsetMultiplicator)
+        .rotationEffect(.degrees(Double(offset.width / GlobalConstants.degreesDivider)))
         .gesture(dragGesture)
     }
     
@@ -90,9 +90,9 @@ struct SwipingCard: View {
     private var cardDescription: some View {
         Text(configuration.title)
             .textTypeModifier(textType: .h1Title)
-            .padding(10)
-            .background(Color.black.opacity(0.5))
-            .cornerRadius(10)
+            .padding(GlobalConstants.padding)
+            .background(Color.black.opacity(GlobalConstants.halfOpacity))
+            .cornerRadius(GlobalConstants.cornerRadius)
             .padding()
     }
 }
@@ -134,22 +134,7 @@ private extension SwipingCard {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// swiftlint:disable no_magic_numbers
 struct Card_Previews: PreviewProvider {
     static var previews: some View {
         SwipingCard(
@@ -164,3 +149,4 @@ struct Card_Previews: PreviewProvider {
         .frame(width: 220, height: 340)
     }
 }
+// swiftlint:enable no_magic_number

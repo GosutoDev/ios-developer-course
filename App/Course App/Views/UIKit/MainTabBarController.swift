@@ -38,6 +38,13 @@ private extension MainTabBarController {
     func setupGlobalTabBarUI() {
         UITabBar.appearance().backgroundColor = .brown
         UITabBar.appearance().tintColor = .white
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .brown
+        appearance.shadowImage = UIImage()
+
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
 
     func setupTabBarControllers() {
@@ -52,22 +59,12 @@ private extension MainTabBarController {
             tag: 0
         )
 
-        let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = .brown
-        appearance.shadowImage = UIImage()
-
-        categoriesNavigationController.navigationBar.standardAppearance = appearance
-        categoriesNavigationController.navigationBar.compactAppearance = appearance
-        categoriesNavigationController.navigationBar.scrollEdgeAppearance = appearance
-
         return categoriesNavigationController
     }
 
     func setupSwipingCardView() -> UIViewController {
         let swipingNavigationController = UINavigationController(rootViewController: UIHostingController(rootView: SwipingView()))
-
         swipingNavigationController.tabBarItem = UITabBarItem(title: "Random", image: UIImage(systemName: "switch.2"), tag: 1)
-
         return swipingNavigationController
     }
 }

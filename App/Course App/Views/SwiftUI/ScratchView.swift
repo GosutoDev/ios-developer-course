@@ -24,11 +24,11 @@ struct ScratchView: View {
         ZStack(alignment: .top) {
             image
                 .resizable()
-                .bordered(cornerRadius: Constants.cornerRadius)
+                .bordered(cornerRadius: GlobalConstants.cornerRadius)
                 .scaledToFit()
                 .padding(1)
                 .overlay {
-                    RoundedRectangle(cornerRadius: Constants.cornerRadius)
+                    RoundedRectangle(cornerRadius: GlobalConstants.cornerRadius)
                         .fill(.bg)
                         .overlay {
                             Text(text)

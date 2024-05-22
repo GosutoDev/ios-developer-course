@@ -11,6 +11,13 @@ import SwiftUI
 struct SwipingView: View {
     private let logger = Logger()
     private let dataProvider = MockDataProvider()
+    
+    enum Constants {
+        static let paddingDivider: CGFloat = 20
+        static let sizeDivider = 1.2
+        static let sizeWidthMultiplicator = 1.5
+    }
+
 
     var body: some View {
         GeometryReader { geometry in
@@ -31,8 +38,8 @@ struct SwipingView: View {
                                 )
                             }
                         }
-                        .padding(.top, geometry.size.height / 20)
-                        .frame(width: geometry.size.width / 1.2, height: (geometry.size.width / 1.2) * 1.5)
+                        .padding(.top, geometry.size.height / Constants.paddingDivider)
+                        .frame(width: geometry.size.width / Constants.sizeDivider, height: (geometry.size.width / Constants.sizeDivider) * Constants.sizeWidthMultiplicator)
                     } else {
                         Text("Empty data!")
                     }
@@ -43,6 +50,7 @@ struct SwipingView: View {
                 Spacer()
             }
         }
+        .navigationTitle("Random")
     }
 }
 
