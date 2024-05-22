@@ -23,9 +23,7 @@ struct HomeView: UIViewControllerRepresentable {
 final class HomeViewController: UIViewController {
     let logger = Logger()
     
-    // swiftlint:disable implicitly_unwrapped_optional
-    var categoriesCollectionView: UICollectionView!
-    // swiftlint:enable implicitly_unwrapped_optional
+    private var categoriesCollectionView = UICollectionView()
     
     // MARK: DataSources
     typealias DataSource = UICollectionViewDiffableDataSource<SectionData, Joke>
