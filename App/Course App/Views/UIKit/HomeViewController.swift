@@ -156,5 +156,3 @@ private extension HomeViewController {
         return layoutSection
     }
 }
-
-

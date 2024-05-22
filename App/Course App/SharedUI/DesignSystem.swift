@@ -1,4 +1,4 @@
-//
+// swiftlint:disable:this file_name
 //  DesignSystem.swift
 //  Course App
 //
@@ -17,12 +17,6 @@ struct TextTypeModifier: ViewModifier {
     }
 }
 
-extension View {
-    func textTypeModifier(textType: TextType) -> some View {
-        self.modifier(TextTypeModifier(textType: textType))
-    }
-}
-
 enum FontSize: CGFloat {
     case size36 = 36
     case size28 = 28
@@ -36,16 +30,44 @@ enum FontType: String {
     case mediumItalic = "Poppins-MediumItalic"
 }
 
+enum TextType {
+    case h1Title
+    case h2Title
+    
+    var font: Font {
+        switch self {
+        case .h1Title:
+            .bold(with: .size36)
+        default:
+            .regular(with: .size20)
+        }
+    }
+    
+    var color: Color {
+        switch self {
+        case .h1Title:
+            .white
+        default:
+            .gray
+        }
+    }
+}
+
+extension View {
+    func textTypeModifier(textType: TextType) -> some View {
+        self.modifier(TextTypeModifier(textType: textType))
+    }
+}
+
 extension UIFont {
     static func regular(with size: FontSize) -> UIFont {
-        UIFont(name: FontType.regular.rawValue, size: size.rawValue)!
+        UIFont(name: FontType.regular.rawValue, size: size.rawValue) ?? UIFont.systemFont(ofSize: size.rawValue)
     }
     static func bold(with size: FontSize) -> UIFont {
-        UIFont(name: FontType.bold.rawValue, size: size.rawValue)!
+        UIFont(name: FontType.bold.rawValue, size: size.rawValue) ?? UIFont.systemFont(ofSize: size.rawValue)
     }
 }
 extension Font {
-
     static func regular(with size: FontSize) -> Font {
         Font.custom(FontType.regular.rawValue, size: size.rawValue)
     }
@@ -53,27 +75,3 @@ extension Font {
         Font.custom(FontType.bold.rawValue, size: size.rawValue)
     }
 }
-
-enum TextType {
-    case h1Title
-    case h2Title
-
-    var font: Font {
-        switch self {
-        case .h1Title:
-                .bold(with: .size36)
-        default:
-                .regular(with: .size20)
-        }
-    }
-
-    var color: Color {
-        switch self {
-        case .h1Title:
-                .white
-        default:
-                .gray
-        }
-    }
-}
-
