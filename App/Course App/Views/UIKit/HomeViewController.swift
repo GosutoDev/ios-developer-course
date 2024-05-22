@@ -23,7 +23,8 @@ struct HomeView: UIViewControllerRepresentable {
 final class HomeViewController: UIViewController {
     let logger = Logger()
     
-    private var categoriesCollectionView = UICollectionView()
+    lazy var categoriesCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
+    
     
     // MARK: DataSources
     typealias DataSource = UICollectionViewDiffableDataSource<SectionData, Joke>
@@ -110,7 +111,6 @@ private extension HomeViewController {
         readData()
     }
     func setupCollectionView() {
-        categoriesCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
         categoriesCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         categoriesCollectionView.backgroundColor = .bg
         categoriesCollectionView.delegate = self

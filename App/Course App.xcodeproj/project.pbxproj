@@ -34,6 +34,9 @@
 		F190AB2E2BFDDDA1001AF32D /* BorderedModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */; };
 		F190AB302BFDDEB7001AF32D /* Image+ResizableBordered.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */; };
 		F190AB322BFDE22F001AF32D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB312BFDE22F001AF32D /* MainTabBarController.swift */; };
+		F190AB342BFDE2D0001AF32D /* SwipingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB332BFDE2D0001AF32D /* SwipingView.swift */; };
+		F190AB362BFDE300001AF32D /* SwipingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB352BFDE300001AF32D /* SwipingCard.swift */; };
+		F190AB382BFDE372001AF32D /* ScratchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB372BFDE372001AF32D /* ScratchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,9 @@
 		F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedModifier.swift; sourceTree = "<group>"; };
 		F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ResizableBordered.swift"; sourceTree = "<group>"; };
 		F190AB312BFDE22F001AF32D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		F190AB332BFDE2D0001AF32D /* SwipingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingView.swift; sourceTree = "<group>"; };
+		F190AB352BFDE300001AF32D /* SwipingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingCard.swift; sourceTree = "<group>"; };
+		F190AB372BFDE372001AF32D /* ScratchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +200,9 @@
 			isa = PBXGroup;
 			children = (
 				A81F21F52BDC1DB700A8A301 /* ContentView.swift */,
+				F190AB332BFDE2D0001AF32D /* SwipingView.swift */,
+				F190AB352BFDE300001AF32D /* SwipingCard.swift */,
+				F190AB372BFDE372001AF32D /* ScratchView.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -431,6 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F190AB362BFDE300001AF32D /* SwipingCard.swift in Sources */,
 				F190AB2B2BFDDC47001AF32D /* DesignSystem.swift in Sources */,
 				A845D9532BF377250039AA1D /* ReusableIdentifier.swift in Sources */,
 				F190AB322BFDE22F001AF32D /* MainTabBarController.swift in Sources */,
@@ -439,7 +449,9 @@
 				F190AB292BFDDBA5001AF32D /* SelectableButtonStyle.swift in Sources */,
 				A81F21F62BDC1DB700A8A301 /* ContentView.swift in Sources */,
 				A845D94C2BF3711D0039AA1D /* MockDataProvider.swift in Sources */,
+				F190AB342BFDE2D0001AF32D /* SwipingView.swift in Sources */,
 				F190AB2E2BFDDDA1001AF32D /* BorderedModifier.swift in Sources */,
+				F190AB382BFDE372001AF32D /* ScratchView.swift in Sources */,
 				A845D94F2BF373EE0039AA1D /* LabelCollectionViewCell.swift in Sources */,
 				A845D9602BF3D7620039AA1D /* Constants.swift in Sources */,
 				F190AB302BFDDEB7001AF32D /* Image+ResizableBordered.swift in Sources */,

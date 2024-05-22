@@ -64,7 +64,7 @@ private extension MainTabBarController {
     }
 
     func setupSwipingCardView() -> UIViewController {
-        let swipingNavigationController = UINavigationController(rootViewController: UIHostingController(rootView: EmptyView())) // SwipingView
+        let swipingNavigationController = UINavigationController(rootViewController: UIHostingController(rootView: SwipingView()))
 
         swipingNavigationController.tabBarItem = UITabBarItem(title: "Random", image: UIImage(systemName: "switch.2"), tag: 1)
 

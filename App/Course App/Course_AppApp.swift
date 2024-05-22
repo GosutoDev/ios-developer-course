@@ -7,6 +7,7 @@
 
 import FirebaseCore
 import SwiftUI
+import os
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(
@@ -22,19 +23,15 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 // swiftlint:disable:next type_name
 struct Course_AppApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    private let logger = Logger()
     private var isUIKit = true
     var body: some Scene {
         WindowGroup {
-            homeView
-        }
-    }
-    
-    @ViewBuilder
-    var homeView: some View {
-        if isUIKit {
-            HomeView()
-        } else {
-            //
+            MainTabView()
+                .ignoresSafeArea(edges: .all)
+                .onAppear {
+                    logger.info("Content view has appeared")
+                }
         }
     }
 }
