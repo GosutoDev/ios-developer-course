@@ -37,7 +37,7 @@ struct SwipingCard: View {
     private let swipingAction: Action<SwipeState>
     private let configuration: Configuration
     @State private var offset: CGSize = .zero
-    @State private var color: Color = .bg.opacity(0.7)
+    @State private var color: Color = .bg.opacity(GlobalConstants.bgOpacity)
     
     init(
         configuration: Configuration,
@@ -101,6 +101,7 @@ struct SwipingCard: View {
 private extension SwipingCard {
     func finishSwipe(translation: CGSize) {
         // swipe left
+        // swiftlint:disable no_magic_numbers
         if -500...(-200) ~= translation.width {
             offset = CGSize(width: -500, height: 0)
             swipingAction(.finished(direction: .left))
@@ -111,7 +112,7 @@ private extension SwipingCard {
         } else {
             // re-center
             offset = .zero
-            color = .bg.opacity(0.7)
+            color = .bg.opacity(GlobalConstants.bgOpacity)
             swipingAction(.cancelled)
         }
     }
@@ -128,13 +129,12 @@ private extension SwipingCard {
                 .opacity(Double(translation.width / 500) + 0.6)
             swipingAction(.swiping(direction: .right))
         } else {
-            color = .bg.opacity(0.7)
+            color = .bg.opacity(GlobalConstants.bgOpacity)
             swipingAction(.cancelled)
         }
     }
 }
 
-// swiftlint:disable no_magic_numbers
 struct Card_Previews: PreviewProvider {
     static var previews: some View {
         SwipingCard(
@@ -149,4 +149,4 @@ struct Card_Previews: PreviewProvider {
         .frame(width: 220, height: 340)
     }
 }
-// swiftlint:enable no_magic_number
+// siwftlint:enable no_magic_numbers

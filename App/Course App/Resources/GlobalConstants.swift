@@ -23,4 +23,5 @@ enum GlobalConstants {
     static let halfOpacity: CGFloat = 0.5
     static let offsetMultiplicator = 0.5
     static let degreesDivider: CGFloat = 40
+    static let bgOpacity: CGFloat = 0.7
 }

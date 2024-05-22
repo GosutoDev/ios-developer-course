@@ -72,10 +72,16 @@ private extension HomeViewController {
     }
     
     func makeDataSource() -> DataSource {
-        let dataSource = DataSource(collectionView: categoriesCollectionView) { collectionView, indexPath, _ in
+        let cellRegistration = UICollectionView.CellRegistration<UICollectionViewCell, Joke> { cell, _, joke in
+            cell.contentConfiguration = UIHostingConfiguration {
+                Image(uiImage: joke.image ?? UIImage())
+                    .resizableBordered(cornerRadius: GlobalConstants.cornerRadius)
+            }
+        }
+        
+        let dataSource = DataSource(collectionView: categoriesCollectionView) { collectionView, indexPath, item in
             let section = self.dataSource.snapshot().sectionIdentifiers[indexPath.section]
-            let imageCell: ImageCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
-            imageCell.imageView.image = section.jokes[indexPath.item].image
+            let imageCell: UICollectionViewCell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
             return imageCell
         }
         
@@ -115,7 +121,6 @@ private extension HomeViewController {
         categoriesCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         categoriesCollectionView.backgroundColor = .bg
         categoriesCollectionView.delegate = self
-        categoriesCollectionView.register(ImageCollectionViewCell.self)
         categoriesCollectionView.register(LabelCollectionViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader)
         view.addSubview(categoriesCollectionView)
     }
