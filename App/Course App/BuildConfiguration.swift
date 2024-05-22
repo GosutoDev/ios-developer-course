@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Configuration: Decodable {
+struct BuildConfiguration: Decodable {
     private enum CodingKeys: String, CodingKey {
         case imagesBaseURL = "API_IMAGES_BASE_URL"
         case jokesBaseURL = "API_JOKES_BASE_URL"
@@ -17,8 +17,8 @@ struct Configuration: Decodable {
     let imagesBaseURL: String
 }
 
-extension Configuration {
-    static let `default`: Configuration = {
+extension BuildConfiguration {
+    static let `default`: BuildConfiguration = {
         guard let propertyList = Bundle.main.infoDictionary else {
             fatalError("Unable to get property list.")
         }
@@ -28,7 +28,7 @@ extension Configuration {
         }
         
         let decoder = JSONDecoder()
-        guard let configuration = try? decoder.decode(Configuration.self, from: data) else {
+        guard let configuration = try? decoder.decode(BuildConfiguration.self, from: data) else {
             fatalError("Unable to decode the Environment configuration file.")
         }
         

@@ -22,13 +22,15 @@
 		A8830C1E2BED0315005CAFEA /* Course_App_UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8830C1D2BED0315005CAFEA /* Course_App_UnitTests.swift */; };
 		A8830C2B2BED03BB005CAFEA /* Course_App_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8830C2A2BED03BB005CAFEA /* Course_App_UITests.swift */; };
 		A8830C2D2BED03BB005CAFEA /* Course_App_UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8830C2C2BED03BB005CAFEA /* Course_App_UITestsLaunchTests.swift */; };
-		A8830C402BED0EE0005CAFEA /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8830C3F2BED0EE0005CAFEA /* Configuration.swift */; };
+		A8830C402BED0EE0005CAFEA /* BuildConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8830C3F2BED0EE0005CAFEA /* BuildConfiguration.swift */; };
 		A8830C482BEF80FA005CAFEA /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8830C452BEF80FA005CAFEA /* Poppins-Regular.ttf */; };
 		A8830C492BEF80FA005CAFEA /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8830C462BEF80FA005CAFEA /* Poppins-Bold.ttf */; };
 		A8830C4A2BEF80FA005CAFEA /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8830C472BEF80FA005CAFEA /* Poppins-MediumItalic.ttf */; };
 		A8830C4C2BEF84BC005CAFEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8830C4B2BEF84BC005CAFEA /* GoogleService-Info.plist */; };
 		A8830C4F2BEF8565005CAFEA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A8830C4E2BEF8565005CAFEA /* FirebaseAuth */; };
 		A8830C512BEF8565005CAFEA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A8830C502BEF8565005CAFEA /* FirebaseFirestore */; };
+		F190AB292BFDDBA5001AF32D /* SelectableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */; };
+		F190AB2B2BFDDC47001AF32D /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2A2BFDDC47001AF32D /* DesignSystem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,11 +72,13 @@
 		A8830C332BED05F4005CAFEA /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		A8830C352BED07EF005CAFEA /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		A8830C3E2BED0E80005CAFEA /* Course-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Course-App-Info.plist"; sourceTree = SOURCE_ROOT; };
-		A8830C3F2BED0EE0005CAFEA /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		A8830C3F2BED0EE0005CAFEA /* BuildConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildConfiguration.swift; sourceTree = "<group>"; };
 		A8830C452BEF80FA005CAFEA /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		A8830C462BEF80FA005CAFEA /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		A8830C472BEF80FA005CAFEA /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
 		A8830C4B2BEF84BC005CAFEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableButtonStyle.swift; sourceTree = "<group>"; };
+		F190AB2A2BFDDC47001AF32D /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,8 +132,9 @@
 		A81F21F22BDC1DB700A8A301 /* Course App */ = {
 			isa = PBXGroup;
 			children = (
+				F190AB262BFDDB68001AF32D /* SharedUI */,
 				A845D9502BF376860039AA1D /* Common */,
-				A8830C3F2BED0EE0005CAFEA /* Configuration.swift */,
+				A8830C3F2BED0EE0005CAFEA /* BuildConfiguration.swift */,
 				A81F21F32BDC1DB700A8A301 /* Course_AppApp.swift */,
 				A845D9482BF36F070039AA1D /* DataAPI */,
 				A8830C3E2BED0E80005CAFEA /* Course-App-Info.plist */,
@@ -246,6 +251,23 @@
 				A8830C452BEF80FA005CAFEA /* Poppins-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F190AB262BFDDB68001AF32D /* SharedUI */ = {
+			isa = PBXGroup;
+			children = (
+				F190AB272BFDDB89001AF32D /* Styles */,
+				F190AB2A2BFDDC47001AF32D /* DesignSystem.swift */,
+			);
+			path = SharedUI;
+			sourceTree = "<group>";
+		};
+		F190AB272BFDDB89001AF32D /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,9 +414,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F190AB2B2BFDDC47001AF32D /* DesignSystem.swift in Sources */,
 				A845D9532BF377250039AA1D /* ReusableIdentifier.swift in Sources */,
-				A8830C402BED0EE0005CAFEA /* Configuration.swift in Sources */,
+				A8830C402BED0EE0005CAFEA /* BuildConfiguration.swift in Sources */,
 				A845D9552BF377A70039AA1D /* UICollectionView+ReusableIdentifier.swift in Sources */,
+				F190AB292BFDDBA5001AF32D /* SelectableButtonStyle.swift in Sources */,
 				A81F21F62BDC1DB700A8A301 /* ContentView.swift in Sources */,
 				A845D94C2BF3711D0039AA1D /* MockDataProvider.swift in Sources */,
 				A845D94F2BF373EE0039AA1D /* LabelCollectionViewCell.swift in Sources */,

@@ -9,8 +9,8 @@ import os
 import SwiftUI
 
 struct ContentView: View {
-    let imagesBaseURL = Configuration.default.imagesBaseURL
-    let jokesBaseURL = Configuration.default.jokesBaseURL
+    let imagesBaseURL = BuildConfiguration.default.imagesBaseURL
+    let jokesBaseURL = BuildConfiguration.default.jokesBaseURL
     
     private let logger = Logger()
     
