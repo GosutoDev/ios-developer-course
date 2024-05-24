@@ -78,24 +78,28 @@ private extension HomeViewController {
                     .resizableBordered(cornerRadius: GlobalConstants.cornerRadius)
             }
         }
-        
+
         let dataSource = DataSource(collectionView: categoriesCollectionView) { collectionView, indexPath, item in
-            let section = self.dataSource.snapshot().sectionIdentifiers[indexPath.section]
-            let imageCell: UICollectionViewCell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
-            return imageCell
+            collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
         }
-        
+
         dataSource.supplementaryViewProvider = { collectionView, kind, indexPath in
-            guard kind == UICollectionView.elementKindSectionHeader else {
-                return nil
-            }
-            
+//            guard kind == UICollectionView.elementKindSectionHeader else {
+//                return nil
+//            }
+
             let section = self.dataSource.snapshot().sectionIdentifiers[indexPath.section]
-            let labelCell: LabelCollectionViewCell = collectionView.dequeueSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, for: indexPath)
-            labelCell.nameLabel.text = section.title
+            let labelCell: UICollectionViewCell = collectionView.dequeueSupplementaryView(
+                ofKind: UICollectionView.elementKindSectionHeader,
+                for: indexPath
+            )
+            labelCell.contentConfiguration = UIHostingConfiguration {
+                Text(section.title)
+                    .textStyle(textType: .sectionTitle)
+            }
             return labelCell
         }
-        
+
         return dataSource
     }
 }
@@ -121,7 +125,10 @@ private extension HomeViewController {
         categoriesCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         categoriesCollectionView.backgroundColor = .bg
         categoriesCollectionView.delegate = self
-        categoriesCollectionView.register(LabelCollectionViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader)
+        categoriesCollectionView.register(
+            UICollectionViewCell.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader
+        )
         view.addSubview(categoriesCollectionView)
     }
 }

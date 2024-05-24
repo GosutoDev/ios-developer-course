@@ -38,13 +38,6 @@ private extension MainTabBarController {
     func setupGlobalTabBarUI() {
         UITabBar.appearance().backgroundColor = .brown
         UITabBar.appearance().tintColor = .white
-        let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = .brown
-        appearance.shadowImage = UIImage()
-
-        UINavigationBar.appearance().scrollEdgeAppearance = appearance
-        UINavigationBar.appearance().compactAppearance = appearance
-        UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
 
     func setupTabBarControllers() {
@@ -52,7 +45,7 @@ private extension MainTabBarController {
     }
 
     func setupCategoriesView() -> UIViewController {
-        let categoriesNavigationController = UINavigationController(rootViewController: HomeViewController())
+        let categoriesNavigationController = CustomNavigationController(rootViewController: HomeViewController())
         categoriesNavigationController.tabBarItem = UITabBarItem(
             title: "Categories",
             image: UIImage(systemName: "list.dash.header.rectangle"),
@@ -63,7 +56,7 @@ private extension MainTabBarController {
     }
 
     func setupSwipingCardView() -> UIViewController {
-        let swipingNavigationController = UINavigationController(rootViewController: UIHostingController(rootView: SwipingView()))
+        let swipingNavigationController = CustomNavigationController(rootViewController: UIHostingController(rootView: SwipingView()))
         swipingNavigationController.tabBarItem = UITabBarItem(title: "Random", image: UIImage(systemName: "switch.2"), tag: 1)
         return swipingNavigationController
     }

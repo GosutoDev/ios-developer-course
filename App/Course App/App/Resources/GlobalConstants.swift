@@ -16,7 +16,7 @@ enum GlobalConstants {
     static let cornerRadius15: CGFloat = 15
     static let numberOfImages = MockDataProvider().data.count
     static let interSectionSpacing: CGFloat = 20
-    static let layoutWidth: CGFloat = 0.93
+    static let layoutWidth: CGFloat = 1
     static let layoutGroupHeight: CGFloat = 250
     static let layoutHeaderHeight: CGFloat = 80
     static let padding: CGFloat = 10

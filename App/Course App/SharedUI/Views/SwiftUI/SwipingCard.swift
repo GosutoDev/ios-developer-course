@@ -89,19 +89,19 @@ struct SwipingCard: View {
     // MARK: CardDescription
     private var cardDescription: some View {
         Text(configuration.title)
-            .textTypeModifier(textType: .h1Title)
+            .textStyle(textType: .sectionTitle)
             .padding(GlobalConstants.padding)
-            .background(Color.black.opacity(GlobalConstants.halfOpacity))
-            .cornerRadius(GlobalConstants.cornerRadius)
+            .cornerRadius(CornerRadiusSize.default.rawValue)
             .padding()
     }
 }
+
+// swiftlint:disable no_magic_numbers
 
 // MARK: - Swipe logic
 private extension SwipingCard {
     func finishSwipe(translation: CGSize) {
         // swipe left
-        // swiftlint:disable no_magic_numbers
         if -500...(-200) ~= translation.width {
             offset = CGSize(width: -500, height: 0)
             swipingAction(.finished(direction: .left))
@@ -149,4 +149,5 @@ struct Card_Previews: PreviewProvider {
         .frame(width: 220, height: 340)
     }
 }
-// siwftlint:enable no_magic_numbers
+
+// swiftlint:enable no_magic_numbers
