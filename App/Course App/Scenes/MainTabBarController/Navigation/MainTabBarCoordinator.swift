@@ -21,7 +21,10 @@ class MainTabBarCoordinator: NSObject, TabBarControllerCoordinator {
 // MARK: - Start the coordinator
 extension MainTabBarCoordinator {
     func start() {
-        tabBarController.viewControllers = [makeHomeFlow(), makeSwipingFlow().rootViewController]
+        tabBarController.viewControllers = [
+            makeHomeFlow().rootViewController,
+            makeSwipingFlow().rootViewController
+        ]
     }
 }
 
@@ -33,22 +36,21 @@ private extension MainTabBarCoordinator {
         return tabBarController
     }
     
-    func makeHomeFlow() -> UIViewController {
-        let homeViewController = CustomNavigationController(rootViewController: HomeViewController())
-        homeViewController.tabBarItem = UITabBarItem(
+    func makeHomeFlow() -> ViewControllerCoordinator {
+        let homeViewCoordinator = HomeNavigationCoordinator()
+        homeViewCoordinator.rootViewController.tabBarItem = UITabBarItem(
             title: "Categories",
             image: UIImage(systemName: "list.dash.header.rectangle"),
             tag: 0
-        )
-
-        return homeViewController
+            )
+        return homeViewCoordinator
     }
 
     func makeSwipingFlow() -> ViewControllerCoordinator {
-        let swipingNavigationController = SwipingViewNavigationCoordinator()
-        startChildCoordinator(swipingNavigationController)
-        swipingNavigationController.rootViewController.tabBarItem = UITabBarItem(title: "Random", image: UIImage(systemName: "switch.2"), tag: 1)
-        return swipingNavigationController
+        let swipingNavigationCoordinator = SwipingViewNavigationCoordinator()
+        startChildCoordinator(swipingNavigationCoordinator)
+        swipingNavigationCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "Random", image: UIImage(systemName: "switch.2"), tag: 1)
+        return swipingNavigationCoordinator
     }
 }
 
