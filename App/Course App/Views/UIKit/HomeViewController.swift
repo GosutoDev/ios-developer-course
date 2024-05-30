@@ -10,12 +10,21 @@ import os
 import SwiftUI
 import UIKit
 
+// HELPER
+struct HomeView: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> HomeViewController {
+        HomeViewController()
+    }
+    
+    func updateUIViewController(_ uiViewController: HomeViewController, context: Context) {
+    }
+}
+
 final class HomeViewController: UIViewController {
     let logger = Logger()
     
-    // swiftlint:disable implicitly_unwrapped_optional
-    var categoriesCollectionView: UICollectionView!
-    // swiftlint:enable implicitly_unwrapped_optional
+    lazy var categoriesCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
+    
     
     // MARK: DataSources
     typealias DataSource = UICollectionViewDiffableDataSource<SectionData, Joke>
@@ -27,6 +36,7 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        title = "Categories"
     }
 }
 
@@ -62,10 +72,16 @@ private extension HomeViewController {
     }
     
     func makeDataSource() -> DataSource {
-        let dataSource = DataSource(collectionView: categoriesCollectionView) { collectionView, indexPath, _ in
+        let cellRegistration = UICollectionView.CellRegistration<UICollectionViewCell, Joke> { cell, _, joke in
+            cell.contentConfiguration = UIHostingConfiguration {
+                Image(uiImage: joke.image ?? UIImage())
+                    .resizableBordered(cornerRadius: GlobalConstants.cornerRadius)
+            }
+        }
+        
+        let dataSource = DataSource(collectionView: categoriesCollectionView) { collectionView, indexPath, item in
             let section = self.dataSource.snapshot().sectionIdentifiers[indexPath.section]
-            let imageCell: ImageCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
-            imageCell.imageView.image = section.jokes[indexPath.item].image
+            let imageCell: UICollectionViewCell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
             return imageCell
         }
         
@@ -102,11 +118,9 @@ private extension HomeViewController {
         readData()
     }
     func setupCollectionView() {
-        categoriesCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
         categoriesCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         categoriesCollectionView.backgroundColor = .bg
         categoriesCollectionView.delegate = self
-        categoriesCollectionView.register(ImageCollectionViewCell.self)
         categoriesCollectionView.register(LabelCollectionViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader)
         view.addSubview(categoriesCollectionView)
     }
@@ -125,7 +139,7 @@ private extension HomeViewController {
         }
         
         let config = UICollectionViewCompositionalLayoutConfiguration()
-        config.interSectionSpacing = Constants.interSectionSpacing
+        config.interSectionSpacing = GlobalConstants.interSectionSpacing
         layout.configuration = config
         return layout
     }
@@ -135,13 +149,13 @@ private extension HomeViewController {
         
         let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(Constants.layoutWidth), heightDimension: .estimated(Constants.layoutGroupHeight))
+        let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(GlobalConstants.layoutWidth), heightDimension: .estimated(GlobalConstants.layoutGroupHeight))
         let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: layoutGroupSize, subitems: [layoutItem])
         
         let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
         layoutSection.orthogonalScrollingBehavior = .groupPagingCentered
         
-        let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(Constants.layoutWidth), heightDimension: .estimated(Constants.layoutHeaderHeight))
+        let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(GlobalConstants.layoutWidth), heightDimension: .estimated(GlobalConstants.layoutHeaderHeight))
         let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
         layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
         
