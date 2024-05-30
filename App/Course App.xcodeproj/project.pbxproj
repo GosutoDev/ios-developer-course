@@ -42,6 +42,7 @@
 		F1076BB92C08FDA500653A6E /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BB82C08FDA500653A6E /* MainTabBarCoordinator.swift */; };
 		F1076BBD2C09027100653A6E /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BBC2C09027100653A6E /* CoordinatorView.swift */; };
 		F1076BBF2C09052900653A6E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BBE2C09052900653A6E /* AppCoordinator.swift */; };
+		F1076BC22C0908A400653A6E /* SwipingViewNavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BC12C0908A400653A6E /* SwipingViewNavigationCoordinator.swift */; };
 		F190AB292BFDDBA5001AF32D /* SelectableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */; };
 		F190AB2E2BFDDDA1001AF32D /* BorderedModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */; };
 		F190AB302BFDDEB7001AF32D /* Image+ResizableBordered.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */; };
@@ -107,6 +108,7 @@
 		F1076BB82C08FDA500653A6E /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
 		F1076BBC2C09027100653A6E /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
 		F1076BBE2C09052900653A6E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		F1076BC12C0908A400653A6E /* SwipingViewNavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingViewNavigationCoordinator.swift; sourceTree = "<group>"; };
 		F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableButtonStyle.swift; sourceTree = "<group>"; };
 		F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedModifier.swift; sourceTree = "<group>"; };
 		F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ResizableBordered.swift"; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 		F1076B6B2C01024200653A6E /* SwipingView */ = {
 			isa = PBXGroup;
 			children = (
+				F1076BC02C09088900653A6E /* Navigation */,
 				F190AB332BFDE2D0001AF32D /* SwipingView.swift */,
 			);
 			path = SwipingView;
@@ -385,6 +388,14 @@
 				F1076BBC2C09027100653A6E /* CoordinatorView.swift */,
 			);
 			path = Types;
+			sourceTree = "<group>";
+		};
+		F1076BC02C09088900653A6E /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				F1076BC12C0908A400653A6E /* SwipingViewNavigationCoordinator.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		F190AB262BFDDB68001AF32D /* SharedUI */ = {
@@ -562,6 +573,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1076BB42C08FC9800653A6E /* TabBarControllerCoordinator.swift in Sources */,
+				F1076BC22C0908A400653A6E /* SwipingViewNavigationCoordinator.swift in Sources */,
 				F190AB362BFDE300001AF32D /* SwipingCard.swift in Sources */,
 				F1076B582C00FF2400653A6E /* FontSize.swift in Sources */,
 				F1076B532C00FE1000653A6E /* TextStyle.swift in Sources */,
