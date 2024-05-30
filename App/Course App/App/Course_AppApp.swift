@@ -24,7 +24,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct Course_AppApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     private let logger = Logger()
-    private var isUIKit = true
     var body: some Scene {
         WindowGroup {
             MainTabView()
