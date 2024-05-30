@@ -38,6 +38,7 @@ private extension MainTabBarCoordinator {
     
     func makeHomeFlow() -> ViewControllerCoordinator {
         let homeViewCoordinator = HomeNavigationCoordinator()
+        startChildCoordinator(homeViewCoordinator)
         homeViewCoordinator.rootViewController.tabBarItem = UITabBarItem(
             title: "Categories",
             image: UIImage(systemName: "list.dash.header.rectangle"),
