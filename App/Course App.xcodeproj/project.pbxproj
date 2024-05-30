@@ -35,6 +35,7 @@
 		F1076B632C00FF8500653A6E /* UIFont+AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076B622C00FF8500653A6E /* UIFont+AppFonts.swift */; };
 		F1076B652C01016B00653A6E /* UINavigationController+NavBarUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076B642C01016B00653A6E /* UINavigationController+NavBarUI.swift */; };
 		F1076B672C0101A700653A6E /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076B662C0101A700653A6E /* CustomNavigationController.swift */; };
+		F1076BB02C08FB5500653A6E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BAF2C08FB5500653A6E /* Coordinator.swift */; };
 		F190AB292BFDDBA5001AF32D /* SelectableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */; };
 		F190AB2E2BFDDDA1001AF32D /* BorderedModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */; };
 		F190AB302BFDDEB7001AF32D /* Image+ResizableBordered.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */; };
@@ -94,6 +95,7 @@
 		F1076B622C00FF8500653A6E /* UIFont+AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+AppFonts.swift"; sourceTree = "<group>"; };
 		F1076B642C01016B00653A6E /* UINavigationController+NavBarUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+NavBarUI.swift"; sourceTree = "<group>"; };
 		F1076B662C0101A700653A6E /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		F1076BAF2C08FB5500653A6E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableButtonStyle.swift; sourceTree = "<group>"; };
 		F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedModifier.swift; sourceTree = "<group>"; };
 		F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ResizableBordered.swift"; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 		A845D9502BF376860039AA1D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F1076BAE2C08FB4B00653A6E /* Navigation */,
 				F1076B6E2C0102B000653A6E /* Extensions */,
 				F1076B6D2C0102A700653A6E /* Protocols */,
 			);
@@ -343,6 +346,14 @@
 				A845D9542BF377A70039AA1D /* UICollectionView+ReusableIdentifier.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F1076BAE2C08FB4B00653A6E /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				F1076BAF2C08FB5500653A6E /* Coordinator.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		F190AB262BFDDB68001AF32D /* SharedUI */ = {
@@ -527,6 +538,7 @@
 				F1076B562C00FE4A00653A6E /* TextType.swift in Sources */,
 				F190AB322BFDE22F001AF32D /* MainTabBarController.swift in Sources */,
 				F1076B5C2C00FF4100653A6E /* PaddingSize.swift in Sources */,
+				F1076BB02C08FB5500653A6E /* Coordinator.swift in Sources */,
 				F1076B5E2C00FF5200653A6E /* CornerRadiusSize.swift in Sources */,
 				A8830C402BED0EE0005CAFEA /* BuildConfiguration.swift in Sources */,
 				A845D9552BF377A70039AA1D /* UICollectionView+ReusableIdentifier.swift in Sources */,
