@@ -39,6 +39,8 @@
 		F1076BB22C08FC4700653A6E /* ViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BB12C08FC4700653A6E /* ViewControllerCoordinator.swift */; };
 		F1076BB42C08FC9800653A6E /* TabBarControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BB32C08FC9800653A6E /* TabBarControllerCoordinator.swift */; };
 		F1076BB62C08FCFE00653A6E /* NavigationControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BB52C08FCFE00653A6E /* NavigationControllerCoordinator.swift */; };
+		F1076BB92C08FDA500653A6E /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BB82C08FDA500653A6E /* MainTabBarCoordinator.swift */; };
+		F1076BBD2C09027100653A6E /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BBC2C09027100653A6E /* CoordinatorView.swift */; };
 		F190AB292BFDDBA5001AF32D /* SelectableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */; };
 		F190AB2E2BFDDDA1001AF32D /* BorderedModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */; };
 		F190AB302BFDDEB7001AF32D /* Image+ResizableBordered.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */; };
@@ -102,6 +104,8 @@
 		F1076BB12C08FC4700653A6E /* ViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCoordinator.swift; sourceTree = "<group>"; };
 		F1076BB32C08FC9800653A6E /* TabBarControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarControllerCoordinator.swift; sourceTree = "<group>"; };
 		F1076BB52C08FCFE00653A6E /* NavigationControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerCoordinator.swift; sourceTree = "<group>"; };
+		F1076BB82C08FDA500653A6E /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
+		F1076BBC2C09027100653A6E /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
 		F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableButtonStyle.swift; sourceTree = "<group>"; };
 		F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedModifier.swift; sourceTree = "<group>"; };
 		F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ResizableBordered.swift"; sourceTree = "<group>"; };
@@ -228,9 +232,10 @@
 		A845D9502BF376860039AA1D /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				F1076BAE2C08FB4B00653A6E /* Navigation */,
 				F1076B6E2C0102B000653A6E /* Extensions */,
+				F1076BAE2C08FB4B00653A6E /* Navigation */,
 				F1076B6D2C0102A700653A6E /* Protocols */,
+				F1076BBA2C09025600653A6E /* Types */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -333,6 +338,7 @@
 		F1076B6C2C01024900653A6E /* MainTabBarController */ = {
 			isa = PBXGroup;
 			children = (
+				F1076BB72C08FD8A00653A6E /* Navigation */,
 				F190AB312BFDE22F001AF32D /* MainTabBarController.swift */,
 			);
 			path = MainTabBarController;
@@ -363,6 +369,22 @@
 				F1076BB52C08FCFE00653A6E /* NavigationControllerCoordinator.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		F1076BB72C08FD8A00653A6E /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				F1076BB82C08FDA500653A6E /* MainTabBarCoordinator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		F1076BBA2C09025600653A6E /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				F1076BBC2C09027100653A6E /* CoordinatorView.swift */,
+			);
+			path = Types;
 			sourceTree = "<group>";
 		};
 		F190AB262BFDDB68001AF32D /* SharedUI */ = {
@@ -554,6 +576,7 @@
 				A8830C402BED0EE0005CAFEA /* BuildConfiguration.swift in Sources */,
 				A845D9552BF377A70039AA1D /* UICollectionView+ReusableIdentifier.swift in Sources */,
 				F190AB292BFDDBA5001AF32D /* SelectableButtonStyle.swift in Sources */,
+				F1076BBD2C09027100653A6E /* CoordinatorView.swift in Sources */,
 				F1076B612C00FF7500653A6E /* Font+AppFonts.swift in Sources */,
 				A845D94C2BF3711D0039AA1D /* MockDataProvider.swift in Sources */,
 				F190AB342BFDE2D0001AF32D /* SwipingView.swift in Sources */,
@@ -562,6 +585,7 @@
 				F190AB2E2BFDDDA1001AF32D /* BorderedModifier.swift in Sources */,
 				F1076B5A2C00FF2F00653A6E /* FontType.swift in Sources */,
 				F190AB382BFDE372001AF32D /* ScratchView.swift in Sources */,
+				F1076BB92C08FDA500653A6E /* MainTabBarCoordinator.swift in Sources */,
 				F190AB302BFDDEB7001AF32D /* Image+ResizableBordered.swift in Sources */,
 				F1076B652C01016B00653A6E /* UINavigationController+NavBarUI.swift in Sources */,
 				A81F21F42BDC1DB700A8A301 /* Course_AppApp.swift in Sources */,
