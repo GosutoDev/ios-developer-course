@@ -31,13 +31,17 @@ struct SwipingCard: View {
     }
     
     // MARK: UI constant {
-    
+    enum UIConstants {
+        static let offsetMultiplicator = 0.5
+        static let degreesDivider: CGFloat = 40
+        static let bgOpacity: CGFloat = 0.7
+    }
     
     // MARK: Private variables
     private let swipingAction: Action<SwipeState>
     private let configuration: Configuration
     @State private var offset: CGSize = .zero
-    @State private var color: Color = .bg.opacity(GlobalConstants.bgOpacity)
+    @State private var color: Color = .bg.opacity(UIConstants.bgOpacity)
     
     init(
         configuration: Configuration,
@@ -63,9 +67,9 @@ struct SwipingCard: View {
             Spacer()
         }
         .background(color)
-        .cornerRadius(GlobalConstants.cornerRadius15)
-        .offset(x: offset.width, y: offset.height * GlobalConstants.offsetMultiplicator)
-        .rotationEffect(.degrees(Double(offset.width / GlobalConstants.degreesDivider)))
+        .cornerRadius(CornerRadiusSize.default.rawValue)
+        .offset(x: offset.width, y: offset.height * UIConstants.offsetMultiplicator)
+        .rotationEffect(.degrees(Double(offset.width / UIConstants.degreesDivider)))
         .gesture(dragGesture)
     }
     
@@ -90,7 +94,7 @@ struct SwipingCard: View {
     private var cardDescription: some View {
         Text(configuration.title)
             .textStyle(textType: .sectionTitle)
-            .padding(GlobalConstants.padding)
+            .padding(PaddingSize.default.rawValue)
             .cornerRadius(CornerRadiusSize.default.rawValue)
             .padding()
     }
@@ -112,7 +116,7 @@ private extension SwipingCard {
         } else {
             // re-center
             offset = .zero
-            color = .bg.opacity(GlobalConstants.bgOpacity)
+            color = .bg.opacity(UIConstants.bgOpacity)
             swipingAction(.cancelled)
         }
     }
@@ -129,7 +133,7 @@ private extension SwipingCard {
                 .opacity(Double(translation.width / 500) + 0.6)
             swipingAction(.swiping(direction: .right))
         } else {
-            color = .bg.opacity(GlobalConstants.bgOpacity)
+            color = .bg.opacity(UIConstants.bgOpacity)
             swipingAction(.cancelled)
         }
     }

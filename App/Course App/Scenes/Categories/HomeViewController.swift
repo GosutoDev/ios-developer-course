@@ -21,6 +21,14 @@ struct HomeView: UIViewControllerRepresentable {
 }
 
 final class HomeViewController: UIViewController {
+    // MARK: UIConstants
+    enum UIConstants {
+        static let interSectionSpacing: CGFloat = 20
+        static let layoutWidth: CGFloat = 1
+        static let layoutGroupHeight: CGFloat = 250
+        static let layoutHeaderHeight: CGFloat = 80
+    }
+    
     let logger = Logger()
     
     lazy var categoriesCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
@@ -75,7 +83,7 @@ private extension HomeViewController {
         let cellRegistration = UICollectionView.CellRegistration<UICollectionViewCell, Joke> { cell, _, joke in
             cell.contentConfiguration = UIHostingConfiguration {
                 Image(uiImage: joke.image ?? UIImage())
-                    .resizableBordered(cornerRadius: GlobalConstants.cornerRadius)
+                    .resizableBordered(cornerRadius: CornerRadiusSize.default.rawValue)
             }
         }
 
@@ -84,9 +92,9 @@ private extension HomeViewController {
         }
 
         dataSource.supplementaryViewProvider = { collectionView, kind, indexPath in
-//            guard kind == UICollectionView.elementKindSectionHeader else {
-//                return nil
-//            }
+            guard kind == UICollectionView.elementKindSectionHeader else {
+                return nil
+            }
 
             let section = self.dataSource.snapshot().sectionIdentifiers[indexPath.section]
             let labelCell: UICollectionViewCell = collectionView.dequeueSupplementaryView(
@@ -146,7 +154,7 @@ private extension HomeViewController {
         }
         
         let config = UICollectionViewCompositionalLayoutConfiguration()
-        config.interSectionSpacing = GlobalConstants.interSectionSpacing
+        config.interSectionSpacing = UIConstants.interSectionSpacing
         layout.configuration = config
         return layout
     }
@@ -156,13 +164,13 @@ private extension HomeViewController {
         
         let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(GlobalConstants.layoutWidth), heightDimension: .estimated(GlobalConstants.layoutGroupHeight))
+        let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(UIConstants.layoutWidth), heightDimension: .estimated(UIConstants.layoutGroupHeight))
         let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: layoutGroupSize, subitems: [layoutItem])
         
         let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
         layoutSection.orthogonalScrollingBehavior = .groupPagingCentered
         
-        let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(GlobalConstants.layoutWidth), heightDimension: .estimated(GlobalConstants.layoutHeaderHeight))
+        let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(UIConstants.layoutWidth), heightDimension: .estimated(UIConstants.layoutHeaderHeight))
         let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
         layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
         
