@@ -36,6 +36,7 @@
 		F1076B652C01016B00653A6E /* UINavigationController+NavBarUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076B642C01016B00653A6E /* UINavigationController+NavBarUI.swift */; };
 		F1076B672C0101A700653A6E /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076B662C0101A700653A6E /* CustomNavigationController.swift */; };
 		F1076BB02C08FB5500653A6E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BAF2C08FB5500653A6E /* Coordinator.swift */; };
+		F1076BB22C08FC4700653A6E /* ViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BB12C08FC4700653A6E /* ViewControllerCoordinator.swift */; };
 		F190AB292BFDDBA5001AF32D /* SelectableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */; };
 		F190AB2E2BFDDDA1001AF32D /* BorderedModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */; };
 		F190AB302BFDDEB7001AF32D /* Image+ResizableBordered.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */; };
@@ -96,6 +97,7 @@
 		F1076B642C01016B00653A6E /* UINavigationController+NavBarUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+NavBarUI.swift"; sourceTree = "<group>"; };
 		F1076B662C0101A700653A6E /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		F1076BAF2C08FB5500653A6E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F1076BB12C08FC4700653A6E /* ViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCoordinator.swift; sourceTree = "<group>"; };
 		F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableButtonStyle.swift; sourceTree = "<group>"; };
 		F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedModifier.swift; sourceTree = "<group>"; };
 		F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ResizableBordered.swift"; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				F1076BAF2C08FB5500653A6E /* Coordinator.swift */,
+				F1076BB12C08FC4700653A6E /* ViewControllerCoordinator.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				F1076B532C00FE1000653A6E /* TextStyle.swift in Sources */,
 				F1076B632C00FF8500653A6E /* UIFont+AppFonts.swift in Sources */,
 				A845D9532BF377250039AA1D /* ReusableIdentifier.swift in Sources */,
+				F1076BB22C08FC4700653A6E /* ViewControllerCoordinator.swift in Sources */,
 				F1076B562C00FE4A00653A6E /* TextType.swift in Sources */,
 				F190AB322BFDE22F001AF32D /* MainTabBarController.swift in Sources */,
 				F1076B5C2C00FF4100653A6E /* PaddingSize.swift in Sources */,
