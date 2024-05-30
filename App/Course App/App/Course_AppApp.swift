@@ -23,15 +23,15 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 // swiftlint:disable:next type_name
 struct Course_AppApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    private let mainTabBarCoordinator = {
-        let coordinator = MainTabBarCoordinator()
+    private let appCoordinator = {
+        let coordinator = AppCoordinator()
         coordinator.start()
         return coordinator
     }
     private let logger = Logger()
     var body: some Scene {
         WindowGroup {
-            CoordinatorView(coordinator: mainTabBarCoordinator())
+            CoordinatorView(coordinator: appCoordinator())
                 .ignoresSafeArea(edges: .all)
                 .onAppear {
                     logger.info("Content view has appeared")
