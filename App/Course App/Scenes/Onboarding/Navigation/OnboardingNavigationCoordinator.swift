@@ -19,7 +19,7 @@ class OnboardingNavigationCoordinator: NavigationControllerCoordinator {
 // MARK: - Start coordinator
 extension OnboardingNavigationCoordinator {
     func start() {
-        navigationController.setViewControllers([makeOnboardingView(), makeOnboardingView()], animated: true)
+        navigationController.setViewControllers([makeOnboardingView()], animated: false)
     }
 }
 
@@ -27,10 +27,12 @@ extension OnboardingNavigationCoordinator {
 private extension OnboardingNavigationCoordinator {
     func makeNavigationController() -> UINavigationController {
         let controller = CustomNavigationController()
+        controller.modalPresentationStyle = .fullScreen
+        controller.modalTransitionStyle = .crossDissolve
         return controller
     }
     
     func makeOnboardingView() -> UIViewController {
-        return UIHostingController(rootView: OnboardingView(page: .about))
+        UIHostingController(rootView: OnboardingView(page: .about))
     }
 }
