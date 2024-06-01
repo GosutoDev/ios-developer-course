@@ -8,7 +8,6 @@
 import UIKit
 
 final class AppCoordinator: ViewControllerCoordinator {
-    
     // MARK: Private properties
     private(set) lazy var rootViewController = makeTabBarFlow().rootViewController
     
