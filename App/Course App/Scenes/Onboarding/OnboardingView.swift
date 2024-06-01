@@ -20,6 +20,9 @@ struct OnboardingView: View {
                 .foregroundStyle(.black)
                 .textStyle(textType: .baseText)
                 .underline()
+            Text("Page number: \(page.rawValue)")
+                .foregroundStyle(.black)
+                .textStyle(textType: .caption)
             
             Button("Next page") {
             }

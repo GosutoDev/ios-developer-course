@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum OnboardingPage {
-    case welcome
+enum OnboardingPage: Int, CaseIterable {
+    case welcome = 1
     case about
     case diveIn
     
