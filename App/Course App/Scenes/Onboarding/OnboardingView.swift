@@ -8,11 +8,33 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    let page: OnboardingPage
+    
+    init(page: OnboardingPage) {
+        self.page = page
+    }
+    
     var body: some View {
-        Text("Hello, Onboarding!")
+        VStack(spacing: PaddingSize.default.rawValue) {
+            Text("This page name is \(page.title).")
+                .foregroundStyle(.black)
+                .textStyle(textType: .baseText)
+                .underline()
+            
+            Button("Next page") {
+            }
+            .buttonStyle(.navigationButtonStyle)
+            
+            Button("Close") {
+            }
+            .buttonStyle(.navigationButtonStyle)
+        }
+        .navigationTitle("Onboarding")
     }
 }
 
 #Preview {
-    OnboardingView()
+    NavigationStack {
+        OnboardingView(page: .welcome)
+    }
 }

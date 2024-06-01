@@ -31,7 +31,6 @@ private extension OnboardingNavigationCoordinator {
     }
     
     func makeOnboardingView() -> UIViewController {
-        let controller = OnboardingView()
-        return UIHostingController(rootView: OnboardingView())
+        return UIHostingController(rootView: OnboardingView(page: .about))
     }
 }
