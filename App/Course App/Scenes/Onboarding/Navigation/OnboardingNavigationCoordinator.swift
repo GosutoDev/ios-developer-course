@@ -5,8 +5,8 @@
 //  Created by Tomáš Duchoslav on 01.06.2024.
 //
 
-import os
 import Combine
+import os
 import SwiftUI
 import UIKit
 
@@ -43,6 +43,13 @@ extension OnboardingNavigationCoordinator {
 private extension OnboardingNavigationCoordinator {
     func makeNavigationController() -> UINavigationController {
         let controller = CustomNavigationController()
+        controller.eventPublisher.sink { [weak self] _ in
+            guard let self else {
+                return
+            }
+            self.eventSubject.send(.dismiss(self))
+        }
+        .store(in: &anyCancellables)
         controller.modalPresentationStyle = .fullScreen
         controller.modalTransitionStyle = .crossDissolve
         return controller
@@ -57,9 +64,12 @@ private extension OnboardingNavigationCoordinator {
             
             switch event {
             case let .nextPage(from):
-                var newPage: OnboardingPage = OnboardingPage.welcome
+                var newPage = OnboardingPage.welcome
                 if from < OnboardingPage.allCases.count {
+                    // swiftlint:disable:next force_unwrapping
                     newPage = OnboardingPage(rawValue: from + 1)!
+                } else {
+                    break
                 }
                 let viewController = self.makeOnboardingView(page: newPage)
                 self.navigationController.pushViewController(viewController, animated: true)

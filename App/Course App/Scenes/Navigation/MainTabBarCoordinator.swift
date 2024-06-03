@@ -5,6 +5,7 @@
 //  Created by Tomáš Duchoslav on 30.05.2024.
 //
 
+import Combine
 import os
 import SwiftUI
 import UIKit
@@ -13,6 +14,7 @@ class MainTabBarCoordinator: NSObject, TabBarControllerCoordinator {
     // MARK: Private properties
     private(set) lazy var tabBarController = makeTabBarController()
     private var logger = Logger()
+    private lazy var anyCancellables = Set<AnyCancellable>()
     
     // MARK: Public Properties
     var childCoordinators = [Coordinator]()
@@ -48,6 +50,10 @@ extension MainTabBarCoordinator {
 private extension MainTabBarCoordinator {
     func makeOnboardingFlow() -> ViewControllerCoordinator {
         let coordinator = OnboardingNavigationCoordinator()
+        coordinator.eventPublisher.sink { [weak self] event in
+            self?.handle(event: event)
+        }
+        .store(in: &anyCancellables)
         return coordinator
     }
     
@@ -73,6 +79,16 @@ private extension MainTabBarCoordinator {
         startChildCoordinator(swipingNavigationCoordinator)
         swipingNavigationCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "Random", image: UIImage(systemName: "switch.2"), tag: 1)
         return swipingNavigationCoordinator
+    }
+}
+
+// MARK: - Handling events
+private extension MainTabBarCoordinator {
+    func handle(event: OnboardingNavigationCoordinatorEvent) {
+        switch event {
+        case let .dismiss(coordinator):
+            release(coordinator)
+        }
     }
 }
 
