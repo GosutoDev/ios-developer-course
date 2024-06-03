@@ -49,6 +49,7 @@
 		F1076BCF2C0B552B00653A6E /* NavigationButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BCE2C0B552B00653A6E /* NavigationButtonStyle.swift */; };
 		F1076BD12C0B560E00653A6E /* ButtonStyle+CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BD02C0B560E00653A6E /* ButtonStyle+CustomButtonStyle.swift */; };
 		F1076BD32C0B5CAA00653A6E /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BD22C0B5CAA00653A6E /* OnboardingPage.swift */; };
+		F1076BD52C0D9A7800653A6E /* OpacityVisibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BD42C0D9A7800653A6E /* OpacityVisibility.swift */; };
 		F190AB292BFDDBA5001AF32D /* SelectableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */; };
 		F190AB2E2BFDDDA1001AF32D /* BorderedModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */; };
 		F190AB302BFDDEB7001AF32D /* Image+ResizableBordered.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */; };
@@ -121,6 +122,7 @@
 		F1076BCE2C0B552B00653A6E /* NavigationButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButtonStyle.swift; sourceTree = "<group>"; };
 		F1076BD02C0B560E00653A6E /* ButtonStyle+CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonStyle+CustomButtonStyle.swift"; sourceTree = "<group>"; };
 		F1076BD22C0B5CAA00653A6E /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
+		F1076BD42C0D9A7800653A6E /* OpacityVisibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpacityVisibility.swift; sourceTree = "<group>"; };
 		F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableButtonStyle.swift; sourceTree = "<group>"; };
 		F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedModifier.swift; sourceTree = "<group>"; };
 		F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ResizableBordered.swift"; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				F1076B5D2C00FF5200653A6E /* CornerRadiusSize.swift */,
 				F1076B572C00FF2400653A6E /* FontSize.swift */,
 				F1076B592C00FF2F00653A6E /* FontType.swift */,
+				F1076BD42C0D9A7800653A6E /* OpacityVisibility.swift */,
 				F1076B5B2C00FF4100653A6E /* PaddingSize.swift */,
 				F1076B552C00FE4A00653A6E /* TextType.swift */,
 			);
@@ -622,6 +625,7 @@
 				F1076B632C00FF8500653A6E /* UIFont+AppFonts.swift in Sources */,
 				A845D9532BF377250039AA1D /* ReusableIdentifier.swift in Sources */,
 				F1076BCF2C0B552B00653A6E /* NavigationButtonStyle.swift in Sources */,
+				F1076BD52C0D9A7800653A6E /* OpacityVisibility.swift in Sources */,
 				F1076BB22C08FC4700653A6E /* ViewControllerCoordinator.swift in Sources */,
 				F1076B562C00FE4A00653A6E /* TextType.swift in Sources */,
 				F1076B5C2C00FF4100653A6E /* PaddingSize.swift in Sources */,

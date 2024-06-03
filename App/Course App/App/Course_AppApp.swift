@@ -21,14 +21,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
         FirebaseApp.configure()
-        startChild()
         return true
-        
-        func startChild() {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-                self?.appCoordinator.startChildCoordinator(OnboardingNavigationCoordinator())
-            }
-        }
     }
 }
 
