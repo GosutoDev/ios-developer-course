@@ -8,5 +8,5 @@
 import Foundation
 
 enum SignInNavigationCoordinatorEvent {
-    case successful(Coordinator)
+    case signedIn(Coordinator)
 }

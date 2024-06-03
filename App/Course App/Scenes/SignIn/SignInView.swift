@@ -19,7 +19,7 @@ struct SignInView: View {
             TextField("Email", text: $emailField)
             SecureField("password", text: $passwordField)
             Button("SignIn") {
-                eventSubject.send(.successful)
+                eventSubject.send(.signedIn)
             }
         }
         .navigationTitle("Profile")

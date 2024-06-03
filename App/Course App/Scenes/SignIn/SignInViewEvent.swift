@@ -8,7 +8,5 @@
 import Foundation
 
 enum SignInViewEvent {
-    case successful
-    case forgotPassword
-    case incorrect
+    case signedIn
 }

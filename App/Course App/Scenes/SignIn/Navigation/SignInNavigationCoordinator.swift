@@ -53,10 +53,8 @@ private extension SignInNavigationCoordinator {
 private extension SignInNavigationCoordinator {
     func handle(_ event: SignInViewEvent) {
         switch event {
-        case .successful:
-            eventSubject.send(.successful(self))
-        default:
-            break
+        case .signedIn:
+            eventSubject.send(.signedIn(self))
         }
     }
 }

@@ -45,3 +45,6 @@ private extension AppCoordinator {
         UINavigationBar.appearance().tintColor = .white
     }
 }
+
+// MARK: - Handle Events
+
