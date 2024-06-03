@@ -17,7 +17,7 @@ struct NavigationButtonStyle: ButtonStyle {
             .foregroundStyle(.white)
             .padding(.vertical)
             .frame(width: UIScreen.main.bounds.width / StyleConstant.divider)
-            .background(.blue.gradient)
+            .background(.brown.gradient)
             .clipShape(.rect(cornerRadius: CornerRadiusSize.default.rawValue))
             .opacity(configuration.isPressed ? OpacityVisibility.half.rawValue : OpacityVisibility.default.rawValue)
     }
