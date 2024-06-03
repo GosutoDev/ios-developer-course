@@ -10,7 +10,6 @@ import os
 import SwiftUI
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    
     weak var deeplinkHandler: DeeplinkHandling?
     
     func application(
