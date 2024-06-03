@@ -5,15 +5,21 @@
 //  Created by Tomáš Duchoslav on 01.06.2024.
 //
 
+import os
 import SwiftUI
 import UIKit
 
 class OnboardingNavigationCoordinator: NavigationControllerCoordinator {
     // MARK: Private properties
     private(set) lazy var navigationController: UINavigationController = makeNavigationController()
+    private let logger = Logger()
     
     // MARK: Public properties
     var childCoordinators = [Coordinator]()
+    
+    deinit {
+        logger.info("Deinit OnboardingNavigationCoordinator")
+    }
 }
 
 // MARK: - Start coordinator

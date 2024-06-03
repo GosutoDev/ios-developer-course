@@ -50,6 +50,8 @@
 		F1076BD12C0B560E00653A6E /* ButtonStyle+CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BD02C0B560E00653A6E /* ButtonStyle+CustomButtonStyle.swift */; };
 		F1076BD32C0B5CAA00653A6E /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BD22C0B5CAA00653A6E /* OnboardingPage.swift */; };
 		F1076BD52C0D9A7800653A6E /* OpacityVisibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BD42C0D9A7800653A6E /* OpacityVisibility.swift */; };
+		F1076BD72C0D9F2200653A6E /* DeeplinkHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BD62C0D9F2200653A6E /* DeeplinkHandling.swift */; };
+		F1076BD92C0D9F5400653A6E /* Deeplink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BD82C0D9F5400653A6E /* Deeplink.swift */; };
 		F190AB292BFDDBA5001AF32D /* SelectableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */; };
 		F190AB2E2BFDDDA1001AF32D /* BorderedModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */; };
 		F190AB302BFDDEB7001AF32D /* Image+ResizableBordered.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */; };
@@ -123,6 +125,8 @@
 		F1076BD02C0B560E00653A6E /* ButtonStyle+CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonStyle+CustomButtonStyle.swift"; sourceTree = "<group>"; };
 		F1076BD22C0B5CAA00653A6E /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		F1076BD42C0D9A7800653A6E /* OpacityVisibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpacityVisibility.swift; sourceTree = "<group>"; };
+		F1076BD62C0D9F2200653A6E /* DeeplinkHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkHandling.swift; sourceTree = "<group>"; };
+		F1076BD82C0D9F5400653A6E /* Deeplink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deeplink.swift; sourceTree = "<group>"; };
 		F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableButtonStyle.swift; sourceTree = "<group>"; };
 		F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedModifier.swift; sourceTree = "<group>"; };
 		F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ResizableBordered.swift"; sourceTree = "<group>"; };
@@ -332,7 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				F1076B6A2C01023D00653A6E /* Home */,
-				F1076B6C2C01024900653A6E /* MainTabBarController */,
+				F1076BB72C08FD8A00653A6E /* Navigation */,
 				F1076BC62C0B472400653A6E /* Onboarding */,
 				F1076B6B2C01024200653A6E /* SwipingView */,
 			);
@@ -355,14 +359,6 @@
 				F190AB332BFDE2D0001AF32D /* SwipingView.swift */,
 			);
 			path = SwipingView;
-			sourceTree = "<group>";
-		};
-		F1076B6C2C01024900653A6E /* MainTabBarController */ = {
-			isa = PBXGroup;
-			children = (
-				F1076BB72C08FD8A00653A6E /* Navigation */,
-			);
-			path = MainTabBarController;
 			sourceTree = "<group>";
 		};
 		F1076B6D2C0102A700653A6E /* Protocols */ = {
@@ -388,6 +384,7 @@
 				F1076BB52C08FCFE00653A6E /* NavigationControllerCoordinator.swift */,
 				F1076BB32C08FC9800653A6E /* TabBarControllerCoordinator.swift */,
 				F1076BB12C08FC4700653A6E /* ViewControllerCoordinator.swift */,
+				F1076BD62C0D9F2200653A6E /* DeeplinkHandling.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -404,6 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				F1076BBC2C09027100653A6E /* CoordinatorView.swift */,
+				F1076BD82C0D9F5400653A6E /* Deeplink.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -645,6 +643,7 @@
 				F1076BB62C08FCFE00653A6E /* NavigationControllerCoordinator.swift in Sources */,
 				F1076BC52C090C0600653A6E /* HomeNavigationCoordinator.swift in Sources */,
 				F1076B672C0101A700653A6E /* CustomNavigationController.swift in Sources */,
+				F1076BD72C0D9F2200653A6E /* DeeplinkHandling.swift in Sources */,
 				F190AB2E2BFDDDA1001AF32D /* BorderedModifier.swift in Sources */,
 				F1076B5A2C00FF2F00653A6E /* FontType.swift in Sources */,
 				F190AB382BFDE372001AF32D /* ScratchView.swift in Sources */,
@@ -654,6 +653,7 @@
 				A81F21F42BDC1DB700A8A301 /* Course_AppApp.swift in Sources */,
 				F1076BD12C0B560E00653A6E /* ButtonStyle+CustomButtonStyle.swift in Sources */,
 				A845D9462BF365A60039AA1D /* HomeViewController.swift in Sources */,
+				F1076BD92C0D9F5400653A6E /* Deeplink.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

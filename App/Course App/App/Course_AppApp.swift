@@ -21,7 +21,14 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
         FirebaseApp.configure()
+        deeplinkFromService()
         return true
+    }
+    
+    func deeplinkFromService() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+            self?.appCoordinator.handleDeeplink(.onboarding(page: 1))
+        }
     }
 }
 

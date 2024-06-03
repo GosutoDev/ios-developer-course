@@ -28,8 +28,29 @@ extension MainTabBarCoordinator {
     }
 }
 
+// MARK: - Handle Deeplinks
+extension MainTabBarCoordinator {
+    func handleDeeplink(_ deeplink: Deeplink) {
+        switch deeplink {
+        case let .onboarding(page):
+            let coordinator = makeOnboardingFlow()
+            startChildCoordinator(coordinator)
+            tabBarController.present(coordinator.rootViewController, animated: true)
+        default:
+            break
+        }
+        
+        childCoordinators.forEach { $0.handleDeeplink(deeplink) }
+    }
+}
+
 // MARK: - Factory methods
 private extension MainTabBarCoordinator {
+    func makeOnboardingFlow() -> ViewControllerCoordinator {
+        let coordinator = OnboardingNavigationCoordinator()
+        return coordinator
+    }
+    
     func makeTabBarController() -> UITabBarController {
         let tabBarController = UITabBarController()
         tabBarController.delegate = self
