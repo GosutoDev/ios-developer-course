@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ProfileViewEvent {
+enum SignInViewEvent {
     case successful
     case forgotPassword
     case incorrect
