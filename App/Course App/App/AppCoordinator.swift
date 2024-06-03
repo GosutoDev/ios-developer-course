@@ -8,7 +8,7 @@
 import Combine
 import UIKit
 
-final class AppCoordinator: ObservableObject ,ViewControllerCoordinator {
+final class AppCoordinator: ObservableObject, ViewControllerCoordinator {
     // MARK: Private properties
     private(set) lazy var rootViewController: UIViewController = {
         if isSignedIn {
