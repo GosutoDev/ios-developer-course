@@ -9,7 +9,6 @@ import Combine
 import SwiftUI
 
 struct ProfileView: View {
-    
     private let eventSubject = PassthroughSubject<ProfileViewEvent, Never>()
     
     var body: some View {

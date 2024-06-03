@@ -40,7 +40,9 @@ private extension ProfileNavigationCoordinator {
     func makeProfileView() -> UIViewController {
         let profileView = ProfileView()
         profileView.eventPublisher.sink { [weak self] event in
-            guard let self else { return }
+            guard let self else {
+                return
+            }
             
             switch event {
             case .logout:
