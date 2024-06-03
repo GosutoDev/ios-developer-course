@@ -6,6 +6,7 @@
 //
 
 import Combine
+import os
 import SwiftUI
 import UIKit
 
@@ -14,15 +15,20 @@ final class SignInNavigationCoordinator: NavigationControllerCoordinator {
     private(set) lazy var navigationController = makeNavigationController()
     private let eventSubject = PassthroughSubject<SignInNavigationCoordinatorEvent, Never>()
     private var anyCancellables = Set<AnyCancellable>()
+    private let logger = Logger()
     
     // MARK: Public properties
     var childCoordinators = [Coordinator]()
+    
+    deinit {
+        logger.info("Deinit SignInVIew")
+    }
 }
 
 // MARK: - Start coordinator
 extension SignInNavigationCoordinator {
     func start() {
-        navigationController.setViewControllers([], animated: false)
+        navigationController.setViewControllers([makeSignInView()], animated: false)
     }
 }
 

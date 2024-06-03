@@ -10,11 +10,8 @@ import os
 import SwiftUI
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    let appCoordinator = {
-        let coordinator = AppCoordinator()
-        coordinator.start()
-        return coordinator
-    }()
+    
+    weak var deeplinkHandler: DeeplinkHandling?
     
     func application(
         _ application: UIApplication,
@@ -28,7 +25,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     func deeplinkFromService() {
         // swiftlint:disable:next no_magic_numbers
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
-            self?.appCoordinator.handleDeeplink(.onboarding(page: 1))
+            self?.deeplinkHandler?.handleDeeplink(.onboarding(page: 1))
         }
     }
 }
@@ -37,10 +34,19 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 // swiftlint:disable:next type_name
 struct Course_AppApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @ObservedObject private var appCordinator = AppCoordinator()
+    
     private let logger = Logger()
+    
+    init() {
+        appCordinator.start()
+        delegate.deeplinkHandler = appCordinator
+    }
+    
     var body: some Scene {
         WindowGroup {
-            CoordinatorView(coordinator: delegate.appCoordinator)
+            CoordinatorView(coordinator: appCordinator)
+                .id(appCordinator.isSignedIn)
                 .ignoresSafeArea(edges: .all)
                 .onAppear {
                     logger.info("Content view has appeared")

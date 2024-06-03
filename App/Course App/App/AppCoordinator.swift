@@ -5,14 +5,23 @@
 //  Created by Tomáš Duchoslav on 30.05.2024.
 //
 
+import Combine
 import UIKit
 
-final class AppCoordinator: ViewControllerCoordinator {
+final class AppCoordinator: ObservableObject ,ViewControllerCoordinator {
     // MARK: Private properties
-    private(set) lazy var rootViewController = makeTabBarFlow().rootViewController
+    private(set) lazy var rootViewController: UIViewController = {
+        if isSignedIn {
+            makeTabBarFlow().rootViewController
+        } else {
+            makeSignInFlow().rootViewController
+        }
+    }()
+    private var anyCancellables = Set<AnyCancellable>()
     
     // MARK: Public properties
     var childCoordinators = [Coordinator]()
+    @Published var isSignedIn = false
 }
 
 // MARK: - Start coordinator
@@ -29,6 +38,16 @@ private extension AppCoordinator {
         startChildCoordinator(mainTabBarCoordinator)
         return mainTabBarCoordinator
     }
+    
+    func makeSignInFlow() -> ViewControllerCoordinator {
+        let signInCoordinator = SignInNavigationCoordinator()
+        startChildCoordinator(signInCoordinator)
+        signInCoordinator.eventPublisher.sink { [weak self] event in
+            self?.handle(event)
+        }
+        .store(in: &anyCancellables)
+        return signInCoordinator
+    }
 }
 
 // MARK: - Setup UI
@@ -42,9 +61,19 @@ private extension AppCoordinator {
             ],
             for: .normal
         )
+        
         UINavigationBar.appearance().tintColor = .white
     }
 }
 
 // MARK: - Handle Events
-
+private extension AppCoordinator {
+    func handle(_ event: SignInNavigationCoordinatorEvent) {
+        switch event {
+        case let .signedIn(coordinator):
+            rootViewController = makeTabBarFlow().rootViewController
+            release(coordinator)
+            isSignedIn = true
+        }
+    }
+}

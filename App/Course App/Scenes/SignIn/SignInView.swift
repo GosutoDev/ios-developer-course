@@ -9,9 +9,9 @@ import Combine
 import SwiftUI
 
 struct SignInView: View {
+    // MARK: Private properties
     @State private var emailField = ""
     @State private var passwordField = ""
-    
     private let eventSubject = PassthroughSubject<SignInViewEvent, Never>()
     
     var body: some View {
