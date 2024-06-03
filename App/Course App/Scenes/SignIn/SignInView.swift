@@ -22,7 +22,7 @@ struct SignInView: View {
                 eventSubject.send(.signedIn)
             }
         }
-        .navigationTitle("Profile")
+        .navigationTitle("SignIn")
     }
 }
 
