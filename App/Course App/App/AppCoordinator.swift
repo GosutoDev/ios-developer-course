@@ -36,6 +36,10 @@ private extension AppCoordinator {
     func makeTabBarFlow() -> ViewControllerCoordinator {
         let mainTabBarCoordinator = MainTabBarCoordinator()
         startChildCoordinator(mainTabBarCoordinator)
+        mainTabBarCoordinator.eventPublisher.sink { [weak self] event in
+            self?.handle(event)
+        }
+        .store(in: &anyCancellables)
         return mainTabBarCoordinator
     }
     
@@ -74,6 +78,15 @@ private extension AppCoordinator {
             rootViewController = makeTabBarFlow().rootViewController
             release(coordinator)
             isSignedIn = true
+        }
+    }
+    
+    func handle(_ event: MainTabBarCoordinatorEvent) {
+        switch event {
+        case let .logout(coordinator):
+            rootViewController = makeSignInFlow().rootViewController
+            release(coordinator)
+            isSignedIn = false
         }
     }
 }

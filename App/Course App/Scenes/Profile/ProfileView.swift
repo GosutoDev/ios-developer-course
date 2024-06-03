@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ProfileView: View {
     
-//    private let eventSubject = PassthroughSubject<Event, Never>()
+    private let eventSubject = PassthroughSubject<ProfileViewEvent, Never>()
     
     var body: some View {
         VStack {
@@ -20,17 +20,17 @@ struct ProfileView: View {
                 .underline()
             
             Button("Onboarding") {
-                
+                eventSubject.send(.onboarding)
             }
             .buttonStyle(.navigationButtonStyle)
             
             Button("Onboarding modal") {
-                
+                eventSubject.send(.onboardingModal)
             }
             .buttonStyle(.navigationButtonStyle)
             
             Button("Logout") {
-                
+                eventSubject.send(.logout)
             }
             .buttonStyle(.navigationButtonStyle)
         }
@@ -39,8 +39,8 @@ struct ProfileView: View {
 
 // MARK: - Event Emitter
 extension ProfileView: EventEmitting {
-    var eventPublisher: AnyPublisher<Event, Never> {
-        
+    var eventPublisher: AnyPublisher<ProfileViewEvent, Never> {
+        eventSubject.eraseToAnyPublisher()
     }
 }
 

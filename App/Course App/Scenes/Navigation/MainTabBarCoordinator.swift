@@ -15,6 +15,7 @@ class MainTabBarCoordinator: NSObject, TabBarControllerCoordinator {
     private(set) lazy var tabBarController = makeTabBarController()
     private var logger = Logger()
     private lazy var anyCancellables = Set<AnyCancellable>()
+    private let eventSubject = PassthroughSubject<MainTabBarCoordinatorEvent, Never>()
     
     // MARK: Public Properties
     var childCoordinators = [Coordinator]()
@@ -28,6 +29,13 @@ extension MainTabBarCoordinator {
             makeSwipingFlow().rootViewController,
             makeProfileFlow().rootViewController
         ]
+    }
+}
+
+// MARK: - Event Emitter
+extension MainTabBarCoordinator: EventEmitting {
+    var eventPublisher: AnyPublisher<MainTabBarCoordinatorEvent, Never> {
+        eventSubject.eraseToAnyPublisher()
     }
 }
 
@@ -85,6 +93,10 @@ private extension MainTabBarCoordinator {
     func makeProfileFlow() -> ViewControllerCoordinator {
         let profileNavigationCoordinator = ProfileNavigationCoordinator()
         startChildCoordinator(profileNavigationCoordinator)
+        profileNavigationCoordinator.eventPublisher.sink { [weak self] event in
+            self?.handle(event)
+        }
+        .store(in: &anyCancellables)
         // swiftlint:disable:next no_magic_numbers
         profileNavigationCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"), tag: 2)
         return profileNavigationCoordinator
@@ -97,6 +109,13 @@ private extension MainTabBarCoordinator {
         switch event {
         case let .dismiss(coordinator):
             release(coordinator)
+        }
+    }
+    
+    func handle(_ event: ProfileNavigationCoordinatorEvent) {
+        switch event {
+        case .logout:
+            eventSubject.send(.logout(self))
         }
     }
 }
