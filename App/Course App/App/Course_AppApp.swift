@@ -26,9 +26,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     }
     
     func deeplinkFromService() {
-        let seconds: UInt64 = 4_000_000_000
-        let dispatchTime = DispatchTime(uptimeNanoseconds: seconds)
-        DispatchQueue.main.asyncAfter(deadline: dispatchTime) { [weak self] in
+        // swiftlint:disable:next no_magic_numbers
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
             self?.appCoordinator.handleDeeplink(.onboarding(page: 1))
         }
     }

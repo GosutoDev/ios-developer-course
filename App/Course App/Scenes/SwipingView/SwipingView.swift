@@ -18,7 +18,6 @@ struct SwipingView: View {
         static let sizeWidthMultiplicator = 1.5
     }
 
-
     var body: some View {
         GeometryReader { geometry in
             HStack {

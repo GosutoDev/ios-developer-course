@@ -25,7 +25,8 @@ extension MainTabBarCoordinator {
     func start() {
         tabBarController.viewControllers = [
             makeHomeFlow().rootViewController,
-            makeSwipingFlow().rootViewController
+            makeSwipingFlow().rootViewController,
+            makeProfileFlow().rootViewController
         ]
     }
 }
@@ -48,6 +49,12 @@ extension MainTabBarCoordinator {
 
 // MARK: - Factory methods
 private extension MainTabBarCoordinator {
+    func makeTabBarController() -> UITabBarController {
+        let tabBarController = UITabBarController()
+        tabBarController.delegate = self
+        return tabBarController
+    }
+    
     func makeOnboardingFlow() -> ViewControllerCoordinator {
         let coordinator = OnboardingNavigationCoordinator()
         coordinator.eventPublisher.sink { [weak self] event in
@@ -55,12 +62,6 @@ private extension MainTabBarCoordinator {
         }
         .store(in: &anyCancellables)
         return coordinator
-    }
-    
-    func makeTabBarController() -> UITabBarController {
-        let tabBarController = UITabBarController()
-        tabBarController.delegate = self
-        return tabBarController
     }
     
     func makeHomeFlow() -> ViewControllerCoordinator {
@@ -79,6 +80,14 @@ private extension MainTabBarCoordinator {
         startChildCoordinator(swipingNavigationCoordinator)
         swipingNavigationCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "Random", image: UIImage(systemName: "switch.2"), tag: 1)
         return swipingNavigationCoordinator
+    }
+    
+    func makeProfileFlow() -> ViewControllerCoordinator {
+        let profileNavigationCoordinator = ProfileNavigationCoordinator()
+        startChildCoordinator(profileNavigationCoordinator)
+        // swiftlint:disable:next no_magic_numbers
+        profileNavigationCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"), tag: 2)
+        return profileNavigationCoordinator
     }
 }
 

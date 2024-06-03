@@ -26,7 +26,7 @@ final class HomeViewController: UIViewController {
         static let interSectionSpacing: CGFloat = 20
         static let layoutWidth: CGFloat = 1
         static let layoutGroupHeight: CGFloat = 250
-        static let layoutHeaderHeight: CGFloat = 80
+        static let layoutHeaderHeight: CGFloat = 20
     }
     
     let logger = Logger()
