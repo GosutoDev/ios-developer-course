@@ -52,6 +52,9 @@
 		F1076BD52C0D9A7800653A6E /* OpacityVisibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BD42C0D9A7800653A6E /* OpacityVisibility.swift */; };
 		F1076BD72C0D9F2200653A6E /* DeeplinkHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BD62C0D9F2200653A6E /* DeeplinkHandling.swift */; };
 		F1076BD92C0D9F5400653A6E /* Deeplink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BD82C0D9F5400653A6E /* Deeplink.swift */; };
+		F1076BDB2C0DA2EA00653A6E /* EventEmitting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BDA2C0DA2EA00653A6E /* EventEmitting.swift */; };
+		F1076BDD2C0DA40000653A6E /* OnboardingViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BDC2C0DA40000653A6E /* OnboardingViewEvent.swift */; };
+		F1076BDF2C0DA48A00653A6E /* OnboardingNavigationCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BDE2C0DA48A00653A6E /* OnboardingNavigationCoordinatorEvent.swift */; };
 		F190AB292BFDDBA5001AF32D /* SelectableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */; };
 		F190AB2E2BFDDDA1001AF32D /* BorderedModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */; };
 		F190AB302BFDDEB7001AF32D /* Image+ResizableBordered.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */; };
@@ -127,6 +130,9 @@
 		F1076BD42C0D9A7800653A6E /* OpacityVisibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpacityVisibility.swift; sourceTree = "<group>"; };
 		F1076BD62C0D9F2200653A6E /* DeeplinkHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkHandling.swift; sourceTree = "<group>"; };
 		F1076BD82C0D9F5400653A6E /* Deeplink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deeplink.swift; sourceTree = "<group>"; };
+		F1076BDA2C0DA2EA00653A6E /* EventEmitting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEmitting.swift; sourceTree = "<group>"; };
+		F1076BDC2C0DA40000653A6E /* OnboardingViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewEvent.swift; sourceTree = "<group>"; };
+		F1076BDE2C0DA48A00653A6E /* OnboardingNavigationCoordinatorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNavigationCoordinatorEvent.swift; sourceTree = "<group>"; };
 		F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableButtonStyle.swift; sourceTree = "<group>"; };
 		F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedModifier.swift; sourceTree = "<group>"; };
 		F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ResizableBordered.swift"; sourceTree = "<group>"; };
@@ -365,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				A845D9522BF377250039AA1D /* ReusableIdentifier.swift */,
+				F1076BDA2C0DA2EA00653A6E /* EventEmitting.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -427,6 +434,7 @@
 			children = (
 				F1076BC72C0B472C00653A6E /* Navigation */,
 				F1076BC92C0B474200653A6E /* OnboardingView.swift */,
+				F1076BDC2C0DA40000653A6E /* OnboardingViewEvent.swift */,
 				F1076BD22C0B5CAA00653A6E /* OnboardingPage.swift */,
 			);
 			path = Onboarding;
@@ -436,6 +444,7 @@
 			isa = PBXGroup;
 			children = (
 				F1076BCC2C0B475A00653A6E /* OnboardingNavigationCoordinator.swift */,
+				F1076BDE2C0DA48A00653A6E /* OnboardingNavigationCoordinatorEvent.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -618,6 +627,7 @@
 				F1076BB42C08FC9800653A6E /* TabBarControllerCoordinator.swift in Sources */,
 				F1076BC22C0908A400653A6E /* SwipingViewNavigationCoordinator.swift in Sources */,
 				F190AB362BFDE300001AF32D /* SwipingCard.swift in Sources */,
+				F1076BDD2C0DA40000653A6E /* OnboardingViewEvent.swift in Sources */,
 				F1076B582C00FF2400653A6E /* FontSize.swift in Sources */,
 				F1076B532C00FE1000653A6E /* TextStyle.swift in Sources */,
 				F1076B632C00FF8500653A6E /* UIFont+AppFonts.swift in Sources */,
@@ -636,10 +646,12 @@
 				A8830C402BED0EE0005CAFEA /* BuildConfiguration.swift in Sources */,
 				A845D9552BF377A70039AA1D /* UICollectionView+ReusableIdentifier.swift in Sources */,
 				F190AB292BFDDBA5001AF32D /* SelectableButtonStyle.swift in Sources */,
+				F1076BDF2C0DA48A00653A6E /* OnboardingNavigationCoordinatorEvent.swift in Sources */,
 				F1076BBD2C09027100653A6E /* CoordinatorView.swift in Sources */,
 				F1076B612C00FF7500653A6E /* Font+AppFonts.swift in Sources */,
 				A845D94C2BF3711D0039AA1D /* MockDataProvider.swift in Sources */,
 				F190AB342BFDE2D0001AF32D /* SwipingView.swift in Sources */,
+				F1076BDB2C0DA2EA00653A6E /* EventEmitting.swift in Sources */,
 				F1076BB62C08FCFE00653A6E /* NavigationControllerCoordinator.swift in Sources */,
 				F1076BC52C090C0600653A6E /* HomeNavigationCoordinator.swift in Sources */,
 				F1076B672C0101A700653A6E /* CustomNavigationController.swift in Sources */,

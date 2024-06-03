@@ -5,10 +5,12 @@
 //  Created by Tomáš Duchoslav on 01.06.2024.
 //
 
+import Combine
 import SwiftUI
 
 struct OnboardingView: View {
     let page: OnboardingPage
+    private let eventSubject = PassthroughSubject<OnboardingViewEvent, Never>()
     
     init(page: OnboardingPage) {
         self.page = page
@@ -25,14 +27,23 @@ struct OnboardingView: View {
                 .textStyle(textType: .caption)
             
             Button("Next page") {
+                eventSubject.send(.nextPage(from: page.rawValue))
             }
             .buttonStyle(.navigationButtonStyle)
             
             Button("Close") {
+                eventSubject.send(.close)
             }
             .buttonStyle(.navigationButtonStyle)
         }
         .navigationTitle("Onboarding")
+    }
+}
+
+// MARK: - Event Emitter
+extension OnboardingView: EventEmitting {
+    var eventPublisher: AnyPublisher<OnboardingViewEvent, Never> {
+        eventSubject.eraseToAnyPublisher()
     }
 }
 
