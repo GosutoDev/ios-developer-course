@@ -26,10 +26,12 @@ struct OnboardingView: View {
                 .foregroundStyle(.black)
                 .textStyle(textType: .caption)
             
-            Button("Next page") {
-                eventSubject.send(.nextPage(from: page.rawValue))
+            if page != .diveIn {
+                Button("Next page") {
+                    eventSubject.send(.nextPage(from: page.rawValue))
+                }
+                .buttonStyle(.navigationButtonStyle)
             }
-            .buttonStyle(.navigationButtonStyle)
             
             Button("Close") {
                 eventSubject.send(.close)
