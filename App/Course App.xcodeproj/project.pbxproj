@@ -65,6 +65,7 @@
 		F1076BF72C0DDA9400653A6E /* ProfileViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BF62C0DDA9400653A6E /* ProfileViewEvent.swift */; };
 		F1076BF92C0DDB2800653A6E /* ProfileNavigationCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BF82C0DDB2800653A6E /* ProfileNavigationCoordinatorEvent.swift */; };
 		F1076BFB2C0DDCBD00653A6E /* MainTabBarCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BFA2C0DDCBD00653A6E /* MainTabBarCoordinatorEvent.swift */; };
+		F1076BFD2C0F0B8500653A6E /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BFC2C0F0B8500653A6E /* CustomError.swift */; };
 		F190AB292BFDDBA5001AF32D /* SelectableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */; };
 		F190AB2E2BFDDDA1001AF32D /* BorderedModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */; };
 		F190AB302BFDDEB7001AF32D /* Image+ResizableBordered.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */; };
@@ -153,6 +154,7 @@
 		F1076BF62C0DDA9400653A6E /* ProfileViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewEvent.swift; sourceTree = "<group>"; };
 		F1076BF82C0DDB2800653A6E /* ProfileNavigationCoordinatorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationCoordinatorEvent.swift; sourceTree = "<group>"; };
 		F1076BFA2C0DDCBD00653A6E /* MainTabBarCoordinatorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinatorEvent.swift; sourceTree = "<group>"; };
+		F1076BFC2C0F0B8500653A6E /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableButtonStyle.swift; sourceTree = "<group>"; };
 		F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedModifier.swift; sourceTree = "<group>"; };
 		F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ResizableBordered.swift"; sourceTree = "<group>"; };
@@ -433,6 +435,7 @@
 			children = (
 				F1076BBC2C09027100653A6E /* CoordinatorView.swift */,
 				F1076BD82C0D9F5400653A6E /* Deeplink.swift */,
+				F1076BFC2C0F0B8500653A6E /* CustomError.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -726,6 +729,7 @@
 				F1076BB62C08FCFE00653A6E /* NavigationControllerCoordinator.swift in Sources */,
 				F1076BC52C090C0600653A6E /* HomeNavigationCoordinator.swift in Sources */,
 				F1076B672C0101A700653A6E /* CustomNavigationController.swift in Sources */,
+				F1076BFD2C0F0B8500653A6E /* CustomError.swift in Sources */,
 				F1076BD72C0D9F2200653A6E /* DeeplinkHandling.swift in Sources */,
 				F190AB2E2BFDDDA1001AF32D /* BorderedModifier.swift in Sources */,
 				F1076B5A2C00FF2F00653A6E /* FontType.swift in Sources */,
