@@ -493,8 +493,8 @@
 		F1076BC72C0B472C00653A6E /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				F1076BCC2C0B475A00653A6E /* OnboardingNavigationCoordinator.swift */,
 				F18F1A8C2C107AFE005364B7 /* OnboardingCoordinatorPresenting.swift */,
+				F1076BCC2C0B475A00653A6E /* OnboardingNavigationCoordinator.swift */,
 				F1076BDE2C0DA48A00653A6E /* OnboardingNavigationCoordinatorEvent.swift */,
 			);
 			path = Navigation;

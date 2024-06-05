@@ -13,7 +13,7 @@ protocol OnboardingCoordinatorPresenting {
 }
 
 extension OnboardingCoordinatorPresenting where Self: Coordinator, Self: CancellablesContaining {
-    func makeOnboardingFlow() -> ViewControllerCoordinator {
+    func makeOnboardingFlow(navigationController: UINavigationController? = nil) -> ViewControllerCoordinator {
         let coordinator = OnboardingNavigationCoordinator()
         startChildCoordinator(coordinator)
         
