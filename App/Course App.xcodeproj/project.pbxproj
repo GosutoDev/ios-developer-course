@@ -70,6 +70,7 @@
 		F18F1A7B2C1075C7005364B7 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7A2C1075C7005364B7 /* FirebaseFirestoreCombine-Community */; };
 		F18F1A7D2C1075C7005364B7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7C2C1075C7005364B7 /* FirebaseFirestoreSwift */; };
 		F18F1A812C107656005364B7 /* KeychainManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F1A802C107656005364B7 /* KeychainManaging.swift */; };
+		F18F1A852C1076A8005364B7 /* KeychainManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F1A842C1076A8005364B7 /* KeychainManagerError.swift */; };
 		F190AB292BFDDBA5001AF32D /* SelectableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */; };
 		F190AB2E2BFDDDA1001AF32D /* BorderedModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */; };
 		F190AB302BFDDEB7001AF32D /* Image+ResizableBordered.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */; };
@@ -160,6 +161,7 @@
 		F1076BFA2C0DDCBD00653A6E /* MainTabBarCoordinatorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinatorEvent.swift; sourceTree = "<group>"; };
 		F1076BFC2C0F0B8500653A6E /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		F18F1A802C107656005364B7 /* KeychainManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManaging.swift; sourceTree = "<group>"; };
+		F18F1A842C1076A8005364B7 /* KeychainManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerError.swift; sourceTree = "<group>"; };
 		F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableButtonStyle.swift; sourceTree = "<group>"; };
 		F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedModifier.swift; sourceTree = "<group>"; };
 		F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ResizableBordered.swift"; sourceTree = "<group>"; };
@@ -528,6 +530,7 @@
 			isa = PBXGroup;
 			children = (
 				F18F1A802C107656005364B7 /* KeychainManaging.swift */,
+				F18F1A842C1076A8005364B7 /* KeychainManagerError.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -763,6 +766,7 @@
 				F190AB2E2BFDDDA1001AF32D /* BorderedModifier.swift in Sources */,
 				F18F1A812C107656005364B7 /* KeychainManaging.swift in Sources */,
 				F1076B5A2C00FF2F00653A6E /* FontType.swift in Sources */,
+				F18F1A852C1076A8005364B7 /* KeychainManagerError.swift in Sources */,
 				F190AB382BFDE372001AF32D /* ScratchView.swift in Sources */,
 				F1076BE92C0DB91700653A6E /* ProfileView.swift in Sources */,
 				F1076BB92C08FDA500653A6E /* MainTabBarCoordinator.swift in Sources */,
