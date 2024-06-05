@@ -66,6 +66,9 @@
 		F1076BF92C0DDB2800653A6E /* ProfileNavigationCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BF82C0DDB2800653A6E /* ProfileNavigationCoordinatorEvent.swift */; };
 		F1076BFB2C0DDCBD00653A6E /* MainTabBarCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BFA2C0DDCBD00653A6E /* MainTabBarCoordinatorEvent.swift */; };
 		F1076BFD2C0F0B8500653A6E /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BFC2C0F0B8500653A6E /* CustomError.swift */; };
+		F18F1A792C107591005364B7 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A782C107591005364B7 /* KeychainAccess */; };
+		F18F1A7B2C1075C7005364B7 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7A2C1075C7005364B7 /* FirebaseFirestoreCombine-Community */; };
+		F18F1A7D2C1075C7005364B7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7C2C1075C7005364B7 /* FirebaseFirestoreSwift */; };
 		F190AB292BFDDBA5001AF32D /* SelectableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */; };
 		F190AB2E2BFDDDA1001AF32D /* BorderedModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */; };
 		F190AB302BFDDEB7001AF32D /* Image+ResizableBordered.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */; };
@@ -168,8 +171,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F18F1A7D2C1075C7005364B7 /* FirebaseFirestoreSwift in Frameworks */,
 				A8830C4F2BEF8565005CAFEA /* FirebaseAuth in Frameworks */,
+				F18F1A7B2C1075C7005364B7 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				A8830C512BEF8565005CAFEA /* FirebaseFirestore in Frameworks */,
+				F18F1A792C107591005364B7 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +571,9 @@
 			packageProductDependencies = (
 				A8830C4E2BEF8565005CAFEA /* FirebaseAuth */,
 				A8830C502BEF8565005CAFEA /* FirebaseFirestore */,
+				F18F1A782C107591005364B7 /* KeychainAccess */,
+				F18F1A7A2C1075C7005364B7 /* FirebaseFirestoreCombine-Community */,
+				F18F1A7C2C1075C7005364B7 /* FirebaseFirestoreSwift */,
 			);
 			productName = "Course App";
 			productReference = A81F21F02BDC1DB700A8A301 /* App Course Dev.app */;
@@ -641,6 +650,7 @@
 			packageReferences = (
 				A8830C422BEF7B17005CAFEA /* XCRemoteSwiftPackageReference "SwiftLint" */,
 				A8830C4D2BEF8565005CAFEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F18F1A772C107591005364B7 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = A81F21F12BDC1DB700A8A301 /* Products */;
 			projectDirPath = "";
@@ -1396,6 +1406,14 @@
 				minimumVersion = 10.25.0;
 			};
 		};
+		F18F1A772C107591005364B7 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1413,6 +1431,19 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A8830C4D2BEF8565005CAFEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		F18F1A782C107591005364B7 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F18F1A772C107591005364B7 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		F18F1A7A2C1075C7005364B7 /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		F18F1A7C2C1075C7005364B7 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseFirestoreSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
