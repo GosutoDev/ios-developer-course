@@ -50,7 +50,6 @@ private extension OnboardingNavigationCoordinator {
             self.eventSubject.send(.dismiss(self))
         }
         .store(in: &cancellables)
-        controller.modalPresentationStyle = .fullScreen
         controller.modalTransitionStyle = .crossDissolve
         return controller
     }
