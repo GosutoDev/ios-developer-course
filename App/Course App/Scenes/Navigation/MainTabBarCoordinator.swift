@@ -10,7 +10,7 @@ import os
 import SwiftUI
 import UIKit
 
-final class MainTabBarCoordinator: NSObject, TabBarControllerCoordinator, CancellablesContaining {
+final class MainTabBarCoordinator: NSObject, TabBarControllerCoordinator, CancellablesContaining, OnboardingCoordinatorPresenting {
     // MARK: Private properties
     private(set) lazy var tabBarController = makeTabBarController()
     private var logger = Logger()
@@ -45,7 +45,6 @@ extension MainTabBarCoordinator {
         switch deeplink {
         case let .onboarding(page):
             let coordinator = makeOnboardingFlow()
-            startChildCoordinator(coordinator)
             tabBarController.present(coordinator.rootViewController, animated: true)
         default:
             break
@@ -61,15 +60,6 @@ private extension MainTabBarCoordinator {
         let tabBarController = UITabBarController()
         tabBarController.delegate = self
         return tabBarController
-    }
-    
-    func makeOnboardingFlow() -> ViewControllerCoordinator {
-        let coordinator = OnboardingNavigationCoordinator()
-        coordinator.eventPublisher.sink { [weak self] event in
-            self?.handle(event: event)
-        }
-        .store(in: &cancellables)
-        return coordinator
     }
     
     func makeHomeFlow() -> ViewControllerCoordinator {
