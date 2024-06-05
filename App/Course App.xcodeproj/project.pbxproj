@@ -72,6 +72,7 @@
 		F18F1A812C107656005364B7 /* KeychainManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F1A802C107656005364B7 /* KeychainManaging.swift */; };
 		F18F1A852C1076A8005364B7 /* KeychainManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F1A842C1076A8005364B7 /* KeychainManagerError.swift */; };
 		F18F1A872C1076EA005364B7 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F1A862C1076EA005364B7 /* KeychainManager.swift */; };
+		F18F1A892C107725005364B7 /* KeychainServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F1A882C107725005364B7 /* KeychainServicing.swift */; };
 		F190AB292BFDDBA5001AF32D /* SelectableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */; };
 		F190AB2E2BFDDDA1001AF32D /* BorderedModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */; };
 		F190AB302BFDDEB7001AF32D /* Image+ResizableBordered.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */; };
@@ -164,6 +165,7 @@
 		F18F1A802C107656005364B7 /* KeychainManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManaging.swift; sourceTree = "<group>"; };
 		F18F1A842C1076A8005364B7 /* KeychainManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerError.swift; sourceTree = "<group>"; };
 		F18F1A862C1076EA005364B7 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		F18F1A882C107725005364B7 /* KeychainServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServicing.swift; sourceTree = "<group>"; };
 		F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableButtonStyle.swift; sourceTree = "<group>"; };
 		F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedModifier.swift; sourceTree = "<group>"; };
 		F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ResizableBordered.swift"; sourceTree = "<group>"; };
@@ -541,6 +543,7 @@
 		F18F1A7F2C10763C005364B7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F18F1A882C107725005364B7 /* KeychainServicing.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -736,6 +739,7 @@
 				F1076B532C00FE1000653A6E /* TextStyle.swift in Sources */,
 				F1076B632C00FF8500653A6E /* UIFont+AppFonts.swift in Sources */,
 				A845D9532BF377250039AA1D /* ReusableIdentifier.swift in Sources */,
+				F18F1A892C107725005364B7 /* KeychainServicing.swift in Sources */,
 				F1076BCF2C0B552B00653A6E /* NavigationButtonStyle.swift in Sources */,
 				F1076BD52C0D9A7800653A6E /* OpacityVisibility.swift in Sources */,
 				F1076BB22C08FC4700653A6E /* ViewControllerCoordinator.swift in Sources */,
