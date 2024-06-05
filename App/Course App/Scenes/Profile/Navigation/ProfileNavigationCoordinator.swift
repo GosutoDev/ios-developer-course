@@ -10,9 +10,11 @@ import SwiftUI
 import UIKit
 
 final class ProfileNavigationCoordinator: NSObject, NavigationControllerCoordinator, CancellablesContaining, OnboardingCoordinatorPresenting {
+    // MARK: Private properties
     private(set) lazy var navigationController = makeNavigationController()
     private let eventSubject = PassthroughSubject<ProfileNavigationCoordinatorEvent, Never>()
     
+    // MARK: Public properties
     var cancellables = Set<AnyCancellable>()
     var childCoordinators = [Coordinator]()
 }
@@ -59,6 +61,7 @@ private extension ProfileNavigationCoordinator {
     }
 }
 
+// MARK: - UINavigationControllerDelegate
 extension ProfileNavigationCoordinator: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         if navigationController.viewControllers.count == 1 {

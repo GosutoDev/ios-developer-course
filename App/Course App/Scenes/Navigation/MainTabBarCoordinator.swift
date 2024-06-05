@@ -117,4 +117,5 @@ extension MainTabBarCoordinator: UITabBarControllerDelegate {
     }
 }
 
+// MARK: - UINavigationControllerDelegate
 extension MainTabBarCoordinator: UINavigationControllerDelegate {}
