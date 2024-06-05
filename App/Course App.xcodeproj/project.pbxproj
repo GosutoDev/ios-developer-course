@@ -74,6 +74,7 @@
 		F18F1A872C1076EA005364B7 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F1A862C1076EA005364B7 /* KeychainManager.swift */; };
 		F18F1A892C107725005364B7 /* KeychainServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F1A882C107725005364B7 /* KeychainServicing.swift */; };
 		F18F1A8B2C10774C005364B7 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F1A8A2C10774C005364B7 /* KeychainService.swift */; };
+		F18F1A8D2C107AFE005364B7 /* OnboardingCoordinatorPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F1A8C2C107AFE005364B7 /* OnboardingCoordinatorPresenting.swift */; };
 		F190AB292BFDDBA5001AF32D /* SelectableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */; };
 		F190AB2E2BFDDDA1001AF32D /* BorderedModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */; };
 		F190AB302BFDDEB7001AF32D /* Image+ResizableBordered.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */; };
@@ -168,6 +169,7 @@
 		F18F1A862C1076EA005364B7 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		F18F1A882C107725005364B7 /* KeychainServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServicing.swift; sourceTree = "<group>"; };
 		F18F1A8A2C10774C005364B7 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		F18F1A8C2C107AFE005364B7 /* OnboardingCoordinatorPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinatorPresenting.swift; sourceTree = "<group>"; };
 		F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableButtonStyle.swift; sourceTree = "<group>"; };
 		F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedModifier.swift; sourceTree = "<group>"; };
 		F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ResizableBordered.swift"; sourceTree = "<group>"; };
@@ -489,6 +491,7 @@
 			isa = PBXGroup;
 			children = (
 				F1076BCC2C0B475A00653A6E /* OnboardingNavigationCoordinator.swift */,
+				F18F1A8C2C107AFE005364B7 /* OnboardingCoordinatorPresenting.swift */,
 				F1076BDE2C0DA48A00653A6E /* OnboardingNavigationCoordinatorEvent.swift */,
 			);
 			path = Navigation;
@@ -754,6 +757,7 @@
 				F1076BF32C0DC55200653A6E /* SignInNavigationCoordinatorEvent.swift in Sources */,
 				F1076B5E2C00FF5200653A6E /* CornerRadiusSize.swift in Sources */,
 				F1076BCD2C0B475A00653A6E /* OnboardingNavigationCoordinator.swift in Sources */,
+				F18F1A8D2C107AFE005364B7 /* OnboardingCoordinatorPresenting.swift in Sources */,
 				F18F1A872C1076EA005364B7 /* KeychainManager.swift in Sources */,
 				F1076BBF2C09052900653A6E /* AppCoordinator.swift in Sources */,
 				F1076BCA2C0B474200653A6E /* OnboardingView.swift in Sources */,
