@@ -9,11 +9,11 @@ import Combine
 import SwiftUI
 import UIKit
 
-final class ProfileNavigationCoordinator: NavigationControllerCoordinator {
+final class ProfileNavigationCoordinator: NavigationControllerCoordinator, CancellablesContaining {
     private(set) lazy var navigationController = makeNavigationController()
     private let eventSubject = PassthroughSubject<ProfileNavigationCoordinatorEvent, Never>()
-    private var anyCancellables = Set<AnyCancellable>()
     
+    var cancellables = Set<AnyCancellable>()
     var childCoordinators = [Coordinator]()
 }
 
@@ -51,7 +51,7 @@ private extension ProfileNavigationCoordinator {
                 break
             }
         }
-        .store(in: &anyCancellables)
+        .store(in: &cancellables)
         
         return UIHostingController(rootView: profileView)
     }

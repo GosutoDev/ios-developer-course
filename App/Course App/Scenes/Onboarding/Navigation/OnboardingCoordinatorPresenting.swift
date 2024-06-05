@@ -12,15 +12,15 @@ protocol OnboardingCoordinatorPresenting {
     func handle(_ event: OnboardingNavigationCoordinatorEvent)
 }
 
-extension OnboardingCoordinatorPresenting where Self: Coordinator {
+extension OnboardingCoordinatorPresenting where Self: Coordinator, Self: CancellablesContaining {
     func makeOnboardingFlow() -> ViewControllerCoordinator {
         let coordinator = OnboardingNavigationCoordinator()
         startChildCoordinator(coordinator)
         
         coordinator.eventPublisher.sink { [weak self] event in
-            self?.handle(event: event)
+            self?.handle(event)
         }
-        .store(in: &anyCancellables)
+        .store(in: &cancellables)
         return coordinator
     }
     

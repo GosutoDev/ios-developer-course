@@ -10,14 +10,14 @@ import os
 import SwiftUI
 import UIKit
 
-class OnboardingNavigationCoordinator: NavigationControllerCoordinator {
+class OnboardingNavigationCoordinator: NavigationControllerCoordinator, CancellablesContaining {
     // MARK: Private properties
     private(set) lazy var navigationController: UINavigationController = makeNavigationController()
     private let logger = Logger()
-    private var anyCancellables = Set<AnyCancellable>()
     private let eventSubject = PassthroughSubject<OnboardingNavigationCoordinatorEvent, Never>()
     
     // MARK: Public properties
+    var cancellables = Set<AnyCancellable>()
     var childCoordinators = [Coordinator]()
     
     deinit {
@@ -49,7 +49,7 @@ private extension OnboardingNavigationCoordinator {
             }
             self.eventSubject.send(.dismiss(self))
         }
-        .store(in: &anyCancellables)
+        .store(in: &cancellables)
         controller.modalPresentationStyle = .fullScreen
         controller.modalTransitionStyle = .crossDissolve
         return controller
@@ -77,7 +77,7 @@ private extension OnboardingNavigationCoordinator {
                 self.navigationController.dismiss(animated: true)
             }
         }
-        .store(in: &anyCancellables)
+        .store(in: &cancellables)
         
         return UIHostingController(rootView: onboardingView)
     }

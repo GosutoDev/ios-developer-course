@@ -10,14 +10,14 @@ import os
 import SwiftUI
 import UIKit
 
-class MainTabBarCoordinator: NSObject, TabBarControllerCoordinator {
+class MainTabBarCoordinator: NSObject, TabBarControllerCoordinator, CancellablesContaining {
     // MARK: Private properties
     private(set) lazy var tabBarController = makeTabBarController()
     private var logger = Logger()
-    private lazy var anyCancellables = Set<AnyCancellable>()
     private let eventSubject = PassthroughSubject<MainTabBarCoordinatorEvent, Never>()
     
     // MARK: Public Properties
+    var cancellables = Set<AnyCancellable>()
     var childCoordinators = [Coordinator]()
 }
 
@@ -68,7 +68,7 @@ private extension MainTabBarCoordinator {
         coordinator.eventPublisher.sink { [weak self] event in
             self?.handle(event: event)
         }
-        .store(in: &anyCancellables)
+        .store(in: &cancellables)
         return coordinator
     }
     
@@ -96,7 +96,7 @@ private extension MainTabBarCoordinator {
         profileNavigationCoordinator.eventPublisher.sink { [weak self] event in
             self?.handle(event)
         }
-        .store(in: &anyCancellables)
+        .store(in: &cancellables)
         // swiftlint:disable:next no_magic_numbers
         profileNavigationCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"), tag: 2)
         return profileNavigationCoordinator
