@@ -9,7 +9,7 @@ import FirebaseCore
 import os
 import SwiftUI
 
-class AppDelegate: NSObject, UIApplicationDelegate {
+final class AppDelegate: NSObject, UIApplicationDelegate {
     weak var deeplinkHandler: DeeplinkHandling?
     
     func application(

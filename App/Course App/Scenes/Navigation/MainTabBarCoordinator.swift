@@ -10,7 +10,7 @@ import os
 import SwiftUI
 import UIKit
 
-class MainTabBarCoordinator: NSObject, TabBarControllerCoordinator, CancellablesContaining {
+final class MainTabBarCoordinator: NSObject, TabBarControllerCoordinator, CancellablesContaining {
     // MARK: Private properties
     private(set) lazy var tabBarController = makeTabBarController()
     private var logger = Logger()

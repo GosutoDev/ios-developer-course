@@ -10,7 +10,7 @@ import os
 import SwiftUI
 import UIKit
 
-class OnboardingNavigationCoordinator: NavigationControllerCoordinator, CancellablesContaining {
+final class OnboardingNavigationCoordinator: NavigationControllerCoordinator, CancellablesContaining {
     // MARK: Private properties
     private(set) lazy var navigationController: UINavigationController = makeNavigationController()
     private let logger = Logger()
