@@ -9,7 +9,7 @@ import Combine
 import SwiftUI
 import UIKit
 
-final class ProfileNavigationCoordinator: NavigationControllerCoordinator, CancellablesContaining, OnboardingCoordinatorPresenting {
+final class ProfileNavigationCoordinator: NSObject, NavigationControllerCoordinator, CancellablesContaining, OnboardingCoordinatorPresenting {
     private(set) lazy var navigationController = makeNavigationController()
     private let eventSubject = PassthroughSubject<ProfileNavigationCoordinatorEvent, Never>()
     
@@ -49,12 +49,22 @@ private extension ProfileNavigationCoordinator {
                 eventSubject.send(.logout)
             case .onboardingModal:
                 navigationController.present(makeOnboardingFlow().rootViewController, animated: true)
-            default:
-                break
+            case .onboarding:
+                _ = makeOnboardingFlow(navigationController: self.navigationController)
             }
         }
         .store(in: &cancellables)
         
         return UIHostingController(rootView: profileView)
+    }
+}
+
+extension ProfileNavigationCoordinator: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        if navigationController.viewControllers.count == 1 {
+            if let onboardingCoordinator = childCoordinators.first(where: { $0 is OnboardingNavigationCoordinator }) {
+                release(onboardingCoordinator)
+            }
+        }
     }
 }

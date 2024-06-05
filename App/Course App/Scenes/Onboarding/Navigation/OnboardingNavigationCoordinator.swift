@@ -15,6 +15,7 @@ final class OnboardingNavigationCoordinator: NavigationControllerCoordinator, Ca
     private(set) lazy var navigationController: UINavigationController = makeNavigationController()
     private let logger = Logger()
     private let eventSubject = PassthroughSubject<OnboardingNavigationCoordinatorEvent, Never>()
+    private var isPushNavigation = false
     
     // MARK: Public properties
     var cancellables = Set<AnyCancellable>()
@@ -22,6 +23,13 @@ final class OnboardingNavigationCoordinator: NavigationControllerCoordinator, Ca
     
     deinit {
         logger.info("Deinit OnboardingNavigationCoordinator")
+    }
+    
+    init(navigationController: UINavigationController? = nil) {
+        if let navigationController {
+            isPushNavigation = true
+            self.navigationController = navigationController
+        }
     }
 }
 
@@ -35,7 +43,14 @@ extension OnboardingNavigationCoordinator: EventEmitting {
 // MARK: - Start coordinator
 extension OnboardingNavigationCoordinator {
     func start() {
-        navigationController.setViewControllers([makeOnboardingView(page: OnboardingPage.welcome)], animated: false)
+        if isPushNavigation {
+            navigationController.pushViewController(makeOnboardingView(page: OnboardingPage.welcome), animated: true)
+        } else {
+            navigationController.setViewControllers(
+                [makeOnboardingView(page: OnboardingPage.welcome)],
+                animated: false
+            )
+        }
     }
 }
 
@@ -73,7 +88,11 @@ private extension OnboardingNavigationCoordinator {
                 let viewController = self.makeOnboardingView(page: newPage)
                 self.navigationController.pushViewController(viewController, animated: true)
             case .close:
-                self.navigationController.dismiss(animated: true)
+                if navigationController.presentingViewController != nil {
+                    self.navigationController.dismiss(animated: true)
+                } else {
+                    navigationController.popToRootViewController(animated: true)
+                }
             }
         }
         .store(in: &cancellables)

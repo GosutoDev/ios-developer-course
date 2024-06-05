@@ -116,3 +116,5 @@ extension MainTabBarCoordinator: UITabBarControllerDelegate {
         logger.info("MainTabBarDelegate on coordinator and didSelect tab with controller \(viewController) ")
     }
 }
+
+extension MainTabBarCoordinator: UINavigationControllerDelegate {}
