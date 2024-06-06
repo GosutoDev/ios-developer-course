@@ -68,6 +68,8 @@
 		F1076BFD2C0F0B8500653A6E /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BFC2C0F0B8500653A6E /* CustomError.swift */; };
 		F13088E22C11F05300FA83EC /* APIManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088E12C11F05300FA83EC /* APIManaging.swift */; };
 		F13088E42C11F08000FA83EC /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088E32C11F08000FA83EC /* APIManager.swift */; };
+		F13088E72C11F32900FA83EC /* JokeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088E62C11F32900FA83EC /* JokeResponse.swift */; };
+		F13088E92C11F58900FA83EC /* JokesRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088E82C11F58900FA83EC /* JokesRoutes.swift */; };
 		F18F1A792C107591005364B7 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A782C107591005364B7 /* KeychainAccess */; };
 		F18F1A7B2C1075C7005364B7 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7A2C1075C7005364B7 /* FirebaseFirestoreCombine-Community */; };
 		F18F1A7D2C1075C7005364B7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7C2C1075C7005364B7 /* FirebaseFirestoreSwift */; };
@@ -175,6 +177,8 @@
 		F1076BFC2C0F0B8500653A6E /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		F13088E12C11F05300FA83EC /* APIManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManaging.swift; sourceTree = "<group>"; };
 		F13088E32C11F08000FA83EC /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F13088E62C11F32900FA83EC /* JokeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeResponse.swift; sourceTree = "<group>"; };
+		F13088E82C11F58900FA83EC /* JokesRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesRoutes.swift; sourceTree = "<group>"; };
 		F18F1A802C107656005364B7 /* KeychainManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManaging.swift; sourceTree = "<group>"; };
 		F18F1A842C1076A8005364B7 /* KeychainManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerError.swift; sourceTree = "<group>"; };
 		F18F1A862C1076EA005364B7 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
@@ -555,6 +559,14 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		F13088E52C11F31800FA83EC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F13088E62C11F32900FA83EC /* JokeResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F18F1A7E2C107639005364B7 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -583,6 +595,7 @@
 				F18F1A9A2C11B413005364B7 /* Endpoint+Convenience.swift */,
 				F18F1A9C2C11B4F1005364B7 /* Endpoints */,
 				F18F1A932C11B3BC005364B7 /* Misc */,
+				F13088E52C11F31800FA83EC /* Models */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -601,6 +614,7 @@
 			isa = PBXGroup;
 			children = (
 				F18F1A9D2C11B502005364B7 /* ImagesRouter.swift */,
+				F13088E82C11F58900FA83EC /* JokesRoutes.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -822,6 +836,7 @@
 				A845D9552BF377A70039AA1D /* UICollectionView+ReusableIdentifier.swift in Sources */,
 				F18F1A8F2C107C70005364B7 /* CancellablesContaining.swift in Sources */,
 				F1076BE52C0DB83300653A6E /* ProfileNavigationCoordinator.swift in Sources */,
+				F13088E72C11F32900FA83EC /* JokeResponse.swift in Sources */,
 				F190AB292BFDDBA5001AF32D /* SelectableButtonStyle.swift in Sources */,
 				F1076BDF2C0DA48A00653A6E /* OnboardingNavigationCoordinatorEvent.swift in Sources */,
 				F1076BF72C0DDA9400653A6E /* ProfileViewEvent.swift in Sources */,
@@ -833,6 +848,7 @@
 				F1076BDB2C0DA2EA00653A6E /* EventEmitting.swift in Sources */,
 				F1076BFB2C0DDCBD00653A6E /* MainTabBarCoordinatorEvent.swift in Sources */,
 				F1076BB62C08FCFE00653A6E /* NavigationControllerCoordinator.swift in Sources */,
+				F13088E92C11F58900FA83EC /* JokesRoutes.swift in Sources */,
 				F1076BC52C090C0600653A6E /* HomeNavigationCoordinator.swift in Sources */,
 				F1076B672C0101A700653A6E /* CustomNavigationController.swift in Sources */,
 				F1076BFD2C0F0B8500653A6E /* CustomError.swift in Sources */,
