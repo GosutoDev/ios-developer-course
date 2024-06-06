@@ -66,6 +66,8 @@
 		F1076BF92C0DDB2800653A6E /* ProfileNavigationCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BF82C0DDB2800653A6E /* ProfileNavigationCoordinatorEvent.swift */; };
 		F1076BFB2C0DDCBD00653A6E /* MainTabBarCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BFA2C0DDCBD00653A6E /* MainTabBarCoordinatorEvent.swift */; };
 		F1076BFD2C0F0B8500653A6E /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BFC2C0F0B8500653A6E /* CustomError.swift */; };
+		F13088E22C11F05300FA83EC /* APIManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088E12C11F05300FA83EC /* APIManaging.swift */; };
+		F13088E42C11F08000FA83EC /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088E32C11F08000FA83EC /* APIManager.swift */; };
 		F18F1A792C107591005364B7 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A782C107591005364B7 /* KeychainAccess */; };
 		F18F1A7B2C1075C7005364B7 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7A2C1075C7005364B7 /* FirebaseFirestoreCombine-Community */; };
 		F18F1A7D2C1075C7005364B7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7C2C1075C7005364B7 /* FirebaseFirestoreSwift */; };
@@ -171,6 +173,8 @@
 		F1076BF82C0DDB2800653A6E /* ProfileNavigationCoordinatorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationCoordinatorEvent.swift; sourceTree = "<group>"; };
 		F1076BFA2C0DDCBD00653A6E /* MainTabBarCoordinatorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinatorEvent.swift; sourceTree = "<group>"; };
 		F1076BFC2C0F0B8500653A6E /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		F13088E12C11F05300FA83EC /* APIManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManaging.swift; sourceTree = "<group>"; };
+		F13088E32C11F08000FA83EC /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		F18F1A802C107656005364B7 /* KeychainManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManaging.swift; sourceTree = "<group>"; };
 		F18F1A842C1076A8005364B7 /* KeychainManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerError.swift; sourceTree = "<group>"; };
 		F18F1A862C1076EA005364B7 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
@@ -573,6 +577,8 @@
 		F18F1A902C108C62005364B7 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				F13088E32C11F08000FA83EC /* APIManager.swift */,
+				F13088E12C11F05300FA83EC /* APIManaging.swift */,
 				F18F1A912C108CCB005364B7 /* Endpoint.swift */,
 				F18F1A9A2C11B413005364B7 /* Endpoint+Convenience.swift */,
 				F18F1A9C2C11B4F1005364B7 /* Endpoints */,
@@ -790,6 +796,7 @@
 				F1076B532C00FE1000653A6E /* TextStyle.swift in Sources */,
 				F1076B632C00FF8500653A6E /* UIFont+AppFonts.swift in Sources */,
 				F18F1A922C108CCB005364B7 /* Endpoint.swift in Sources */,
+				F13088E42C11F08000FA83EC /* APIManager.swift in Sources */,
 				F18F1A992C11B400005364B7 /* HTTPMethod.swift in Sources */,
 				A845D9532BF377250039AA1D /* ReusableIdentifier.swift in Sources */,
 				F18F1A892C107725005364B7 /* KeychainServicing.swift in Sources */,
@@ -802,6 +809,7 @@
 				F1076BD32C0B5CAA00653A6E /* OnboardingPage.swift in Sources */,
 				F1076BB02C08FB5500653A6E /* Coordinator.swift in Sources */,
 				F1076BF32C0DC55200653A6E /* SignInNavigationCoordinatorEvent.swift in Sources */,
+				F13088E22C11F05300FA83EC /* APIManaging.swift in Sources */,
 				F1076B5E2C00FF5200653A6E /* CornerRadiusSize.swift in Sources */,
 				F18F1A9B2C11B413005364B7 /* Endpoint+Convenience.swift in Sources */,
 				F1076BCD2C0B475A00653A6E /* OnboardingNavigationCoordinator.swift in Sources */,
