@@ -13,8 +13,8 @@ struct BuildConfiguration: Decodable {
         case jokesBaseURL = "API_JOKES_BASE_URL"
     }
     
-    let jokesBaseURL: String
-    let imagesBaseURL: String
+    let jokesBaseURL: URL
+    let imagesBaseURL: URL
 }
 
 extension BuildConfiguration {

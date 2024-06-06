@@ -81,6 +81,7 @@
 		F18F1A972C11B3EB005364B7 /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F1A962C11B3EB005364B7 /* HTTPHeader.swift */; };
 		F18F1A992C11B400005364B7 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F1A982C11B400005364B7 /* HTTPMethod.swift */; };
 		F18F1A9B2C11B413005364B7 /* Endpoint+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F1A9A2C11B413005364B7 /* Endpoint+Convenience.swift */; };
+		F18F1A9E2C11B502005364B7 /* ImagesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F1A9D2C11B502005364B7 /* ImagesRouter.swift */; };
 		F190AB292BFDDBA5001AF32D /* SelectableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */; };
 		F190AB2E2BFDDDA1001AF32D /* BorderedModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */; };
 		F190AB302BFDDEB7001AF32D /* Image+ResizableBordered.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */; };
@@ -182,6 +183,7 @@
 		F18F1A962C11B3EB005364B7 /* HTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeader.swift; sourceTree = "<group>"; };
 		F18F1A982C11B400005364B7 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		F18F1A9A2C11B413005364B7 /* Endpoint+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Convenience.swift"; sourceTree = "<group>"; };
+		F18F1A9D2C11B502005364B7 /* ImagesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRouter.swift; sourceTree = "<group>"; };
 		F190AB282BFDDBA5001AF32D /* SelectableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableButtonStyle.swift; sourceTree = "<group>"; };
 		F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedModifier.swift; sourceTree = "<group>"; };
 		F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ResizableBordered.swift"; sourceTree = "<group>"; };
@@ -573,6 +575,7 @@
 			children = (
 				F18F1A912C108CCB005364B7 /* Endpoint.swift */,
 				F18F1A9A2C11B413005364B7 /* Endpoint+Convenience.swift */,
+				F18F1A9C2C11B4F1005364B7 /* Endpoints */,
 				F18F1A932C11B3BC005364B7 /* Misc */,
 			);
 			path = Networking;
@@ -586,6 +589,14 @@
 				F18F1A982C11B400005364B7 /* HTTPMethod.swift */,
 			);
 			path = Misc;
+			sourceTree = "<group>";
+		};
+		F18F1A9C2C11B4F1005364B7 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				F18F1A9D2C11B502005364B7 /* ImagesRouter.swift */,
+			);
+			path = Endpoints;
 			sourceTree = "<group>";
 		};
 		F190AB262BFDDB68001AF32D /* SharedUI */ = {
@@ -797,6 +808,7 @@
 				F18F1A8D2C107AFE005364B7 /* OnboardingCoordinatorPresenting.swift in Sources */,
 				F18F1A872C1076EA005364B7 /* KeychainManager.swift in Sources */,
 				F1076BBF2C09052900653A6E /* AppCoordinator.swift in Sources */,
+				F18F1A9E2C11B502005364B7 /* ImagesRouter.swift in Sources */,
 				F1076BCA2C0B474200653A6E /* OnboardingView.swift in Sources */,
 				A8830C402BED0EE0005CAFEA /* BuildConfiguration.swift in Sources */,
 				A845D9552BF377A70039AA1D /* UICollectionView+ReusableIdentifier.swift in Sources */,
