@@ -45,6 +45,11 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         setup()
         title = "Categories"
+        
+        Task {
+            let apiManager = APIManager()
+            let joke: JokeResponse = try await apiManager.request(JokesRoutes.getRandomJoke)
+        }
     }
 }
 
