@@ -58,7 +58,7 @@ final class APIManager: APIManaging {
     }
     
     func checkStatusCode(_ urlResponse: HTTPURLResponse) throws {
-        guard 200..<300 ~= urlResponse.statusCode else {
+        guard HTTPResponseStatusCode.successful.range ~= urlResponse.statusCode else {
             throw NetworkingError.unacceptableStatusCode
         }
     }
