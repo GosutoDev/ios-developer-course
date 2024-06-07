@@ -48,7 +48,7 @@ final class HomeViewController: UIViewController {
         
         Task {
             let apiManager = APIManager()
-            let joke: JokeResponse = try await apiManager.request(JokesRoutes.getRandomJoke)
+            _ = try await apiManager.request(JokesRoutes.getRandomJoke)
         }
     }
 }

@@ -22,9 +22,8 @@ final class APIManager: APIManaging {
         return decoder
     }()
     
-    func request<T>(_ endpoint: any Endpoint) async throws -> T where T : Decodable {
+    func request<T>(_ endpoint: any Endpoint) async throws -> T where T: Decodable {
         let data = try await request(endpoint)
-        let jsonDecoder = JSONDecoder()
         
         do {
             return try decoder.decode(T.self, from: data)
@@ -49,11 +48,11 @@ final class APIManager: APIManaging {
         
         let body = String(decoding: data, as: UTF8.self)
         logger.info("""
-                    Response for \"\(request.description)\"
-                    Status: \(httpResponse.statusCode)
-                    Body:
-                    \(body)
-                    """)
+    Response for \"\(request.description)\"
+    Status: \(httpResponse.statusCode)
+    Body:
+    \(body)
+    """)
         
         return data
     }

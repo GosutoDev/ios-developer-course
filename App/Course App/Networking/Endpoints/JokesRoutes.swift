@@ -25,7 +25,7 @@ enum JokesRoutes: Endpoint {
         }
     }
     
-    var urlParameters: [String : String] {
+    var urlParameters: [String: String] {
         switch self {
         case let .getJokeFor(category):
             ["category": category]
