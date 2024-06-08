@@ -31,25 +31,21 @@ final class HomeViewController: UIViewController {
     
     let logger = Logger()
     
-    lazy var categoriesCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
+    var categoriesCollectionView: UICollectionView!
     
     
     // MARK: DataSources
     typealias DataSource = UICollectionViewDiffableDataSource<SectionData, Joke>
     typealias Snapshot = NSDiffableDataSourceSnapshot<SectionData, Joke>
     lazy var dataSource = makeDataSource()
-    lazy var dataProvider = MockDataProvider()
+    private var dataProvider = DataProvider()
     lazy var cancellables = Set<AnyCancellable>()
+    private let jokeService = JokeService(apiManager: APIManager())
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
         title = "Categories"
-        
-        Task {
-            let apiManager = APIManager()
-            _ = try await apiManager.request(JokesRoutes.getRandomJoke)
-        }
+        setup()
     }
 }
 
@@ -85,22 +81,29 @@ private extension HomeViewController {
     }
     
     func makeDataSource() -> DataSource {
-        let cellRegistration = UICollectionView.CellRegistration<UICollectionViewCell, Joke> { cell, _, joke in
+        let cellRegistration = UICollectionView.CellRegistration<UICollectionViewCell, Joke> { cell, _, _ in
             cell.contentConfiguration = UIHostingConfiguration {
-                Image(uiImage: joke.image ?? UIImage())
-                    .resizableBordered(cornerRadius: CornerRadiusSize.default.rawValue)
+                if let url = try? ImagesRouter.size300x200.asURLRequest().url {
+                    AsyncImage(url: url) { image in
+                        image.resizableBordered(cornerRadius: CornerRadiusSize.default.rawValue)
+                    } placeholder: {
+                        Color.gray
+                    }
+                } else {
+                    Text("ERROR")
+                }
             }
         }
-
+        
         let dataSource = DataSource(collectionView: categoriesCollectionView) { collectionView, indexPath, item in
             collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
         }
-
+        
         dataSource.supplementaryViewProvider = { collectionView, kind, indexPath in
             guard kind == UICollectionView.elementKindSectionHeader else {
                 return nil
             }
-
+            
             let section = self.dataSource.snapshot().sectionIdentifiers[indexPath.section]
             let labelCell: UICollectionViewCell = collectionView.dequeueSupplementaryView(
                 ofKind: UICollectionView.elementKindSectionHeader,
@@ -112,7 +115,7 @@ private extension HomeViewController {
             }
             return labelCell
         }
-
+        
         return dataSource
     }
 }
@@ -131,6 +134,7 @@ extension HomeViewController: UICollectionViewDelegate {
 // MARK: - UI SETUP
 private extension HomeViewController {
     func setup() {
+        loadData()
         setupCollectionView()
         readData()
     }
@@ -148,7 +152,7 @@ private extension HomeViewController {
 
 // MARK: - Layout
 private extension HomeViewController {
-    func createCompositionalLayout() -> UICollectionViewLayout {
+    func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
             let section = self.dataProvider.data[sectionIndex]
             
@@ -180,5 +184,39 @@ private extension HomeViewController {
         layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
         
         return layoutSection
+    }
+}
+
+// MARK: - Loading data
+extension HomeViewController {
+    func loadData() {
+        Task {
+            let categories = try await jokeService.loadCategories()
+            
+            try await withThrowingTaskGroup(of: JokeResponse.self) { [weak self] group in
+                guard let self else {
+                    return
+                }
+                
+                for category in categories {
+                    for _ in 1...5 {
+                        group.addTask {
+                            try await self.jokeService.loadJokeForCategory(category)
+                        }
+                    }
+                }
+                
+                var jokeResponses: [JokeResponse] = []
+                for try await jokeResponse in group {
+                    jokeResponses.append(jokeResponse)
+                }
+                
+                let dataDictionary = Dictionary(grouping: jokeResponses, by: { $0.categories.first ?? "" })
+                for key in dataDictionary.keys {
+                    dataProvider.data.append(SectionData(title: key, jokes: dataDictionary[key] ?? []))
+                    logger.info("\(dataProvider.data)")
+                }
+            }
+        }
     }
 }

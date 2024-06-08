@@ -14,7 +14,6 @@ struct Line {
 
 struct ScratchView: View {
     // MARK: Variables
-    let image: Image
     let text: String
     
     @State private var currentLine = Line()
@@ -22,31 +21,39 @@ struct ScratchView: View {
     
     var body: some View {
         ZStack(alignment: .top) {
-            image
-                .resizable()
-                .bordered(cornerRadius: CornerRadiusSize.default.rawValue)
-                .scaledToFit()
-                .padding(1)
-                .overlay {
-                    RoundedRectangle(cornerRadius: CornerRadiusSize.default.rawValue)
-                        .fill(.bg)
+            if let url = try? ImagesRouter.size300x200.asURLRequest().url {
+                AsyncImage(url: url) { image in
+                    image
+                        .resizable()
+                        .bordered(cornerRadius: CornerRadiusSize.default.rawValue)
+                        .scaledToFit()
+                        .padding(1)
                         .overlay {
-                            Text(text)
-                                .foregroundStyle(.white)
-                                .multilineTextAlignment(.center)
-                                .padding()
-                        }
-                        .mask(
-                            Canvas { context, _ in
-                                for line in lines {
-                                    var path = Path()
-                                    path.addLines(line.points)
-                                    context.stroke(path, with: .color(.white), style: StrokeStyle(lineWidth: line.lineWidth, lineCap: .round, lineJoin: .round))
+                            RoundedRectangle(cornerRadius: CornerRadiusSize.default.rawValue)
+                                .fill(.bg)
+                                .overlay {
+                                    Text(text)
+                                        .foregroundStyle(.white)
+                                        .multilineTextAlignment(.center)
+                                        .padding()
                                 }
-                            }
-                        )
-                        .gesture(dragGesture)
+                                .mask(
+                                    Canvas { context, _ in
+                                        for line in lines {
+                                            var path = Path()
+                                            path.addLines(line.points)
+                                            context.stroke(path, with: .color(.white), style: StrokeStyle(lineWidth: line.lineWidth, lineCap: .round, lineJoin: .round))
+                                        }
+                                    }
+                                )
+                                .gesture(dragGesture)
+                        }
+                } placeholder: {
+                    Color.gray
                 }
+            } else {
+                Text("ERROR")
+            }
         }
     }
     
@@ -62,5 +69,5 @@ struct ScratchView: View {
 }
 
 #Preview {
-    ScratchView(image: Image("nature"), text: "Joke")
+    ScratchView(text: "Joke")
 }
