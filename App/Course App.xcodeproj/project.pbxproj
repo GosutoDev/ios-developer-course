@@ -71,6 +71,7 @@
 		F13088E72C11F32900FA83EC /* JokeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088E62C11F32900FA83EC /* JokeResponse.swift */; };
 		F13088E92C11F58900FA83EC /* JokesRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088E82C11F58900FA83EC /* JokesRoutes.swift */; };
 		F13088EB2C130A1500FA83EC /* HTTPResponseStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088EA2C130A1500FA83EC /* HTTPResponseStatusCode.swift */; };
+		F13088F02C14A6F600FA83EC /* JokeServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088EF2C14A6F600FA83EC /* JokeServicing.swift */; };
 		F18F1A792C107591005364B7 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A782C107591005364B7 /* KeychainAccess */; };
 		F18F1A7B2C1075C7005364B7 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7A2C1075C7005364B7 /* FirebaseFirestoreCombine-Community */; };
 		F18F1A7D2C1075C7005364B7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7C2C1075C7005364B7 /* FirebaseFirestoreSwift */; };
@@ -181,6 +182,7 @@
 		F13088E62C11F32900FA83EC /* JokeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeResponse.swift; sourceTree = "<group>"; };
 		F13088E82C11F58900FA83EC /* JokesRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesRoutes.swift; sourceTree = "<group>"; };
 		F13088EA2C130A1500FA83EC /* HTTPResponseStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponseStatusCode.swift; sourceTree = "<group>"; };
+		F13088EF2C14A6F600FA83EC /* JokeServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeServicing.swift; sourceTree = "<group>"; };
 		F18F1A802C107656005364B7 /* KeychainManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManaging.swift; sourceTree = "<group>"; };
 		F18F1A842C1076A8005364B7 /* KeychainManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerError.swift; sourceTree = "<group>"; };
 		F18F1A862C1076EA005364B7 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
@@ -569,6 +571,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		F13088EC2C14A6C700FA83EC /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F13088E32C11F08000FA83EC /* APIManager.swift */,
+				F13088E12C11F05300FA83EC /* APIManaging.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F13088ED2C14A6CC00FA83EC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F13088EF2C14A6F600FA83EC /* JokeServicing.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		F18F1A7E2C107639005364B7 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -591,13 +610,13 @@
 		F18F1A902C108C62005364B7 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				F13088E32C11F08000FA83EC /* APIManager.swift */,
-				F13088E12C11F05300FA83EC /* APIManaging.swift */,
 				F18F1A912C108CCB005364B7 /* Endpoint.swift */,
 				F18F1A9A2C11B413005364B7 /* Endpoint+Convenience.swift */,
 				F18F1A9C2C11B4F1005364B7 /* Endpoints */,
+				F13088EC2C14A6C700FA83EC /* Managers */,
 				F18F1A932C11B3BC005364B7 /* Misc */,
 				F13088E52C11F31800FA83EC /* Models */,
+				F13088ED2C14A6CC00FA83EC /* Services */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -802,6 +821,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1076BF12C0DC1DA00653A6E /* SignInViewEvent.swift in Sources */,
+				F13088F02C14A6F600FA83EC /* JokeServicing.swift in Sources */,
 				F1076BB42C08FC9800653A6E /* TabBarControllerCoordinator.swift in Sources */,
 				F1076BEF2C0DBF9A00653A6E /* SignInView.swift in Sources */,
 				F1076BC22C0908A400653A6E /* SwipingViewNavigationCoordinator.swift in Sources */,
