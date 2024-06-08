@@ -72,6 +72,7 @@
 		F13088E92C11F58900FA83EC /* JokesRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088E82C11F58900FA83EC /* JokesRoutes.swift */; };
 		F13088EB2C130A1500FA83EC /* HTTPResponseStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088EA2C130A1500FA83EC /* HTTPResponseStatusCode.swift */; };
 		F13088F02C14A6F600FA83EC /* JokeServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088EF2C14A6F600FA83EC /* JokeServicing.swift */; };
+		F13088F22C14A79600FA83EC /* JokeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088F12C14A79600FA83EC /* JokeService.swift */; };
 		F18F1A792C107591005364B7 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A782C107591005364B7 /* KeychainAccess */; };
 		F18F1A7B2C1075C7005364B7 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7A2C1075C7005364B7 /* FirebaseFirestoreCombine-Community */; };
 		F18F1A7D2C1075C7005364B7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7C2C1075C7005364B7 /* FirebaseFirestoreSwift */; };
@@ -183,6 +184,7 @@
 		F13088E82C11F58900FA83EC /* JokesRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesRoutes.swift; sourceTree = "<group>"; };
 		F13088EA2C130A1500FA83EC /* HTTPResponseStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponseStatusCode.swift; sourceTree = "<group>"; };
 		F13088EF2C14A6F600FA83EC /* JokeServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeServicing.swift; sourceTree = "<group>"; };
+		F13088F12C14A79600FA83EC /* JokeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeService.swift; sourceTree = "<group>"; };
 		F18F1A802C107656005364B7 /* KeychainManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManaging.swift; sourceTree = "<group>"; };
 		F18F1A842C1076A8005364B7 /* KeychainManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerError.swift; sourceTree = "<group>"; };
 		F18F1A862C1076EA005364B7 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
@@ -584,6 +586,7 @@
 			isa = PBXGroup;
 			children = (
 				F13088EF2C14A6F600FA83EC /* JokeServicing.swift */,
+				F13088F12C14A79600FA83EC /* JokeService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -829,6 +832,7 @@
 				F190AB362BFDE300001AF32D /* SwipingCard.swift in Sources */,
 				F1076BDD2C0DA40000653A6E /* OnboardingViewEvent.swift in Sources */,
 				F1076BF92C0DDB2800653A6E /* ProfileNavigationCoordinatorEvent.swift in Sources */,
+				F13088F22C14A79600FA83EC /* JokeService.swift in Sources */,
 				F1076B582C00FF2400653A6E /* FontSize.swift in Sources */,
 				F1076B532C00FE1000653A6E /* TextStyle.swift in Sources */,
 				F13088EB2C130A1500FA83EC /* HTTPResponseStatusCode.swift in Sources */,
