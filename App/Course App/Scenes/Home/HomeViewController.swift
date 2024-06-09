@@ -31,7 +31,7 @@ final class HomeViewController: UIViewController {
     
     let logger = Logger()
     
-    var categoriesCollectionView: UICollectionView!
+    lazy var categoriesCollectionView: UICollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
     
     
     // MARK: DataSources
@@ -127,7 +127,6 @@ private extension HomeViewController {
         readData()
     }
     func setupCollectionView() {
-        categoriesCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
         categoriesCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         categoriesCollectionView.backgroundColor = .bg
         categoriesCollectionView.delegate = self
