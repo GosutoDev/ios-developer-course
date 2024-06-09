@@ -18,14 +18,14 @@ final class JokeService: JokeServicing {
 // MARK: - Functions
 extension JokeService {
     func loadRandomJoke() async throws -> JokeResponse {
-        try await apiManager.request(JokesRoutes.getRandomJoke)
+        try await apiManager.request(JokesRouter.getRandomJoke)
     }
     
     func loadCategories() async throws -> [String] {
-        try await apiManager.request(JokesRoutes.getJokeCategories)
+        try await apiManager.request(JokesRouter.getJokeCategories)
     }
     
     func loadJokeForCategory(_ category: String) async throws -> JokeResponse {
-        try await apiManager.request(JokesRoutes.getJokeFor(category: category))
+        try await apiManager.request(JokesRouter.getJokeFor(category: category))
     }
 }

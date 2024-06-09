@@ -69,7 +69,7 @@
 		F13088E22C11F05300FA83EC /* APIManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088E12C11F05300FA83EC /* APIManaging.swift */; };
 		F13088E42C11F08000FA83EC /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088E32C11F08000FA83EC /* APIManager.swift */; };
 		F13088E72C11F32900FA83EC /* JokeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088E62C11F32900FA83EC /* JokeResponse.swift */; };
-		F13088E92C11F58900FA83EC /* JokesRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088E82C11F58900FA83EC /* JokesRoutes.swift */; };
+		F13088E92C11F58900FA83EC /* JokesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088E82C11F58900FA83EC /* JokesRouter.swift */; };
 		F13088EB2C130A1500FA83EC /* HTTPResponseStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088EA2C130A1500FA83EC /* HTTPResponseStatusCode.swift */; };
 		F13088F02C14A6F600FA83EC /* JokeServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088EF2C14A6F600FA83EC /* JokeServicing.swift */; };
 		F13088F22C14A79600FA83EC /* JokeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088F12C14A79600FA83EC /* JokeService.swift */; };
@@ -181,7 +181,7 @@
 		F13088E12C11F05300FA83EC /* APIManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManaging.swift; sourceTree = "<group>"; };
 		F13088E32C11F08000FA83EC /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		F13088E62C11F32900FA83EC /* JokeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeResponse.swift; sourceTree = "<group>"; };
-		F13088E82C11F58900FA83EC /* JokesRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesRoutes.swift; sourceTree = "<group>"; };
+		F13088E82C11F58900FA83EC /* JokesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesRouter.swift; sourceTree = "<group>"; };
 		F13088EA2C130A1500FA83EC /* HTTPResponseStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponseStatusCode.swift; sourceTree = "<group>"; };
 		F13088EF2C14A6F600FA83EC /* JokeServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeServicing.swift; sourceTree = "<group>"; };
 		F13088F12C14A79600FA83EC /* JokeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeService.swift; sourceTree = "<group>"; };
@@ -639,7 +639,7 @@
 			isa = PBXGroup;
 			children = (
 				F18F1A9D2C11B502005364B7 /* ImagesRouter.swift */,
-				F13088E82C11F58900FA83EC /* JokesRoutes.swift */,
+				F13088E82C11F58900FA83EC /* JokesRouter.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -876,7 +876,7 @@
 				F1076BDB2C0DA2EA00653A6E /* EventEmitting.swift in Sources */,
 				F1076BFB2C0DDCBD00653A6E /* MainTabBarCoordinatorEvent.swift in Sources */,
 				F1076BB62C08FCFE00653A6E /* NavigationControllerCoordinator.swift in Sources */,
-				F13088E92C11F58900FA83EC /* JokesRoutes.swift in Sources */,
+				F13088E92C11F58900FA83EC /* JokesRouter.swift in Sources */,
 				F1076BC52C090C0600653A6E /* HomeNavigationCoordinator.swift in Sources */,
 				F1076B672C0101A700653A6E /* CustomNavigationController.swift in Sources */,
 				F1076BFD2C0F0B8500653A6E /* CustomError.swift in Sources */,

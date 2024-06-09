@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum JokesRoutes: Endpoint {
+enum JokesRouter: Endpoint {
     case getJokeCategories
     case getRandomJoke
     case getJokeFor(category: String)
