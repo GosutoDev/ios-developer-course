@@ -31,7 +31,7 @@ final class HomeViewController: UIViewController {
     
     let logger = Logger()
     
-    lazy var categoriesCollectionView: UICollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
+    lazy var categoriesCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
     
     
     // MARK: DataSources
