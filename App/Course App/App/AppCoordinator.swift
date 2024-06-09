@@ -57,7 +57,6 @@ private extension AppCoordinator {
 // MARK: - Setup UI
 private extension AppCoordinator {
     func setupAppUI() {
-        UITabBar.appearance().backgroundColor = .brown
         UITabBar.appearance().tintColor = .white
         UITabBarItem.appearance().setTitleTextAttributes(
             [
@@ -65,8 +64,11 @@ private extension AppCoordinator {
             ],
             for: .normal
         )
-        
-        UINavigationBar.appearance().tintColor = .white
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithDefaultBackground()
+        tabBarAppearance.backgroundColor = .brown
+        UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+        UITabBar.appearance().standardAppearance = tabBarAppearance
     }
 }
 

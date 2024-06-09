@@ -19,12 +19,11 @@ struct SectionData: Identifiable, Hashable {
 }
 
 struct Joke: Identifiable, Hashable {
-    let id: String
+    let id = UUID()
     let text: String
     let categories: [String]
     
     init(jokeResponse: JokeResponse) {
-        self.id = jokeResponse.id
         self.text = jokeResponse.value
         self.categories = jokeResponse.categories
     }

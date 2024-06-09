@@ -46,12 +46,14 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         title = "Categories"
         setup()
+        loadData()
     }
 }
 
 // MARK: - UICollectionViewDataSource
 private extension HomeViewController {
     func readData() {
+        categoriesCollectionView.reloadData()
         dataProvider.$data.sink { [weak self] data in
             self?.applySnapshot(data: data, animatingDifferences: true)
         }
@@ -59,24 +61,11 @@ private extension HomeViewController {
     }
     
     func applySnapshot(data: [SectionData], animatingDifferences: Bool = true) {
-        guard dataSource.snapshot().numberOfSections == 0 else {
-            var snapshot = dataSource.snapshot()
-            
-            // swiftlint:disable force_unwrapping
-            snapshot.moveItem((data.first?.jokes.first)!, afterItem: (data.first?.jokes.last)!)
-            // swiftlint:enable force_unwrapping
-            
-            dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
-            return
-        }
-        
         var snapshot = Snapshot()
         snapshot.appendSections(data)
-        
         data.forEach { section in
             snapshot.appendItems(section.jokes, toSection: section)
         }
-        
         dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
     }
     
@@ -134,41 +123,26 @@ extension HomeViewController: UICollectionViewDelegate {
 // MARK: - UI SETUP
 private extension HomeViewController {
     func setup() {
-        loadData()
         setupCollectionView()
         readData()
     }
     func setupCollectionView() {
+        categoriesCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
         categoriesCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         categoriesCollectionView.backgroundColor = .bg
         categoriesCollectionView.delegate = self
+        view.addSubview(categoriesCollectionView)
+        
         categoriesCollectionView.register(
             UICollectionViewCell.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader
         )
-        view.addSubview(categoriesCollectionView)
     }
 }
 
 // MARK: - Layout
 private extension HomeViewController {
-    func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
-        let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
-            let section = self.dataProvider.data[sectionIndex]
-            
-            switch section.title {
-            default:
-                return self.createSection(with: section)
-            }
-        }
-        
-        let config = UICollectionViewCompositionalLayoutConfiguration()
-        config.interSectionSpacing = UIConstants.interSectionSpacing
-        layout.configuration = config
-        return layout
-    }
-    
-    func createSection(with section: SectionData) -> NSCollectionLayoutSection {
+    func createCompositionalLayout() -> UICollectionViewLayout {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         
         let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -183,7 +157,13 @@ private extension HomeViewController {
         let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
         layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
         
-        return layoutSection
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+        config.interSectionSpacing = UIConstants.interSectionSpacing
+        
+        let layout = UICollectionViewCompositionalLayout(section: layoutSection)
+        layout.configuration = config
+        
+        return layout
     }
 }
 
@@ -214,9 +194,9 @@ extension HomeViewController {
                 let dataDictionary = Dictionary(grouping: jokeResponses, by: { $0.categories.first ?? "" })
                 for key in dataDictionary.keys {
                     dataProvider.data.append(SectionData(title: key, jokes: dataDictionary[key] ?? []))
-                    logger.info("\(dataProvider.data)")
                 }
             }
         }
+        readData()
     }
 }
