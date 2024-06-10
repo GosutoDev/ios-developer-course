@@ -74,6 +74,7 @@
 		F13088F02C14A6F600FA83EC /* JokeServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088EF2C14A6F600FA83EC /* JokeServicing.swift */; };
 		F13088F22C14A79600FA83EC /* JokeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088F12C14A79600FA83EC /* JokeService.swift */; };
 		F13088F62C16EBD400FA83EC /* OnFirstAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088F52C16EBD400FA83EC /* OnFirstAppear.swift */; };
+		F13088F82C16EC0F00FA83EC /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088F72C16EC0F00FA83EC /* Action.swift */; };
 		F18F1A792C107591005364B7 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A782C107591005364B7 /* KeychainAccess */; };
 		F18F1A7B2C1075C7005364B7 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7A2C1075C7005364B7 /* FirebaseFirestoreCombine-Community */; };
 		F18F1A7D2C1075C7005364B7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7C2C1075C7005364B7 /* FirebaseFirestoreSwift */; };
@@ -187,6 +188,7 @@
 		F13088EF2C14A6F600FA83EC /* JokeServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeServicing.swift; sourceTree = "<group>"; };
 		F13088F12C14A79600FA83EC /* JokeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeService.swift; sourceTree = "<group>"; };
 		F13088F52C16EBD400FA83EC /* OnFirstAppear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnFirstAppear.swift; sourceTree = "<group>"; };
+		F13088F72C16EC0F00FA83EC /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		F18F1A802C107656005364B7 /* KeychainManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManaging.swift; sourceTree = "<group>"; };
 		F18F1A842C1076A8005364B7 /* KeychainManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerError.swift; sourceTree = "<group>"; };
 		F18F1A862C1076EA005364B7 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 				F1076BBC2C09027100653A6E /* CoordinatorView.swift */,
 				F1076BD82C0D9F5400653A6E /* Deeplink.swift */,
 				F1076BFC2C0F0B8500653A6E /* CustomError.swift */,
+				F13088F72C16EC0F00FA83EC /* Action.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -880,6 +883,7 @@
 				F1076BFB2C0DDCBD00653A6E /* MainTabBarCoordinatorEvent.swift in Sources */,
 				F1076BB62C08FCFE00653A6E /* NavigationControllerCoordinator.swift in Sources */,
 				F13088E92C11F58900FA83EC /* JokesRouter.swift in Sources */,
+				F13088F82C16EC0F00FA83EC /* Action.swift in Sources */,
 				F1076BC52C090C0600653A6E /* HomeNavigationCoordinator.swift in Sources */,
 				F1076B672C0101A700653A6E /* CustomNavigationController.swift in Sources */,
 				F1076BFD2C0F0B8500653A6E /* CustomError.swift in Sources */,
