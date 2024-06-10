@@ -14,6 +14,7 @@ struct SwipingView: View {
         static let paddingDivider: CGFloat = 20
         static let sizeDivider = 1.2
         static let sizeWidthMultiplicator = 1.5
+        static let fiveCard = 5
     }
     
     // MARK: Private properties
@@ -100,7 +101,7 @@ extension SwipingView {
     
     // MARK: Check for jokes count
     func checkCardStack() {
-        if jokes.count <= 5 {
+        if jokes.count <= Constants.fiveCard {
             loadRandomJokes()
         }
     }
@@ -119,4 +120,3 @@ extension SwipingView {
         logger.info("\(message)")
     }
 }
-
