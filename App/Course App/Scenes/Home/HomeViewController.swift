@@ -81,6 +81,7 @@ extension HomeViewController {
                 }
                 
                 for category in categories {
+                    // swiftlint:disable:next no_magic_numbers
                     for _ in 1...5 {
                         group.addTask {
                             try await self.jokeService.loadJokeForCategory(category)

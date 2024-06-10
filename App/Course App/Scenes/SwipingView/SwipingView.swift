@@ -63,6 +63,7 @@ struct SwipingView: View {
     func loadRandomJokes() {
         Task {
             try await withThrowingTaskGroup(of: JokeResponse.self) { group in
+                // swiftlint:disable:next no_magic_numbers
                 for _ in 1...5 {
                     group.addTask {
                         if let category {
