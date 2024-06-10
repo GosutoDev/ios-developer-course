@@ -76,6 +76,7 @@
 		F13088F62C16EBD400FA83EC /* OnFirstAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088F52C16EBD400FA83EC /* OnFirstAppear.swift */; };
 		F13088F82C16EC0F00FA83EC /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088F72C16EC0F00FA83EC /* Action.swift */; };
 		F13088FA2C17081000FA83EC /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088F92C17081000FA83EC /* Credentials.swift */; };
+		F13088FD2C1708AB00FA83EC /* FirebaseAuthManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088FC2C1708AB00FA83EC /* FirebaseAuthManaging.swift */; };
 		F18F1A792C107591005364B7 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A782C107591005364B7 /* KeychainAccess */; };
 		F18F1A7B2C1075C7005364B7 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7A2C1075C7005364B7 /* FirebaseFirestoreCombine-Community */; };
 		F18F1A7D2C1075C7005364B7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7C2C1075C7005364B7 /* FirebaseFirestoreSwift */; };
@@ -191,6 +192,7 @@
 		F13088F52C16EBD400FA83EC /* OnFirstAppear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnFirstAppear.swift; sourceTree = "<group>"; };
 		F13088F72C16EC0F00FA83EC /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		F13088F92C17081000FA83EC /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		F13088FC2C1708AB00FA83EC /* FirebaseAuthManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManaging.swift; sourceTree = "<group>"; };
 		F18F1A802C107656005364B7 /* KeychainManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManaging.swift; sourceTree = "<group>"; };
 		F18F1A842C1076A8005364B7 /* KeychainManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerError.swift; sourceTree = "<group>"; };
 		F18F1A862C1076EA005364B7 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
@@ -599,6 +601,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		F13088FB2C17084E00FA83EC /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				F13088FC2C1708AB00FA83EC /* FirebaseAuthManaging.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		F18F1A7E2C107639005364B7 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -621,6 +631,7 @@
 		F18F1A902C108C62005364B7 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				F13088FB2C17084E00FA83EC /* Authentication */,
 				F18F1A912C108CCB005364B7 /* Endpoint.swift */,
 				F18F1A9A2C11B413005364B7 /* Endpoint+Convenience.swift */,
 				F18F1A9C2C11B4F1005364B7 /* Endpoints */,
@@ -885,6 +896,7 @@
 				F1076BDB2C0DA2EA00653A6E /* EventEmitting.swift in Sources */,
 				F1076BFB2C0DDCBD00653A6E /* MainTabBarCoordinatorEvent.swift in Sources */,
 				F1076BB62C08FCFE00653A6E /* NavigationControllerCoordinator.swift in Sources */,
+				F13088FD2C1708AB00FA83EC /* FirebaseAuthManaging.swift in Sources */,
 				F13088E92C11F58900FA83EC /* JokesRouter.swift in Sources */,
 				F13088F82C16EC0F00FA83EC /* Action.swift in Sources */,
 				F1076BC52C090C0600653A6E /* HomeNavigationCoordinator.swift in Sources */,
