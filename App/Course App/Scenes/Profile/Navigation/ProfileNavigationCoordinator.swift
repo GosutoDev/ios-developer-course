@@ -61,8 +61,6 @@ private extension ProfileNavigationCoordinator {
     }
 }
 
-
-
 // MARK: - UINavigationControllerDelegate
 extension ProfileNavigationCoordinator: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {

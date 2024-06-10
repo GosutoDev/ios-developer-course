@@ -18,7 +18,7 @@ struct SignInView: View {
     private let logger = Logger()
     
     // MARK: Lifecycle
-    init(emailField: String = "", passwordField: String = "") {
+    init(emailField: String = "Test@test.test", passwordField: String = "test123") {
         self.emailField = emailField
         self.passwordField = passwordField
     }

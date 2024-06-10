@@ -6,12 +6,14 @@
 //
 
 import Combine
+import os
 import SwiftUI
 
 struct ProfileView: View {
     // MARK: Private properties
     private let eventSubject = PassthroughSubject<ProfileViewEvent, Never>()
     private let authManager = FirebaseAuthManager()
+    private let logger = Logger()
     
     var body: some View {
         VStack {
@@ -54,7 +56,7 @@ private extension ProfileView {
                 try await authManager.signOut()
                 eventSubject.send(.logout)
             } catch {
-                print(error)
+                logger.info("\(error)")
             }
         }
     }
