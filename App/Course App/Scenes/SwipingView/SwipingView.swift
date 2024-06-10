@@ -22,6 +22,7 @@ struct SwipingView: View {
     private let jokeService = JokeService(apiManager: APIManager())
     private let category: String?
     @State private var jokes: [Joke] = []
+    private let storage = StorageManager()
     
     init(joke: Joke? = nil) {
         self.category = joke?.categories.first
@@ -46,7 +47,8 @@ struct SwipingView: View {
                                 ),
                                 swipeStateAction: { action in
                                     switch action {
-                                    case .finished(direction: .left), .finished(direction: .right):
+                                    case let .finished(direction):
+                                        storeJokeLike(jokeId: joke.jokeID, liked: direction == .left)
                                         removeCard(of: joke)
                                         checkCardStack()
                                     default:
@@ -97,6 +99,13 @@ extension SwipingView {
                 }
                 logger.info("INFO: Count cards is \(jokes.count).")
             }
+        }
+    }
+    
+    // MARK: Storing joke like
+    func storeJokeLike(jokeId: String, liked: Bool) {
+        Task {
+            try await storage.storeLike(jokeId: jokeId, liked: liked)
         }
     }
     
