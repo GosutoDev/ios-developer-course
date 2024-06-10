@@ -73,6 +73,7 @@
 		F13088EB2C130A1500FA83EC /* HTTPResponseStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088EA2C130A1500FA83EC /* HTTPResponseStatusCode.swift */; };
 		F13088F02C14A6F600FA83EC /* JokeServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088EF2C14A6F600FA83EC /* JokeServicing.swift */; };
 		F13088F22C14A79600FA83EC /* JokeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088F12C14A79600FA83EC /* JokeService.swift */; };
+		F13088F62C16EBD400FA83EC /* OnFirstAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088F52C16EBD400FA83EC /* OnFirstAppear.swift */; };
 		F18F1A792C107591005364B7 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A782C107591005364B7 /* KeychainAccess */; };
 		F18F1A7B2C1075C7005364B7 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7A2C1075C7005364B7 /* FirebaseFirestoreCombine-Community */; };
 		F18F1A7D2C1075C7005364B7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7C2C1075C7005364B7 /* FirebaseFirestoreSwift */; };
@@ -185,6 +186,7 @@
 		F13088EA2C130A1500FA83EC /* HTTPResponseStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponseStatusCode.swift; sourceTree = "<group>"; };
 		F13088EF2C14A6F600FA83EC /* JokeServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeServicing.swift; sourceTree = "<group>"; };
 		F13088F12C14A79600FA83EC /* JokeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeService.swift; sourceTree = "<group>"; };
+		F13088F52C16EBD400FA83EC /* OnFirstAppear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnFirstAppear.swift; sourceTree = "<group>"; };
 		F18F1A802C107656005364B7 /* KeychainManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManaging.swift; sourceTree = "<group>"; };
 		F18F1A842C1076A8005364B7 /* KeychainManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerError.swift; sourceTree = "<group>"; };
 		F18F1A862C1076EA005364B7 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
@@ -671,6 +673,7 @@
 				F190AB2D2BFDDDA1001AF32D /* BorderedModifier.swift */,
 				F190AB2F2BFDDEB7001AF32D /* Image+ResizableBordered.swift */,
 				F1076B522C00FE1000653A6E /* TextStyle.swift */,
+				F13088F52C16EBD400FA83EC /* OnFirstAppear.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -891,6 +894,7 @@
 				F1076BE92C0DB91700653A6E /* ProfileView.swift in Sources */,
 				F1076BB92C08FDA500653A6E /* MainTabBarCoordinator.swift in Sources */,
 				F190AB302BFDDEB7001AF32D /* Image+ResizableBordered.swift in Sources */,
+				F13088F62C16EBD400FA83EC /* OnFirstAppear.swift in Sources */,
 				F1076B652C01016B00653A6E /* UINavigationController+NavBarUI.swift in Sources */,
 				A81F21F42BDC1DB700A8A301 /* Course_AppApp.swift in Sources */,
 				F1076BD12C0B560E00653A6E /* ButtonStyle+CustomButtonStyle.swift in Sources */,
