@@ -49,6 +49,7 @@ private extension HomeViewController {
         categoriesCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         categoriesCollectionView.backgroundColor = .bg
         categoriesCollectionView.delegate = self
+        
         view.addSubview(categoriesCollectionView)
         
         categoriesCollectionView.register(

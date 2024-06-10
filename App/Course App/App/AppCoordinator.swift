@@ -21,7 +21,7 @@ final class AppCoordinator: ObservableObject, ViewControllerCoordinator, Cancell
     // MARK: Public properties
     var cancellables = Set<AnyCancellable>()
     var childCoordinators = [Coordinator]()
-    @Published var isSignedIn = true
+    @Published var isSignedIn = false
 }
 
 // MARK: - Start coordinator

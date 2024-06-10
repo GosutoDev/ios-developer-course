@@ -78,6 +78,8 @@
 		F13088FA2C17081000FA83EC /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088F92C17081000FA83EC /* Credentials.swift */; };
 		F13088FD2C1708AB00FA83EC /* FirebaseAuthManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088FC2C1708AB00FA83EC /* FirebaseAuthManaging.swift */; };
 		F13088FF2C1708FC00FA83EC /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088FE2C1708FC00FA83EC /* FirebaseAuthManager.swift */; };
+		F13089022C17146600FA83EC /* StorageManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13089012C17146600FA83EC /* StorageManaging.swift */; };
+		F13089042C1714AF00FA83EC /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13089032C1714AF00FA83EC /* StorageManager.swift */; };
 		F18F1A792C107591005364B7 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A782C107591005364B7 /* KeychainAccess */; };
 		F18F1A7B2C1075C7005364B7 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7A2C1075C7005364B7 /* FirebaseFirestoreCombine-Community */; };
 		F18F1A7D2C1075C7005364B7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7C2C1075C7005364B7 /* FirebaseFirestoreSwift */; };
@@ -195,6 +197,8 @@
 		F13088F92C17081000FA83EC /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		F13088FC2C1708AB00FA83EC /* FirebaseAuthManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManaging.swift; sourceTree = "<group>"; };
 		F13088FE2C1708FC00FA83EC /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
+		F13089012C17146600FA83EC /* StorageManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManaging.swift; sourceTree = "<group>"; };
+		F13089032C1714AF00FA83EC /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		F18F1A802C107656005364B7 /* KeychainManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManaging.swift; sourceTree = "<group>"; };
 		F18F1A842C1076A8005364B7 /* KeychainManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerError.swift; sourceTree = "<group>"; };
 		F18F1A862C1076EA005364B7 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
@@ -612,6 +616,15 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
+		F13089002C17145100FA83EC /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				F13089012C17146600FA83EC /* StorageManaging.swift */,
+				F13089032C1714AF00FA83EC /* StorageManager.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		F18F1A7E2C107639005364B7 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -634,6 +647,7 @@
 		F18F1A902C108C62005364B7 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				F13089002C17145100FA83EC /* Storage */,
 				F13088FB2C17084E00FA83EC /* Authentication */,
 				F18F1A912C108CCB005364B7 /* Endpoint.swift */,
 				F18F1A9A2C11B413005364B7 /* Endpoint+Convenience.swift */,
@@ -871,6 +885,7 @@
 				F1076B562C00FE4A00653A6E /* TextType.swift in Sources */,
 				F1076B5C2C00FF4100653A6E /* PaddingSize.swift in Sources */,
 				F1076BE12C0DAB1C00653A6E /* CustomNavigationControllerEvent.swift in Sources */,
+				F13089022C17146600FA83EC /* StorageManaging.swift in Sources */,
 				F1076BD32C0B5CAA00653A6E /* OnboardingPage.swift in Sources */,
 				F1076BB02C08FB5500653A6E /* Coordinator.swift in Sources */,
 				F1076BF32C0DC55200653A6E /* SignInNavigationCoordinatorEvent.swift in Sources */,
@@ -892,6 +907,7 @@
 				F190AB292BFDDBA5001AF32D /* SelectableButtonStyle.swift in Sources */,
 				F1076BDF2C0DA48A00653A6E /* OnboardingNavigationCoordinatorEvent.swift in Sources */,
 				F1076BF72C0DDA9400653A6E /* ProfileViewEvent.swift in Sources */,
+				F13089042C1714AF00FA83EC /* StorageManager.swift in Sources */,
 				F1076BBD2C09027100653A6E /* CoordinatorView.swift in Sources */,
 				F1076B612C00FF7500653A6E /* Font+AppFonts.swift in Sources */,
 				A845D94C2BF3711D0039AA1D /* DataProvider.swift in Sources */,
