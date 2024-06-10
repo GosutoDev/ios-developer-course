@@ -43,7 +43,8 @@ struct SwipingView: View {
                             SwipingCard(
                                 configuration: SwipingCard.Configuration(
                                     title: joke.categories.first ?? "",
-                                    description: joke.text
+                                    description: joke.text,
+                                    isLiked: joke.isLiked ?? false
                                 ),
                                 swipeStateAction: { action in
                                     switch action {
@@ -95,7 +96,8 @@ extension SwipingView {
                 }
                 
                 for try await jokeResponse in group {
-                    jokes.append(Joke(jokeResponse: jokeResponse))
+                    let isLiked = try await storage.liked(jokeId: jokeResponse.id)
+                    jokes.append(Joke(jokeResponse: jokeResponse, isLiked: isLiked))
                 }
                 logger.info("INFO: Count cards is \(jokes.count).")
             }

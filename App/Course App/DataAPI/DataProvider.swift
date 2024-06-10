@@ -23,11 +23,13 @@ struct Joke: Identifiable, Hashable {
     let jokeID: String
     let text: String
     let categories: [String]
+    var isLiked: Bool?
     
-    init(jokeResponse: JokeResponse) {
+    init(jokeResponse: JokeResponse, isLiked: Bool? = nil) {
         self.jokeID = jokeResponse.id
         self.text = jokeResponse.value
         self.categories = jokeResponse.categories
+        self.isLiked = isLiked
     }
 }
 

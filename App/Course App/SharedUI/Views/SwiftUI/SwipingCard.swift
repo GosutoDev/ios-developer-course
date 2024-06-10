@@ -25,6 +25,7 @@ struct SwipingCard: View {
     struct Configuration: Equatable {
         let title: String
         let description: String
+        let isLiked: Bool
     }
     
     // MARK: UI constant {
@@ -64,6 +65,15 @@ struct SwipingCard: View {
         }
         .background(color)
         .cornerRadius(CornerRadiusSize.default.rawValue)
+        .overlay {
+            if configuration.isLiked {
+                Image(systemName: "heart.circle.fill")
+                    .font(.largeTitle)
+                    .symbolRenderingMode(.multicolor)
+                    .padding(PaddingSize.default.rawValue)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+            }
+        }
         .offset(x: offset.width, y: offset.height * UIConstants.offsetMultiplicator)
         .rotationEffect(.degrees(Double(offset.width / UIConstants.degreesDivider)))
         .gesture(dragGesture)
@@ -140,7 +150,8 @@ struct Card_Previews: PreviewProvider {
         SwipingCard(
             configuration: SwipingCard.Configuration(
                 title: "Card Title",
-                description: "This is a short description. This is a short description. This is a short description. This is a short description. This is a short description."
+                description: "This is a short description. This is a short description. This is a short description. This is a short description. This is a short description.",
+                isLiked: true
             ),
             swipeStateAction: { _ in }
         )

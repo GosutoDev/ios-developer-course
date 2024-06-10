@@ -30,6 +30,7 @@ final class HomeViewController: UIViewController {
     private let jokeService = JokeService(apiManager: APIManager())
     private lazy var categoriesCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
     private let logger = Logger()
+    private let storage = StorageManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,7 +102,6 @@ extension HomeViewController {
                 }
             }
         }
-        readData()
     }
 }
 
@@ -125,13 +125,15 @@ private extension HomeViewController {
     }
     
     func makeDataSource() -> DataSource {
-        let cellRegistration = UICollectionView.CellRegistration<UICollectionViewCell, Joke> { cell, _, _ in
+        let cellRegistration = UICollectionView.CellRegistration<UICollectionViewCell, Joke> { cell, _, joke in
             cell.contentConfiguration = UIHostingConfiguration {
                 if let url = try? ImagesRouter.size300x200.asURLRequest().url {
-                    AsyncImage(url: url) { image in
-                        image.resizableBordered(cornerRadius: CornerRadiusSize.default.rawValue)
-                    } placeholder: {
-                        Color.gray
+                    ZStack(alignment: .topTrailing) {
+                        AsyncImage(url: url) { image in
+                            image.resizableBordered(cornerRadius: CornerRadiusSize.default.rawValue)
+                        } placeholder: {
+                            Color.gray
+                        }    
                     }
                 } else {
                     Text("ERROR")
