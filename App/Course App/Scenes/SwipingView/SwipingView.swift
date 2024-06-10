@@ -64,7 +64,7 @@ struct SwipingView: View {
             }
         }
         .navigationTitle("Random")
-        .onAppear {
+        .onFirstAppear() {
             loadRandomJokes()
         }
     }
