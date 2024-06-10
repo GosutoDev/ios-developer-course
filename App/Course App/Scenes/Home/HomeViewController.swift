@@ -100,6 +100,13 @@ extension HomeViewController {
                 for key in dataDictionary.keys {
                     dataProvider.data.append(SectionData(title: key, jokes: dataDictionary[key] ?? []))
                 }
+                
+                for sectionIndex in dataProvider.data.indices {
+                    for jokeIndex in dataProvider.data[sectionIndex].jokes.indices {
+                        let isLiked = try await storage.liked(jokeId: dataProvider.data[sectionIndex].jokes[jokeIndex].jokeID)
+                        dataProvider.data[sectionIndex].jokes[jokeIndex].isLiked = isLiked
+                    }
+                }
             }
         }
     }
@@ -133,7 +140,14 @@ private extension HomeViewController {
                             image.resizableBordered(cornerRadius: CornerRadiusSize.default.rawValue)
                         } placeholder: {
                             Color.gray
-                        }    
+                        }
+                        if joke.isLiked ?? false {
+                            Image(systemName: "heart.circle.fill")
+                                .font(.largeTitle)
+                                .symbolRenderingMode(.multicolor)
+                                .padding(PaddingSize.default.rawValue)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                        }
                     }
                 } else {
                     Text("ERROR")

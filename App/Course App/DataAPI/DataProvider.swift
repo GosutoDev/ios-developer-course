@@ -12,9 +12,9 @@ struct SectionData: Identifiable, Hashable {
     let title: String
     var jokes: [Joke]
     
-    init(title: String, jokes: [JokeResponse]) {
+    init(title: String, jokes: [JokeResponse], isLiked: Bool? = nil) {
         self.title = title
-        self.jokes = jokes.map { Joke(jokeResponse: $0) }
+        self.jokes = jokes.map { Joke(jokeResponse: $0, isLiked: isLiked) }
     }
 }
 
