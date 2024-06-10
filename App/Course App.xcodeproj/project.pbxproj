@@ -77,6 +77,7 @@
 		F13088F82C16EC0F00FA83EC /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088F72C16EC0F00FA83EC /* Action.swift */; };
 		F13088FA2C17081000FA83EC /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088F92C17081000FA83EC /* Credentials.swift */; };
 		F13088FD2C1708AB00FA83EC /* FirebaseAuthManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088FC2C1708AB00FA83EC /* FirebaseAuthManaging.swift */; };
+		F13088FF2C1708FC00FA83EC /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088FE2C1708FC00FA83EC /* FirebaseAuthManager.swift */; };
 		F18F1A792C107591005364B7 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A782C107591005364B7 /* KeychainAccess */; };
 		F18F1A7B2C1075C7005364B7 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7A2C1075C7005364B7 /* FirebaseFirestoreCombine-Community */; };
 		F18F1A7D2C1075C7005364B7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7C2C1075C7005364B7 /* FirebaseFirestoreSwift */; };
@@ -193,6 +194,7 @@
 		F13088F72C16EC0F00FA83EC /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		F13088F92C17081000FA83EC /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		F13088FC2C1708AB00FA83EC /* FirebaseAuthManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManaging.swift; sourceTree = "<group>"; };
+		F13088FE2C1708FC00FA83EC /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		F18F1A802C107656005364B7 /* KeychainManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManaging.swift; sourceTree = "<group>"; };
 		F18F1A842C1076A8005364B7 /* KeychainManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerError.swift; sourceTree = "<group>"; };
 		F18F1A862C1076EA005364B7 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
@@ -605,6 +607,7 @@
 			isa = PBXGroup;
 			children = (
 				F13088FC2C1708AB00FA83EC /* FirebaseAuthManaging.swift */,
+				F13088FE2C1708FC00FA83EC /* FirebaseAuthManager.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -879,6 +882,7 @@
 				F18F1A872C1076EA005364B7 /* KeychainManager.swift in Sources */,
 				F1076BBF2C09052900653A6E /* AppCoordinator.swift in Sources */,
 				F18F1A9E2C11B502005364B7 /* ImagesRouter.swift in Sources */,
+				F13088FF2C1708FC00FA83EC /* FirebaseAuthManager.swift in Sources */,
 				F1076BCA2C0B474200653A6E /* OnboardingView.swift in Sources */,
 				A8830C402BED0EE0005CAFEA /* BuildConfiguration.swift in Sources */,
 				A845D9552BF377A70039AA1D /* UICollectionView+ReusableIdentifier.swift in Sources */,
