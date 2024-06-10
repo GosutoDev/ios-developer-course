@@ -30,6 +30,7 @@ struct SwipingView: View {
         }
     }
     
+    // MARK: View
     var body: some View {
         GeometryReader { geometry in
             HStack {
