@@ -6,6 +6,7 @@
 //
 
 import Combine
+import os
 import SwiftUI
 import UIKit
 
@@ -13,10 +14,16 @@ final class ProfileNavigationCoordinator: NSObject, NavigationControllerCoordina
     // MARK: Private properties
     private(set) lazy var navigationController = makeNavigationController()
     private let eventSubject = PassthroughSubject<ProfileNavigationCoordinatorEvent, Never>()
+    private let logger = Logger()
     
     // MARK: Public properties
     var cancellables = Set<AnyCancellable>()
     var childCoordinators = [Coordinator]()
+    
+    // MARK: Lifecycle
+    deinit {
+        logger.info("Deinit ProfileNavigationCoordinator")
+    }
 }
 
 // MARK: - Start coordinator

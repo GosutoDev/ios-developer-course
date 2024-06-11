@@ -19,6 +19,11 @@ final class MainTabBarCoordinator: NSObject, TabBarControllerCoordinator, Cancel
     // MARK: Public Properties
     var cancellables = Set<AnyCancellable>()
     var childCoordinators = [Coordinator]()
+    
+    // MARK: Lifecycle
+    deinit {
+        logger.info("Deinit MainTabBarCoordinator")
+    }
 }
 
 // MARK: - Start the coordinator
