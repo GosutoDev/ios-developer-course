@@ -69,6 +69,8 @@ private extension AppCoordinator {
         tabBarAppearance.backgroundColor = .brown
         UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
         UITabBar.appearance().standardAppearance = tabBarAppearance
+        
+        UINavigationBar.appearance().tintColor = .white
     }
 }
 

@@ -80,6 +80,9 @@
 		F13088FF2C1708FC00FA83EC /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13088FE2C1708FC00FA83EC /* FirebaseAuthManager.swift */; };
 		F13089022C17146600FA83EC /* StorageManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13089012C17146600FA83EC /* StorageManaging.swift */; };
 		F13089042C1714AF00FA83EC /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13089032C1714AF00FA83EC /* StorageManager.swift */; };
+		F130890C2C19B69E00FA83EC /* HomeViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130890B2C19B69E00FA83EC /* HomeViewEvent.swift */; };
+		F130890E2C19B78700FA83EC /* SwipingViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130890D2C19B78700FA83EC /* SwipingViewFactory.swift */; };
+		F13089102C19B81F00FA83EC /* HomeNavigationCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130890F2C19B81F00FA83EC /* HomeNavigationCoordinatorEvent.swift */; };
 		F18F1A792C107591005364B7 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A782C107591005364B7 /* KeychainAccess */; };
 		F18F1A7B2C1075C7005364B7 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7A2C1075C7005364B7 /* FirebaseFirestoreCombine-Community */; };
 		F18F1A7D2C1075C7005364B7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7C2C1075C7005364B7 /* FirebaseFirestoreSwift */; };
@@ -199,6 +202,9 @@
 		F13088FE2C1708FC00FA83EC /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		F13089012C17146600FA83EC /* StorageManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManaging.swift; sourceTree = "<group>"; };
 		F13089032C1714AF00FA83EC /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		F130890B2C19B69E00FA83EC /* HomeViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewEvent.swift; sourceTree = "<group>"; };
+		F130890D2C19B78700FA83EC /* SwipingViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingViewFactory.swift; sourceTree = "<group>"; };
+		F130890F2C19B81F00FA83EC /* HomeNavigationCoordinatorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationCoordinatorEvent.swift; sourceTree = "<group>"; };
 		F18F1A802C107656005364B7 /* KeychainManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManaging.swift; sourceTree = "<group>"; };
 		F18F1A842C1076A8005364B7 /* KeychainManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerError.swift; sourceTree = "<group>"; };
 		F18F1A862C1076EA005364B7 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
@@ -442,6 +448,7 @@
 			children = (
 				F1076BC32C090BF000653A6E /* Navigation */,
 				A845D9442BF365A60039AA1D /* HomeViewController.swift */,
+				F130890B2C19B69E00FA83EC /* HomeViewEvent.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -509,6 +516,7 @@
 			isa = PBXGroup;
 			children = (
 				F1076BC12C0908A400653A6E /* SwipingViewNavigationCoordinator.swift */,
+				F130890D2C19B78700FA83EC /* SwipingViewFactory.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -517,6 +525,7 @@
 			isa = PBXGroup;
 			children = (
 				F1076BC42C090C0600653A6E /* HomeNavigationCoordinator.swift */,
+				F130890F2C19B81F00FA83EC /* HomeNavigationCoordinatorEvent.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -903,6 +912,7 @@
 				A845D9552BF377A70039AA1D /* UICollectionView+ReusableIdentifier.swift in Sources */,
 				F18F1A8F2C107C70005364B7 /* CancellablesContaining.swift in Sources */,
 				F1076BE52C0DB83300653A6E /* ProfileNavigationCoordinator.swift in Sources */,
+				F13089102C19B81F00FA83EC /* HomeNavigationCoordinatorEvent.swift in Sources */,
 				F13088E72C11F32900FA83EC /* JokeResponse.swift in Sources */,
 				F190AB292BFDDBA5001AF32D /* SelectableButtonStyle.swift in Sources */,
 				F1076BDF2C0DA48A00653A6E /* OnboardingNavigationCoordinatorEvent.swift in Sources */,
@@ -917,6 +927,7 @@
 				F1076BFB2C0DDCBD00653A6E /* MainTabBarCoordinatorEvent.swift in Sources */,
 				F1076BB62C08FCFE00653A6E /* NavigationControllerCoordinator.swift in Sources */,
 				F13088FD2C1708AB00FA83EC /* FirebaseAuthManaging.swift in Sources */,
+				F130890C2C19B69E00FA83EC /* HomeViewEvent.swift in Sources */,
 				F13088E92C11F58900FA83EC /* JokesRouter.swift in Sources */,
 				F13088F82C16EC0F00FA83EC /* Action.swift in Sources */,
 				F1076BC52C090C0600653A6E /* HomeNavigationCoordinator.swift in Sources */,
@@ -926,6 +937,7 @@
 				F190AB2E2BFDDDA1001AF32D /* BorderedModifier.swift in Sources */,
 				F18F1A812C107656005364B7 /* KeychainManaging.swift in Sources */,
 				F1076B5A2C00FF2F00653A6E /* FontType.swift in Sources */,
+				F130890E2C19B78700FA83EC /* SwipingViewFactory.swift in Sources */,
 				F18F1A852C1076A8005364B7 /* KeychainManagerError.swift in Sources */,
 				F18F1A952C11B3DB005364B7 /* NetworkingError.swift in Sources */,
 				F190AB382BFDE372001AF32D /* ScratchView.swift in Sources */,

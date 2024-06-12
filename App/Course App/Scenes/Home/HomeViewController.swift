@@ -13,7 +13,7 @@ import UIKit
 final class HomeViewController: UIViewController {
     // MARK: UIConstants
     enum UIConstants {
-        static let interSectionSpacing: CGFloat = 20
+        static let spacing: CGFloat = 20
         static let layoutWidth: CGFloat = 1
         static let layoutGroupHeight: CGFloat = 250
         static let layoutHeaderHeight: CGFloat = 20
@@ -31,11 +31,19 @@ final class HomeViewController: UIViewController {
     private lazy var categoriesCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
     private let logger = Logger()
     private let storage = StorageManager()
+    private let eventSubject = PassthroughSubject<HomeViewEvent, Never>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Categories"
         setup()
+    }
+}
+
+// MARK: - EventEmitting
+extension HomeViewController: EventEmitting {
+    var eventPublisher: AnyPublisher<HomeViewEvent, Never> {
+        eventSubject.eraseToAnyPublisher()
     }
 }
 
@@ -63,11 +71,9 @@ private extension HomeViewController {
 // MARK: - UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        logger.info("I have tapped \(indexPath)")
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        logger.info("will display \(indexPath)")
     }
 }
 
@@ -149,6 +155,9 @@ private extension HomeViewController {
                                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
                         }
                     }
+                    .onTapGesture { [weak self] in
+                        self?.eventSubject.send(.itemTapped(joke))
+                    }
                 } else {
                     Text("ERROR")
                 }
@@ -182,13 +191,16 @@ private extension HomeViewController {
 
 // MARK: - Layout
 private extension HomeViewController {
-    func createCompositionalLayout() -> UICollectionViewLayout {
+    func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         
         let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
+        layoutItem.contentInsets.trailing = UIConstants.spacing
+        layoutItem.contentInsets.leading = UIConstants.spacing
         
         let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(UIConstants.layoutWidth), heightDimension: .estimated(UIConstants.layoutGroupHeight))
         let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: layoutGroupSize, subitems: [layoutItem])
+        layoutGroup.interItemSpacing = NSCollectionLayoutSpacing.fixed(UIConstants.spacing)
         
         let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
         layoutSection.orthogonalScrollingBehavior = .groupPagingCentered
@@ -198,7 +210,7 @@ private extension HomeViewController {
         layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
         
         let config = UICollectionViewCompositionalLayoutConfiguration()
-        config.interSectionSpacing = UIConstants.interSectionSpacing
+        config.interSectionSpacing = UIConstants.spacing
         
         let layout = UICollectionViewCompositionalLayout(section: layoutSection)
         layout.configuration = config
