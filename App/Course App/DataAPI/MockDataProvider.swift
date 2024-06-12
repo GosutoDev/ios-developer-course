@@ -43,13 +43,15 @@ final class MockDataProvider: ObservableObject {
     
     init() {
         data = localData
-//        updateData()
+        //        updateData()
     }
 }
 
 private extension MockDataProvider {
     func updateData() {
-        DispatchQueue.main.asyncAfter(deadline: GlobalConstants.deadline, execute: {
+        let second: UInt64 = 4_000_000_000
+        let deadline = DispatchTime(uptimeNanoseconds: second)
+        DispatchQueue.main.asyncAfter(deadline: deadline, execute: {
             if var section = self.localData.first {
                 section.jokes.remove(at: 1)
                 self.data = [section]
