@@ -143,7 +143,9 @@ private extension HomeViewController {
                 if let url = try? ImagesRouter.size300x200.asURLRequest().url {
                     ZStack(alignment: .topTrailing) {
                         AsyncImage(url: url) { image in
-                            image.resizableBordered(cornerRadius: CornerRadiusSize.default.rawValue)
+                            image
+                                .resizableBordered(cornerRadius: CornerRadiusSize.default.rawValue)
+                                .scaledToFit()
                         } placeholder: {
                             Color.gray
                         }

@@ -348,11 +348,11 @@
 		A845D9502BF376860039AA1D /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				F18F1A7F2C10763C005364B7 /* Services */,
-				F18F1A7E2C107639005364B7 /* Managers */,
 				F1076B6E2C0102B000653A6E /* Extensions */,
+				F18F1A7E2C107639005364B7 /* Managers */,
 				F1076BAE2C08FB4B00653A6E /* Navigation */,
 				F1076B6D2C0102A700653A6E /* Protocols */,
+				F18F1A7F2C10763C005364B7 /* Services */,
 				F1076BBA2C09025600653A6E /* Types */,
 			);
 			path = Common;
