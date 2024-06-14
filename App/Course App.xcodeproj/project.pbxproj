@@ -86,6 +86,7 @@
 		F13089132C1C55AF00FA83EC /* DependencyInjection in Frameworks */ = {isa = PBXBuildFile; productRef = F13089122C1C55AF00FA83EC /* DependencyInjection */; };
 		F13089162C1C5A1300FA83EC /* ManagerRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13089152C1C5A1300FA83EC /* ManagerRegistration.swift */; };
 		F13089182C1C5E0300FA83EC /* ServiceRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13089172C1C5E0300FA83EC /* ServiceRegistration.swift */; };
+		F130891A2C1C64FF00FA83EC /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13089192C1C64FF00FA83EC /* Store.swift */; };
 		F18F1A792C107591005364B7 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A782C107591005364B7 /* KeychainAccess */; };
 		F18F1A7B2C1075C7005364B7 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7A2C1075C7005364B7 /* FirebaseFirestoreCombine-Community */; };
 		F18F1A7D2C1075C7005364B7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7C2C1075C7005364B7 /* FirebaseFirestoreSwift */; };
@@ -210,6 +211,7 @@
 		F130890F2C19B81F00FA83EC /* HomeNavigationCoordinatorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationCoordinatorEvent.swift; sourceTree = "<group>"; };
 		F13089152C1C5A1300FA83EC /* ManagerRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerRegistration.swift; sourceTree = "<group>"; };
 		F13089172C1C5E0300FA83EC /* ServiceRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRegistration.swift; sourceTree = "<group>"; };
+		F13089192C1C64FF00FA83EC /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		F18F1A802C107656005364B7 /* KeychainManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManaging.swift; sourceTree = "<group>"; };
 		F18F1A842C1076A8005364B7 /* KeychainManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerError.swift; sourceTree = "<group>"; };
 		F18F1A862C1076EA005364B7 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
@@ -475,6 +477,7 @@
 				A845D9522BF377250039AA1D /* ReusableIdentifier.swift */,
 				F1076BDA2C0DA2EA00653A6E /* EventEmitting.swift */,
 				F18F1A8E2C107C70005364B7 /* CancellablesContaining.swift */,
+				F13089192C1C64FF00FA83EC /* Store.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -924,6 +927,7 @@
 				F18F1A872C1076EA005364B7 /* KeychainManager.swift in Sources */,
 				F1076BBF2C09052900653A6E /* AppCoordinator.swift in Sources */,
 				F18F1A9E2C11B502005364B7 /* ImagesRouter.swift in Sources */,
+				F130891A2C1C64FF00FA83EC /* Store.swift in Sources */,
 				F13088FF2C1708FC00FA83EC /* FirebaseAuthManager.swift in Sources */,
 				F1076BCA2C0B474200653A6E /* OnboardingView.swift in Sources */,
 				A8830C402BED0EE0005CAFEA /* BuildConfiguration.swift in Sources */,
