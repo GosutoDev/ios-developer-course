@@ -6,6 +6,7 @@
 //
 
 import Combine
+import DependencyInjection
 import os
 import SwiftUI
 import UIKit
@@ -20,12 +21,14 @@ final class OnboardingNavigationCoordinator: NavigationControllerCoordinator, Ca
     // MARK: Public properties
     var cancellables = Set<AnyCancellable>()
     var childCoordinators = [Coordinator]()
+    var container: Container
     
     deinit {
         logger.info("Deinit OnboardingNavigationCoordinator")
     }
     
-    init(navigationController: UINavigationController? = nil) {
+    init(container: Container, navigationController: UINavigationController? = nil) {
+        self.container = container
         if let navigationController {
             isPushNavigation = true
             self.navigationController = navigationController

@@ -14,7 +14,7 @@ protocol OnboardingCoordinatorPresenting {
 
 extension OnboardingCoordinatorPresenting where Self: Coordinator, Self: CancellablesContaining, Self: UINavigationControllerDelegate {
     func makeOnboardingFlow(navigationController: UINavigationController? = nil) -> ViewControllerCoordinator {
-        let coordinator = OnboardingNavigationCoordinator(navigationController: navigationController)
+        let coordinator = OnboardingNavigationCoordinator(container: container, navigationController: navigationController)
         startChildCoordinator(coordinator)
         
         if navigationController != nil {

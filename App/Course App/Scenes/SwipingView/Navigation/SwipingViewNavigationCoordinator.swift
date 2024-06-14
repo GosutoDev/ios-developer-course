@@ -5,6 +5,7 @@
 //  Created by Tomáš Duchoslav on 30.05.2024.
 //
 
+import DependencyInjection
 import os
 import SwiftUI
 import UIKit
@@ -16,10 +17,15 @@ final class SwipingViewNavigationCoordinator: NavigationControllerCoordinator {
     
     // MARK: Public Properties
     var childCoordinators = [Coordinator]()
+    var container: Container
     
     // MARK: Lifecycle
     deinit {
         logger.info("Deinit SwipingViewNavigationCoordinator")
+    }
+    
+    init(container: Container) {
+        self.container = container
     }
 }
 

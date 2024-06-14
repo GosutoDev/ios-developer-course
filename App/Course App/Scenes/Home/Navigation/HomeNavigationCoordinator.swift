@@ -6,6 +6,7 @@
 //
 
 import Combine
+import DependencyInjection
 import os
 import UIKit
 
@@ -18,9 +19,15 @@ final class HomeNavigationCoordinator: NavigationControllerCoordinator, Cancella
     // MARK: Public properties
     var childCoordinators = [Coordinator]()
     var cancellables = Set<AnyCancellable>()
+    var container: Container
     
+    // MARK: Lifecycle
     deinit {
         logger.info("Deinit HomeNavigationCoordinator")
+    }
+    
+    init(container: Container) {
+        self.container = container
     }
 }
 

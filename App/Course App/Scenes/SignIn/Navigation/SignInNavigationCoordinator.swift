@@ -6,6 +6,7 @@
 //
 
 import Combine
+import DependencyInjection
 import os
 import SwiftUI
 import UIKit
@@ -19,9 +20,15 @@ final class SignInNavigationCoordinator: NavigationControllerCoordinator, Cancel
     // MARK: Public properties
     var childCoordinators = [Coordinator]()
     var cancellables = Set<AnyCancellable>()
+    var container: Container
     
+    // MARK: Lifecycle
     deinit {
         logger.info("Deinit SignInVIew")
+    }
+    
+    init(container: Container) {
+        self.container = container
     }
 }
 
