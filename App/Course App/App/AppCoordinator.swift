@@ -30,6 +30,15 @@ final class AppCoordinator: ObservableObject, ViewControllerCoordinator, Cancell
 extension AppCoordinator {
     func start() {
         setupAppUI()
+        assembleDependencyInjectionRegistration()
+    }
+}
+
+// MARK: - Dependency injection registration
+private extension AppCoordinator {
+    func assembleDependencyInjectionRegistration() {
+        ManagerRegistration.registerDependencies(to: container)
+        ServiceRegistration.registerDependecies(to: container)
     }
 }
 

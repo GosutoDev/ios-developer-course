@@ -84,6 +84,8 @@
 		F130890E2C19B78700FA83EC /* SwipingViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130890D2C19B78700FA83EC /* SwipingViewFactory.swift */; };
 		F13089102C19B81F00FA83EC /* HomeNavigationCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130890F2C19B81F00FA83EC /* HomeNavigationCoordinatorEvent.swift */; };
 		F13089132C1C55AF00FA83EC /* DependencyInjection in Frameworks */ = {isa = PBXBuildFile; productRef = F13089122C1C55AF00FA83EC /* DependencyInjection */; };
+		F13089162C1C5A1300FA83EC /* ManagerRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13089152C1C5A1300FA83EC /* ManagerRegistration.swift */; };
+		F13089182C1C5E0300FA83EC /* ServiceRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13089172C1C5E0300FA83EC /* ServiceRegistration.swift */; };
 		F18F1A792C107591005364B7 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A782C107591005364B7 /* KeychainAccess */; };
 		F18F1A7B2C1075C7005364B7 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7A2C1075C7005364B7 /* FirebaseFirestoreCombine-Community */; };
 		F18F1A7D2C1075C7005364B7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7C2C1075C7005364B7 /* FirebaseFirestoreSwift */; };
@@ -206,6 +208,8 @@
 		F130890B2C19B69E00FA83EC /* HomeViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewEvent.swift; sourceTree = "<group>"; };
 		F130890D2C19B78700FA83EC /* SwipingViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingViewFactory.swift; sourceTree = "<group>"; };
 		F130890F2C19B81F00FA83EC /* HomeNavigationCoordinatorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationCoordinatorEvent.swift; sourceTree = "<group>"; };
+		F13089152C1C5A1300FA83EC /* ManagerRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerRegistration.swift; sourceTree = "<group>"; };
+		F13089172C1C5E0300FA83EC /* ServiceRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRegistration.swift; sourceTree = "<group>"; };
 		F18F1A802C107656005364B7 /* KeychainManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManaging.swift; sourceTree = "<group>"; };
 		F18F1A842C1076A8005364B7 /* KeychainManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerError.swift; sourceTree = "<group>"; };
 		F18F1A862C1076EA005364B7 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
@@ -426,6 +430,7 @@
 				F1076BBE2C09052900653A6E /* AppCoordinator.swift */,
 				A8830C3F2BED0EE0005CAFEA /* BuildConfiguration.swift */,
 				A81F21F32BDC1DB700A8A301 /* Course_AppApp.swift */,
+				F13089142C1C59EB00FA83EC /* DIRegistration */,
 				A8830C4B2BEF84BC005CAFEA /* GoogleService-Info.plist */,
 				A845D9402BF364410039AA1D /* Resources */,
 			);
@@ -634,6 +639,15 @@
 				F13089032C1714AF00FA83EC /* StorageManager.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		F13089142C1C59EB00FA83EC /* DIRegistration */ = {
+			isa = PBXGroup;
+			children = (
+				F13089152C1C5A1300FA83EC /* ManagerRegistration.swift */,
+				F13089172C1C5E0300FA83EC /* ServiceRegistration.swift */,
+			);
+			path = DIRegistration;
 			sourceTree = "<group>";
 		};
 		F18F1A7E2C107639005364B7 /* Managers */ = {
@@ -921,6 +935,7 @@
 				F190AB292BFDDBA5001AF32D /* SelectableButtonStyle.swift in Sources */,
 				F1076BDF2C0DA48A00653A6E /* OnboardingNavigationCoordinatorEvent.swift in Sources */,
 				F1076BF72C0DDA9400653A6E /* ProfileViewEvent.swift in Sources */,
+				F13089182C1C5E0300FA83EC /* ServiceRegistration.swift in Sources */,
 				F13089042C1714AF00FA83EC /* StorageManager.swift in Sources */,
 				F1076BBD2C09027100653A6E /* CoordinatorView.swift in Sources */,
 				F1076B612C00FF7500653A6E /* Font+AppFonts.swift in Sources */,
@@ -931,6 +946,7 @@
 				F1076BFB2C0DDCBD00653A6E /* MainTabBarCoordinatorEvent.swift in Sources */,
 				F1076BB62C08FCFE00653A6E /* NavigationControllerCoordinator.swift in Sources */,
 				F13088FD2C1708AB00FA83EC /* FirebaseAuthManaging.swift in Sources */,
+				F13089162C1C5A1300FA83EC /* ManagerRegistration.swift in Sources */,
 				F130890C2C19B69E00FA83EC /* HomeViewEvent.swift in Sources */,
 				F13088E92C11F58900FA83EC /* JokesRouter.swift in Sources */,
 				F13088F82C16EC0F00FA83EC /* Action.swift in Sources */,
