@@ -21,4 +21,12 @@ final class KeychainService: KeychainServicing {
     func storeAuthData(authData: String) throws {
         try keychainManager.store(key: KeychainKey.authData.rawValue, value: authData)
     }
+    
+    func fetchAuthData() throws -> String {
+        try keychainManager.fetch(key: KeychainKey.authData.rawValue)
+    }
+    
+    func removeAuthData() throws {
+        try keychainManager.remove(key: KeychainKey.authData.rawValue)
+    }
 }

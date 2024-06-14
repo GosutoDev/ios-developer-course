@@ -10,15 +10,15 @@ import os
 import SwiftUI
 import UIKit
 
-final class SignInNavigationCoordinator: NavigationControllerCoordinator {
+final class SignInNavigationCoordinator: NavigationControllerCoordinator, CancellablesContaining {
     // MARK: Private properties
     private(set) lazy var navigationController = makeNavigationController()
     private let eventSubject = PassthroughSubject<SignInNavigationCoordinatorEvent, Never>()
-    private var anyCancellables = Set<AnyCancellable>()
     private let logger = Logger()
     
     // MARK: Public properties
     var childCoordinators = [Coordinator]()
+    var cancellables = Set<AnyCancellable>()
     
     deinit {
         logger.info("Deinit SignInVIew")
@@ -50,7 +50,7 @@ private extension SignInNavigationCoordinator {
         signInView.eventPublisher.sink { [weak self] event in
             self?.handle(event)
         }
-        .store(in: &anyCancellables)
+        .store(in: &cancellables)
         return UIHostingController(rootView: signInView)
     }
 }

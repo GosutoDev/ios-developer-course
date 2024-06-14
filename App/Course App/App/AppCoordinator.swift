@@ -8,7 +8,7 @@
 import Combine
 import UIKit
 
-final class AppCoordinator: ObservableObject, ViewControllerCoordinator {
+final class AppCoordinator: ObservableObject, ViewControllerCoordinator, CancellablesContaining {
     // MARK: Private properties
     private(set) lazy var rootViewController: UIViewController = {
         if isSignedIn {
@@ -17,9 +17,9 @@ final class AppCoordinator: ObservableObject, ViewControllerCoordinator {
             makeSignInFlow().rootViewController
         }
     }()
-    private var anyCancellables = Set<AnyCancellable>()
     
     // MARK: Public properties
+    var cancellables = Set<AnyCancellable>()
     var childCoordinators = [Coordinator]()
     @Published var isSignedIn = false
 }
@@ -39,7 +39,7 @@ private extension AppCoordinator {
         mainTabBarCoordinator.eventPublisher.sink { [weak self] event in
             self?.handle(event)
         }
-        .store(in: &anyCancellables)
+        .store(in: &cancellables)
         return mainTabBarCoordinator
     }
     
@@ -49,7 +49,7 @@ private extension AppCoordinator {
         signInCoordinator.eventPublisher.sink { [weak self] event in
             self?.handle(event)
         }
-        .store(in: &anyCancellables)
+        .store(in: &cancellables)
         return signInCoordinator
     }
 }
@@ -57,7 +57,6 @@ private extension AppCoordinator {
 // MARK: - Setup UI
 private extension AppCoordinator {
     func setupAppUI() {
-        UITabBar.appearance().backgroundColor = .brown
         UITabBar.appearance().tintColor = .white
         UITabBarItem.appearance().setTitleTextAttributes(
             [
@@ -65,6 +64,11 @@ private extension AppCoordinator {
             ],
             for: .normal
         )
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithDefaultBackground()
+        tabBarAppearance.backgroundColor = .brown
+        UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+        UITabBar.appearance().standardAppearance = tabBarAppearance
         
         UINavigationBar.appearance().tintColor = .white
     }

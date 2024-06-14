@@ -10,18 +10,26 @@ import os
 import SwiftUI
 import UIKit
 
-class OnboardingNavigationCoordinator: NavigationControllerCoordinator {
+final class OnboardingNavigationCoordinator: NavigationControllerCoordinator, CancellablesContaining {
     // MARK: Private properties
     private(set) lazy var navigationController: UINavigationController = makeNavigationController()
     private let logger = Logger()
-    private var anyCancellables = Set<AnyCancellable>()
     private let eventSubject = PassthroughSubject<OnboardingNavigationCoordinatorEvent, Never>()
+    private var isPushNavigation = false
     
     // MARK: Public properties
+    var cancellables = Set<AnyCancellable>()
     var childCoordinators = [Coordinator]()
     
     deinit {
         logger.info("Deinit OnboardingNavigationCoordinator")
+    }
+    
+    init(navigationController: UINavigationController? = nil) {
+        if let navigationController {
+            isPushNavigation = true
+            self.navigationController = navigationController
+        }
     }
 }
 
@@ -35,7 +43,14 @@ extension OnboardingNavigationCoordinator: EventEmitting {
 // MARK: - Start coordinator
 extension OnboardingNavigationCoordinator {
     func start() {
-        navigationController.setViewControllers([makeOnboardingView(page: OnboardingPage.welcome)], animated: false)
+        if isPushNavigation {
+            navigationController.pushViewController(makeOnboardingView(page: OnboardingPage.welcome), animated: true)
+        } else {
+            navigationController.setViewControllers(
+                [makeOnboardingView(page: OnboardingPage.welcome)],
+                animated: false
+            )
+        }
     }
 }
 
@@ -49,8 +64,7 @@ private extension OnboardingNavigationCoordinator {
             }
             self.eventSubject.send(.dismiss(self))
         }
-        .store(in: &anyCancellables)
-        controller.modalPresentationStyle = .fullScreen
+        .store(in: &cancellables)
         controller.modalTransitionStyle = .crossDissolve
         return controller
     }
@@ -74,10 +88,14 @@ private extension OnboardingNavigationCoordinator {
                 let viewController = self.makeOnboardingView(page: newPage)
                 self.navigationController.pushViewController(viewController, animated: true)
             case .close:
-                self.navigationController.dismiss(animated: true)
+                if navigationController.presentingViewController != nil {
+                    self.navigationController.dismiss(animated: true)
+                } else {
+                    navigationController.popToRootViewController(animated: true)
+                }
             }
         }
-        .store(in: &anyCancellables)
+        .store(in: &cancellables)
         
         return UIHostingController(rootView: onboardingView)
     }

@@ -10,15 +10,20 @@ import os
 import SwiftUI
 import UIKit
 
-class MainTabBarCoordinator: NSObject, TabBarControllerCoordinator {
+final class MainTabBarCoordinator: NSObject, TabBarControllerCoordinator, CancellablesContaining, OnboardingCoordinatorPresenting {
     // MARK: Private properties
     private(set) lazy var tabBarController = makeTabBarController()
     private var logger = Logger()
-    private lazy var anyCancellables = Set<AnyCancellable>()
     private let eventSubject = PassthroughSubject<MainTabBarCoordinatorEvent, Never>()
     
     // MARK: Public Properties
+    var cancellables = Set<AnyCancellable>()
     var childCoordinators = [Coordinator]()
+    
+    // MARK: Lifecycle
+    deinit {
+        logger.info("Deinit MainTabBarCoordinator")
+    }
 }
 
 // MARK: - Start the coordinator
@@ -45,7 +50,6 @@ extension MainTabBarCoordinator {
         switch deeplink {
         case let .onboarding(page):
             let coordinator = makeOnboardingFlow()
-            startChildCoordinator(coordinator)
             tabBarController.present(coordinator.rootViewController, animated: true)
         default:
             break
@@ -61,15 +65,6 @@ private extension MainTabBarCoordinator {
         let tabBarController = UITabBarController()
         tabBarController.delegate = self
         return tabBarController
-    }
-    
-    func makeOnboardingFlow() -> ViewControllerCoordinator {
-        let coordinator = OnboardingNavigationCoordinator()
-        coordinator.eventPublisher.sink { [weak self] event in
-            self?.handle(event: event)
-        }
-        .store(in: &anyCancellables)
-        return coordinator
     }
     
     func makeHomeFlow() -> ViewControllerCoordinator {
@@ -96,7 +91,7 @@ private extension MainTabBarCoordinator {
         profileNavigationCoordinator.eventPublisher.sink { [weak self] event in
             self?.handle(event)
         }
-        .store(in: &anyCancellables)
+        .store(in: &cancellables)
         // swiftlint:disable:next no_magic_numbers
         profileNavigationCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"), tag: 2)
         return profileNavigationCoordinator
@@ -126,3 +121,6 @@ extension MainTabBarCoordinator: UITabBarControllerDelegate {
         logger.info("MainTabBarDelegate on coordinator and didSelect tab with controller \(viewController) ")
     }
 }
+
+// MARK: - UINavigationControllerDelegate
+extension MainTabBarCoordinator: UINavigationControllerDelegate {}

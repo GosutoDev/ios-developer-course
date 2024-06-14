@@ -6,15 +6,24 @@
 //
 
 import Combine
+import os
 import SwiftUI
 import UIKit
 
-final class ProfileNavigationCoordinator: NavigationControllerCoordinator {
+final class ProfileNavigationCoordinator: NSObject, NavigationControllerCoordinator, CancellablesContaining, OnboardingCoordinatorPresenting {
+    // MARK: Private properties
     private(set) lazy var navigationController = makeNavigationController()
     private let eventSubject = PassthroughSubject<ProfileNavigationCoordinatorEvent, Never>()
-    private var anyCancellables = Set<AnyCancellable>()
+    private let logger = Logger()
     
+    // MARK: Public properties
+    var cancellables = Set<AnyCancellable>()
     var childCoordinators = [Coordinator]()
+    
+    // MARK: Lifecycle
+    deinit {
+        logger.info("Deinit ProfileNavigationCoordinator")
+    }
 }
 
 // MARK: - Start coordinator
@@ -47,12 +56,25 @@ private extension ProfileNavigationCoordinator {
             switch event {
             case .logout:
                 eventSubject.send(.logout)
-            default:
-                break
+            case .onboardingModal:
+                navigationController.present(makeOnboardingFlow().rootViewController, animated: true)
+            case .onboarding:
+                _ = makeOnboardingFlow(navigationController: self.navigationController)
             }
         }
-        .store(in: &anyCancellables)
+        .store(in: &cancellables)
         
         return UIHostingController(rootView: profileView)
+    }
+}
+
+// MARK: - UINavigationControllerDelegate
+extension ProfileNavigationCoordinator: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        if navigationController.viewControllers.count == 1 {
+            if let onboardingCoordinator = childCoordinators.first(where: { $0 is OnboardingNavigationCoordinator }) {
+                release(onboardingCoordinator)
+            }
+        }
     }
 }
