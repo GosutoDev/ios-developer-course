@@ -83,6 +83,7 @@
 		F130890C2C19B69E00FA83EC /* HomeViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130890B2C19B69E00FA83EC /* HomeViewEvent.swift */; };
 		F130890E2C19B78700FA83EC /* SwipingViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130890D2C19B78700FA83EC /* SwipingViewFactory.swift */; };
 		F13089102C19B81F00FA83EC /* HomeNavigationCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130890F2C19B81F00FA83EC /* HomeNavigationCoordinatorEvent.swift */; };
+		F13089132C1C55AF00FA83EC /* DependencyInjection in Frameworks */ = {isa = PBXBuildFile; productRef = F13089122C1C55AF00FA83EC /* DependencyInjection */; };
 		F18F1A792C107591005364B7 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A782C107591005364B7 /* KeychainAccess */; };
 		F18F1A7B2C1075C7005364B7 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7A2C1075C7005364B7 /* FirebaseFirestoreCombine-Community */; };
 		F18F1A7D2C1075C7005364B7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7C2C1075C7005364B7 /* FirebaseFirestoreSwift */; };
@@ -234,6 +235,7 @@
 				F18F1A7D2C1075C7005364B7 /* FirebaseFirestoreSwift in Frameworks */,
 				A8830C4F2BEF8565005CAFEA /* FirebaseAuth in Frameworks */,
 				F18F1A7B2C1075C7005364B7 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				F13089132C1C55AF00FA83EC /* DependencyInjection in Frameworks */,
 				A8830C512BEF8565005CAFEA /* FirebaseFirestore in Frameworks */,
 				F18F1A792C107591005364B7 /* KeychainAccess in Frameworks */,
 			);
@@ -744,6 +746,7 @@
 				F18F1A782C107591005364B7 /* KeychainAccess */,
 				F18F1A7A2C1075C7005364B7 /* FirebaseFirestoreCombine-Community */,
 				F18F1A7C2C1075C7005364B7 /* FirebaseFirestoreSwift */,
+				F13089122C1C55AF00FA83EC /* DependencyInjection */,
 			);
 			productName = "Course App";
 			productReference = A81F21F02BDC1DB700A8A301 /* App Course Dev.app */;
@@ -821,6 +824,7 @@
 				A8830C422BEF7B17005CAFEA /* XCRemoteSwiftPackageReference "SwiftLint" */,
 				A8830C4D2BEF8565005CAFEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				F18F1A772C107591005364B7 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				F13089112C1C55AF00FA83EC /* XCRemoteSwiftPackageReference "ios-dependency-injection" */,
 			);
 			productRefGroup = A81F21F12BDC1DB700A8A301 /* Products */;
 			projectDirPath = "";
@@ -1606,6 +1610,14 @@
 				minimumVersion = 10.25.0;
 			};
 		};
+		F13089112C1C55AF00FA83EC /* XCRemoteSwiftPackageReference "ios-dependency-injection" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/strvcom/ios-dependency-injection.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.3;
+			};
+		};
 		F18F1A772C107591005364B7 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
@@ -1631,6 +1643,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A8830C4D2BEF8565005CAFEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		F13089122C1C55AF00FA83EC /* DependencyInjection */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F13089112C1C55AF00FA83EC /* XCRemoteSwiftPackageReference "ios-dependency-injection" */;
+			productName = DependencyInjection;
 		};
 		F18F1A782C107591005364B7 /* KeychainAccess */ = {
 			isa = XCSwiftPackageProductDependency;
