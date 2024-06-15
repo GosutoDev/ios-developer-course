@@ -81,7 +81,7 @@
 		F13089022C17146600FA83EC /* StorageManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13089012C17146600FA83EC /* StorageManaging.swift */; };
 		F13089042C1714AF00FA83EC /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13089032C1714AF00FA83EC /* StorageManager.swift */; };
 		F130890C2C19B69E00FA83EC /* HomeViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130890B2C19B69E00FA83EC /* HomeViewEvent.swift */; };
-		F130890E2C19B78700FA83EC /* SwipingViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130890D2C19B78700FA83EC /* SwipingViewFactory.swift */; };
+		F130890E2C19B78700FA83EC /* SwipingViewCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130890D2C19B78700FA83EC /* SwipingViewCoordinating.swift */; };
 		F13089102C19B81F00FA83EC /* HomeNavigationCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130890F2C19B81F00FA83EC /* HomeNavigationCoordinatorEvent.swift */; };
 		F13089132C1C55AF00FA83EC /* DependencyInjection in Frameworks */ = {isa = PBXBuildFile; productRef = F13089122C1C55AF00FA83EC /* DependencyInjection */; };
 		F13089162C1C5A1300FA83EC /* ManagerRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13089152C1C5A1300FA83EC /* ManagerRegistration.swift */; };
@@ -211,7 +211,7 @@
 		F13089012C17146600FA83EC /* StorageManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManaging.swift; sourceTree = "<group>"; };
 		F13089032C1714AF00FA83EC /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		F130890B2C19B69E00FA83EC /* HomeViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewEvent.swift; sourceTree = "<group>"; };
-		F130890D2C19B78700FA83EC /* SwipingViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingViewFactory.swift; sourceTree = "<group>"; };
+		F130890D2C19B78700FA83EC /* SwipingViewCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingViewCoordinating.swift; sourceTree = "<group>"; };
 		F130890F2C19B81F00FA83EC /* HomeNavigationCoordinatorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationCoordinatorEvent.swift; sourceTree = "<group>"; };
 		F13089152C1C5A1300FA83EC /* ManagerRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerRegistration.swift; sourceTree = "<group>"; };
 		F13089172C1C5E0300FA83EC /* ServiceRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRegistration.swift; sourceTree = "<group>"; };
@@ -536,7 +536,7 @@
 			isa = PBXGroup;
 			children = (
 				F1076BC12C0908A400653A6E /* SwipingViewNavigationCoordinator.swift */,
-				F130890D2C19B78700FA83EC /* SwipingViewFactory.swift */,
+				F130890D2C19B78700FA83EC /* SwipingViewCoordinating.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -984,7 +984,7 @@
 				F18F1A812C107656005364B7 /* KeychainManaging.swift in Sources */,
 				F130891F2C1DA84A00FA83EC /* SwipingViewState.swift in Sources */,
 				F1076B5A2C00FF2F00653A6E /* FontType.swift in Sources */,
-				F130890E2C19B78700FA83EC /* SwipingViewFactory.swift in Sources */,
+				F130890E2C19B78700FA83EC /* SwipingViewCoordinating.swift in Sources */,
 				F18F1A852C1076A8005364B7 /* KeychainManagerError.swift in Sources */,
 				F18F1A952C11B3DB005364B7 /* NetworkingError.swift in Sources */,
 				F190AB382BFDE372001AF32D /* ScratchView.swift in Sources */,

@@ -11,7 +11,7 @@ import os
 import SwiftUI
 import UIKit
 
-final class HomeNavigationCoordinator: NavigationControllerCoordinator, CancellablesContaining {
+final class HomeNavigationCoordinator: NavigationControllerCoordinator, CancellablesContaining, SwipingViewCoordinating {
     // MARK: Private properties
     private(set) lazy var navigationController: UINavigationController = CustomNavigationController()
     private let logger = Logger()
@@ -55,15 +55,6 @@ private extension HomeNavigationCoordinator {
         }
         .store(in: &cancellables)
         return homeView
-    }
-    
-    func makeSwipingView(with joke: Joke? = nil, isChildCoordinator: Bool = false) -> UIViewController {
-        let store = SwipingViewStore(isChildCoordinator: isChildCoordinator)
-        store.eventPublisher.sink { [weak self] _ in
-            self?.navigationController.popToRootViewController(animated: true)
-        }
-        .store(in: &cancellables)
-        return UIHostingController(rootView: SwipingView(store: store))
     }
 }
 

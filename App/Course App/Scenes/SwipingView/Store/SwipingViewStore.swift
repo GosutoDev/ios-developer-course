@@ -6,8 +6,8 @@
 //
 
 import Combine
-import os
 import Foundation
+import os
 
 final class SwipingViewStore: Store, ObservableObject {
     // MARK: Public properties
@@ -19,7 +19,7 @@ final class SwipingViewStore: Store, ObservableObject {
     private let logger = Logger()
     private let category: String?
     private let eventSubject = PassthroughSubject<SwipingViewEvent, Never>()
-    private var isChildCoordinator: Bool = false
+    private var isChildCoordinator = false
     
     init(joke: Joke? = nil, isChildCoordinator: Bool = false) {
         self.isChildCoordinator = isChildCoordinator

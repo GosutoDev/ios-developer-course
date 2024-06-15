@@ -11,7 +11,7 @@ import os
 import SwiftUI
 import UIKit
 
-final class SwipingViewNavigationCoordinator: NavigationControllerCoordinator, CancellablesContaining {
+final class SwipingViewNavigationCoordinator: NavigationControllerCoordinator, CancellablesContaining, SwipingViewCoordinating {
     // MARK: Private properties
     private(set) lazy var navigationController: UINavigationController = CustomNavigationController()
     private let logger = Logger()
@@ -35,13 +35,5 @@ final class SwipingViewNavigationCoordinator: NavigationControllerCoordinator, C
 extension SwipingViewNavigationCoordinator {
     func start() {
         navigationController.setViewControllers([makeSwipingView()], animated: false)
-    }
-}
-
-// MARK: - Factory methods
-extension SwipingViewNavigationCoordinator: SwipingViewFactory {
-    func makeSwipingView(with joke: Joke? = nil, isChildCoordinator: Bool = false) -> UIViewController {
-        let store = SwipingViewStore(isChildCoordinator: isChildCoordinator)
-        return UIHostingController(rootView: SwipingView(store: store))
     }
 }
