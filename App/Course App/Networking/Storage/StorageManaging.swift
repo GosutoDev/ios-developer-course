@@ -10,4 +10,5 @@ import Foundation
 
 protocol StorageManaging {
     func storeLike(jokeId: String, liked: Bool) async throws
+    func loadLiked(jokeId: String) async throws -> Bool
 }

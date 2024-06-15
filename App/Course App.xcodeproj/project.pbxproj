@@ -91,6 +91,7 @@
 		F130891F2C1DA84A00FA83EC /* SwipingViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130891E2C1DA84A00FA83EC /* SwipingViewState.swift */; };
 		F13089212C1DA85900FA83EC /* SwipingViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13089202C1DA85900FA83EC /* SwipingViewAction.swift */; };
 		F13089232C1DCB0C00FA83EC /* SwipingViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13089222C1DCB0C00FA83EC /* SwipingViewEvent.swift */; };
+		F13089252C1DE6E000FA83EC /* StoreRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13089242C1DE6E000FA83EC /* StoreRegistration.swift */; };
 		F18F1A792C107591005364B7 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A782C107591005364B7 /* KeychainAccess */; };
 		F18F1A7B2C1075C7005364B7 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7A2C1075C7005364B7 /* FirebaseFirestoreCombine-Community */; };
 		F18F1A7D2C1075C7005364B7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7C2C1075C7005364B7 /* FirebaseFirestoreSwift */; };
@@ -220,6 +221,7 @@
 		F130891E2C1DA84A00FA83EC /* SwipingViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingViewState.swift; sourceTree = "<group>"; };
 		F13089202C1DA85900FA83EC /* SwipingViewAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingViewAction.swift; sourceTree = "<group>"; };
 		F13089222C1DCB0C00FA83EC /* SwipingViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingViewEvent.swift; sourceTree = "<group>"; };
+		F13089242C1DE6E000FA83EC /* StoreRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRegistration.swift; sourceTree = "<group>"; };
 		F18F1A802C107656005364B7 /* KeychainManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManaging.swift; sourceTree = "<group>"; };
 		F18F1A842C1076A8005364B7 /* KeychainManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerError.swift; sourceTree = "<group>"; };
 		F18F1A862C1076EA005364B7 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
@@ -659,6 +661,7 @@
 			children = (
 				F13089152C1C5A1300FA83EC /* ManagerRegistration.swift */,
 				F13089172C1C5E0300FA83EC /* ServiceRegistration.swift */,
+				F13089242C1DE6E000FA83EC /* StoreRegistration.swift */,
 			);
 			path = DIRegistration;
 			sourceTree = "<group>";
@@ -956,6 +959,7 @@
 				A845D9552BF377A70039AA1D /* UICollectionView+ReusableIdentifier.swift in Sources */,
 				F18F1A8F2C107C70005364B7 /* CancellablesContaining.swift in Sources */,
 				F1076BE52C0DB83300653A6E /* ProfileNavigationCoordinator.swift in Sources */,
+				F13089252C1DE6E000FA83EC /* StoreRegistration.swift in Sources */,
 				F13089102C19B81F00FA83EC /* HomeNavigationCoordinatorEvent.swift in Sources */,
 				F13088E72C11F32900FA83EC /* JokeResponse.swift in Sources */,
 				F190AB292BFDDBA5001AF32D /* SelectableButtonStyle.swift in Sources */,

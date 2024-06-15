@@ -14,7 +14,7 @@ protocol SwipingViewCoordinating: ViewControllerCoordinator {
 
 extension SwipingViewCoordinating where Self: CancellablesContaining, Self: NavigationControllerCoordinator {
     func makeSwipingView(with joke: Joke? = nil, isChildCoordinator: Bool = false) -> UIViewController {
-        let store = SwipingViewStore(isChildCoordinator: isChildCoordinator)
+        let store = container.resolve(type: SwipingViewStore.self)
         store.eventPublisher.sink { [weak self] _ in
             self?.navigationController.popToRootViewController(animated: true)
         }

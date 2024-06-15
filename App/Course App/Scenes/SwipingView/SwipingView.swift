@@ -69,6 +69,6 @@ struct SwipingView: View {
     }
 }
 
-#Preview {
-    SwipingView(store: SwipingViewStore())
-}
+//#Preview {
+//    SwipingView(store: SwipingViewStore())
+//}

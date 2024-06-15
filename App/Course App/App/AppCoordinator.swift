@@ -39,6 +39,7 @@ private extension AppCoordinator {
     func assembleDependencyInjectionRegistration() {
         ManagerRegistration.registerDependencies(to: container)
         ServiceRegistration.registerDependecies(to: container)
+        StoreRegistration.registerDependencies(to: container)
     }
 }
 

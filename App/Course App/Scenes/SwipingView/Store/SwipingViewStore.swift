@@ -14,19 +14,23 @@ final class SwipingViewStore: Store, ObservableObject {
     @Published var viewState: SwipingViewState = .initial
     
     // MARK: Private properties
-    private let jokeService = JokeService(apiManager: APIManager())
-    private let storage = StorageManager()
+    private let jokeService: JokeServicing
+    private let storage: StorageManaging
+    private let keychainService: KeychainServicing
     private let logger = Logger()
-    private let category: String?
+    private var category: String? = nil
     private let eventSubject = PassthroughSubject<SwipingViewEvent, Never>()
-    private var isChildCoordinator = false
+    private var isChildCoordinator: Bool = false
     
-    init(joke: Joke? = nil, isChildCoordinator: Bool = false) {
-        self.isChildCoordinator = isChildCoordinator
-        self.category = joke?.categories.first
-        if let joke {
-            viewState.jokes.append(joke)
-        }
+    init(/*joke: Joke? = nil, isChildCoordinator: Bool = false,*/ storage: StorageManaging, keychainSevice: KeychainServicing, jokeService: JokeServicing) {
+        self.storage = storage
+        self.keychainService = keychainSevice
+        self.jokeService = jokeService
+//        self.isChildCoordinator = isChildCoordinator
+//        self.category = joke?.categories.first
+//        if let joke {
+//            viewState.jokes.append(joke)
+//        }
     }
 }
 
@@ -89,7 +93,7 @@ private extension SwipingViewStore {
                 
                 var jokes: [Joke] = []
                 for try await jokeResponse in group {
-                    let isLiked = try await storage.liked(jokeId: jokeResponse.id)
+                    let isLiked = try await storage.loadLiked(jokeId: jokeResponse.id)
                     jokes.append(Joke(jokeResponse: jokeResponse, isLiked: isLiked))
                 }
                 

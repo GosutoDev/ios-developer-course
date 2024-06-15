@@ -27,7 +27,7 @@ final class StorageManager: StorageManaging {
         }
     }
     
-    func liked(jokeId: String) async throws -> Bool {
+    func loadLiked(jokeId: String) async throws -> Bool {
         let docRef = database.collection("jokesLikes").document(jokeId)
         do {
             let document = try await docRef.getDocument()
