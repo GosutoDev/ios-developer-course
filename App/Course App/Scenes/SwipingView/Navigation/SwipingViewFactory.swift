@@ -14,6 +14,6 @@ protocol SwipingViewFactory {
 
 extension SwipingViewFactory {
     func makeSwipingView(with joke: Joke? = nil) -> UIViewController {
-        UIHostingController(rootView: SwipingView(joke: joke))
+        UIHostingController(rootView: SwipingView(store: SwipingViewStore()))
     }
 }

@@ -11,7 +11,7 @@ protocol Store {
     associatedtype State
     associatedtype Action
     
-    @MainActor var state: State { get }
+    var viewState: State { get }
     
-    @MainActor func send(action: Action)
+    func send(action: Action)
 }

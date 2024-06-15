@@ -39,6 +39,6 @@ extension SwipingViewNavigationCoordinator {
 // MARK: - Factory methods
 private extension SwipingViewNavigationCoordinator {
     func makeSwipingView() -> UIViewController {
-        UIHostingController(rootView: SwipingView())
+        UIHostingController(rootView: SwipingView(store: SwipingViewStore()))
     }
 }

@@ -87,6 +87,9 @@
 		F13089162C1C5A1300FA83EC /* ManagerRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13089152C1C5A1300FA83EC /* ManagerRegistration.swift */; };
 		F13089182C1C5E0300FA83EC /* ServiceRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13089172C1C5E0300FA83EC /* ServiceRegistration.swift */; };
 		F130891A2C1C64FF00FA83EC /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13089192C1C64FF00FA83EC /* Store.swift */; };
+		F130891D2C1C659100FA83EC /* SwipingViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130891C2C1C659100FA83EC /* SwipingViewStore.swift */; };
+		F130891F2C1DA84A00FA83EC /* SwipingViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130891E2C1DA84A00FA83EC /* SwipingViewState.swift */; };
+		F13089212C1DA85900FA83EC /* SwipingViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13089202C1DA85900FA83EC /* SwipingViewAction.swift */; };
 		F18F1A792C107591005364B7 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A782C107591005364B7 /* KeychainAccess */; };
 		F18F1A7B2C1075C7005364B7 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7A2C1075C7005364B7 /* FirebaseFirestoreCombine-Community */; };
 		F18F1A7D2C1075C7005364B7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7C2C1075C7005364B7 /* FirebaseFirestoreSwift */; };
@@ -212,6 +215,9 @@
 		F13089152C1C5A1300FA83EC /* ManagerRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerRegistration.swift; sourceTree = "<group>"; };
 		F13089172C1C5E0300FA83EC /* ServiceRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRegistration.swift; sourceTree = "<group>"; };
 		F13089192C1C64FF00FA83EC /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		F130891C2C1C659100FA83EC /* SwipingViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingViewStore.swift; sourceTree = "<group>"; };
+		F130891E2C1DA84A00FA83EC /* SwipingViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingViewState.swift; sourceTree = "<group>"; };
+		F13089202C1DA85900FA83EC /* SwipingViewAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingViewAction.swift; sourceTree = "<group>"; };
 		F18F1A802C107656005364B7 /* KeychainManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManaging.swift; sourceTree = "<group>"; };
 		F18F1A842C1076A8005364B7 /* KeychainManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerError.swift; sourceTree = "<group>"; };
 		F18F1A862C1076EA005364B7 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
@@ -466,6 +472,7 @@
 			isa = PBXGroup;
 			children = (
 				F1076BC02C09088900653A6E /* Navigation */,
+				F130891B2C1C657800FA83EC /* Store */,
 				F190AB332BFDE2D0001AF32D /* SwipingView.swift */,
 			);
 			path = SwipingView;
@@ -651,6 +658,16 @@
 				F13089172C1C5E0300FA83EC /* ServiceRegistration.swift */,
 			);
 			path = DIRegistration;
+			sourceTree = "<group>";
+		};
+		F130891B2C1C657800FA83EC /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				F13089202C1DA85900FA83EC /* SwipingViewAction.swift */,
+				F130891E2C1DA84A00FA83EC /* SwipingViewState.swift */,
+				F130891C2C1C659100FA83EC /* SwipingViewStore.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 		F18F1A7E2C107639005364B7 /* Managers */ = {
@@ -897,6 +914,7 @@
 				F1076BC22C0908A400653A6E /* SwipingViewNavigationCoordinator.swift in Sources */,
 				F1076BED2C0DBF9000653A6E /* SignInNavigationCoordinator.swift in Sources */,
 				F190AB362BFDE300001AF32D /* SwipingCard.swift in Sources */,
+				F13089212C1DA85900FA83EC /* SwipingViewAction.swift in Sources */,
 				F1076BDD2C0DA40000653A6E /* OnboardingViewEvent.swift in Sources */,
 				F1076BF92C0DDB2800653A6E /* ProfileNavigationCoordinatorEvent.swift in Sources */,
 				F13088F22C14A79600FA83EC /* JokeService.swift in Sources */,
@@ -960,11 +978,13 @@
 				F1076BD72C0D9F2200653A6E /* DeeplinkHandling.swift in Sources */,
 				F190AB2E2BFDDDA1001AF32D /* BorderedModifier.swift in Sources */,
 				F18F1A812C107656005364B7 /* KeychainManaging.swift in Sources */,
+				F130891F2C1DA84A00FA83EC /* SwipingViewState.swift in Sources */,
 				F1076B5A2C00FF2F00653A6E /* FontType.swift in Sources */,
 				F130890E2C19B78700FA83EC /* SwipingViewFactory.swift in Sources */,
 				F18F1A852C1076A8005364B7 /* KeychainManagerError.swift in Sources */,
 				F18F1A952C11B3DB005364B7 /* NetworkingError.swift in Sources */,
 				F190AB382BFDE372001AF32D /* ScratchView.swift in Sources */,
+				F130891D2C1C659100FA83EC /* SwipingViewStore.swift in Sources */,
 				F18F1A972C11B3EB005364B7 /* HTTPHeader.swift in Sources */,
 				F1076BE92C0DB91700653A6E /* ProfileView.swift in Sources */,
 				F1076BB92C08FDA500653A6E /* MainTabBarCoordinator.swift in Sources */,
