@@ -5,6 +5,7 @@
 //  Created by Tomáš Duchoslav on 14.06.2024.
 //
 
+import Combine
 import os
 import Foundation
 
@@ -17,12 +18,22 @@ final class SwipingViewStore: Store, ObservableObject {
     private let storage = StorageManager()
     private let logger = Logger()
     private let category: String?
+    private let eventSubject = PassthroughSubject<SwipingViewEvent, Never>()
+    private var isChildCoordinator: Bool = false
     
-    init(joke: Joke? = nil) {
+    init(joke: Joke? = nil, isChildCoordinator: Bool = false) {
+        self.isChildCoordinator = isChildCoordinator
         self.category = joke?.categories.first
         if let joke {
             viewState.jokes.append(joke)
         }
+    }
+}
+
+// MARK: - Event emitter
+extension SwipingViewStore: EventEmitting {
+    var eventPublisher: AnyPublisher<SwipingViewEvent, Never> {
+        eventSubject.eraseToAnyPublisher()
     }
 }
 
@@ -31,12 +42,32 @@ final class SwipingViewStore: Store, ObservableObject {
 extension SwipingViewStore {
     @MainActor
     func send(action: SwipingViewAction) {
-        
+        switch action {
+        case .viewDidLoad:
+            viewState.status = .loading
+            loadRandomJokes()
+        case let .dataLoaded(jokes):
+            viewState.jokes.append(contentsOf: jokes)
+            viewState.status = .ready
+        case let .didLike(joke, liked):
+            storeJokeLike(joke: joke, liked: liked)
+            removeCard(of: joke)
+            if viewState.jokes.isEmpty {
+                send(action: .noMoreJokes)
+            }
+        case .noMoreJokes:
+            if isChildCoordinator {
+                eventSubject.send(.dismiss)
+            } else {
+                viewState.status = .loading
+                loadRandomJokes()
+            }
+        }
     }
 }
 
 // MARK: - Functions
-extension SwipingViewStore {
+private extension SwipingViewStore {
     // MARK: Loading random jokes
     func loadRandomJokes() {
         Task {
@@ -46,7 +77,7 @@ extension SwipingViewStore {
                 }
                 
                 // swiftlint:disable:next no_magic_numbers
-                for _ in 1...10 {
+                for _ in 1...5 {
                     group.addTask {
                         if let category = self.category {
                             try await self.jokeService.loadJokeForCategory(category)
@@ -61,24 +92,16 @@ extension SwipingViewStore {
                     let isLiked = try await storage.liked(jokeId: jokeResponse.id)
                     jokes.append(Joke(jokeResponse: jokeResponse, isLiked: isLiked))
                 }
-                self.viewState.jokes.append(contentsOf: jokes)
-                logger.info("INFO: Count cards is \(self.viewState.jokes.count).")
+                
+                await send(action: .dataLoaded(jokes))
             }
         }
     }
     
     // MARK: Storing joke like
-    func storeJokeLike(jokeId: String, liked: Bool) {
+    func storeJokeLike(joke: Joke, liked: Bool) {
         Task {
-            try await storage.storeLike(jokeId: jokeId, liked: liked)
-        }
-    }
-    
-    // MARK: Check for jokes count
-    func checkCardStack() {
-        let fiveCards = 5
-        if viewState.jokes.count <= fiveCards {
-            loadRandomJokes()
+            try await storage.storeLike(jokeId: joke.jokeID, liked: liked)
         }
     }
     

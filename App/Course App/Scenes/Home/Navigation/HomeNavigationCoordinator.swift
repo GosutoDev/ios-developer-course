@@ -8,9 +8,10 @@
 import Combine
 import DependencyInjection
 import os
+import SwiftUI
 import UIKit
 
-final class HomeNavigationCoordinator: NavigationControllerCoordinator, CancellablesContaining, SwipingViewFactory {
+final class HomeNavigationCoordinator: NavigationControllerCoordinator, CancellablesContaining {
     // MARK: Private properties
     private(set) lazy var navigationController: UINavigationController = CustomNavigationController()
     private let logger = Logger()
@@ -55,15 +56,24 @@ private extension HomeNavigationCoordinator {
         .store(in: &cancellables)
         return homeView
     }
+    
+    func makeSwipingView(with joke: Joke? = nil, isChildCoordinator: Bool = false) -> UIViewController {
+        let store = SwipingViewStore(isChildCoordinator: isChildCoordinator)
+        store.eventPublisher.sink { [weak self] _ in
+            self?.navigationController.popToRootViewController(animated: true)
+        }
+        .store(in: &cancellables)
+        return UIHostingController(rootView: SwipingView(store: store))
+    }
 }
 
 // MARK: - Handling events
-private extension HomeNavigationCoordinator {
+extension HomeNavigationCoordinator {
     func handle(_ event: HomeViewEvent) {
         switch event {
         case let .itemTapped(joke):
             logger.info("Joke on home screen was tapped \(joke.text)")
-            navigationController.pushViewController(makeSwipingView(with: joke), animated: true)
+            navigationController.pushViewController(makeSwipingView(with: joke, isChildCoordinator: true), animated: true)
         }
     }
 }

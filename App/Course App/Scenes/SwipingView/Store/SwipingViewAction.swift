@@ -10,6 +10,6 @@ import Foundation
 enum SwipingViewAction {
     case viewDidLoad
     case dataLoaded([Joke])
-    case didLike(String, Bool)
-    case swipeHalfPack
+    case didLike(Joke, Bool)
+    case noMoreJokes
 }

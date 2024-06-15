@@ -9,11 +9,5 @@ import SwiftUI
 import UIKit
 
 protocol SwipingViewFactory {
-    func makeSwipingView(with joke: Joke?) -> UIViewController
-}
-
-extension SwipingViewFactory {
-    func makeSwipingView(with joke: Joke? = nil) -> UIViewController {
-        UIHostingController(rootView: SwipingView(store: SwipingViewStore()))
-    }
+    func makeSwipingView(with joke: Joke?, isChildCoordinator: Bool) -> UIViewController
 }

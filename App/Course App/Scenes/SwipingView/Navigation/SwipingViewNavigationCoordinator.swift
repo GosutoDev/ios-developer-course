@@ -5,12 +5,13 @@
 //  Created by Tomáš Duchoslav on 30.05.2024.
 //
 
+import Combine
 import DependencyInjection
 import os
 import SwiftUI
 import UIKit
 
-final class SwipingViewNavigationCoordinator: NavigationControllerCoordinator {
+final class SwipingViewNavigationCoordinator: NavigationControllerCoordinator, CancellablesContaining {
     // MARK: Private properties
     private(set) lazy var navigationController: UINavigationController = CustomNavigationController()
     private let logger = Logger()
@@ -18,6 +19,7 @@ final class SwipingViewNavigationCoordinator: NavigationControllerCoordinator {
     // MARK: Public Properties
     var childCoordinators = [Coordinator]()
     var container: Container
+    var cancellables = Set<AnyCancellable>()
     
     // MARK: Lifecycle
     deinit {
@@ -37,8 +39,9 @@ extension SwipingViewNavigationCoordinator {
 }
 
 // MARK: - Factory methods
-private extension SwipingViewNavigationCoordinator {
-    func makeSwipingView() -> UIViewController {
-        UIHostingController(rootView: SwipingView(store: SwipingViewStore()))
+extension SwipingViewNavigationCoordinator: SwipingViewFactory {
+    func makeSwipingView(with joke: Joke? = nil, isChildCoordinator: Bool = false) -> UIViewController {
+        let store = SwipingViewStore(isChildCoordinator: isChildCoordinator)
+        return UIHostingController(rootView: SwipingView(store: store))
     }
 }
