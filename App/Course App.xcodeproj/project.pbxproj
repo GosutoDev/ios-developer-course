@@ -228,6 +228,7 @@
 		F13089272C202D2B00FA83EC /* SignInViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewStore.swift; sourceTree = "<group>"; };
 		F130892A2C202D3E00FA83EC /* SignInViewAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewAction.swift; sourceTree = "<group>"; };
 		F130892C2C202D4500FA83EC /* SignInViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewState.swift; sourceTree = "<group>"; };
+		F13089312C204FB900FA83EC /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DesignSystem; sourceTree = "<group>"; };
 		F18F1A802C107656005364B7 /* KeychainManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManaging.swift; sourceTree = "<group>"; };
 		F18F1A842C1076A8005364B7 /* KeychainManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerError.swift; sourceTree = "<group>"; };
 		F18F1A862C1076EA005364B7 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
@@ -283,6 +284,7 @@
 		A81F21E72BDC1DB700A8A301 = {
 			isa = PBXGroup;
 			children = (
+				F13089312C204FB900FA83EC /* DesignSystem */,
 				A8830C342BED05FC005CAFEA /* Configurations */,
 				A81F21F22BDC1DB700A8A301 /* Course App */,
 				A8830C1C2BED0315005CAFEA /* Course App UnitTests */,
