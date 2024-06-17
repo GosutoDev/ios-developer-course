@@ -20,7 +20,7 @@ final class SwipingViewStore: Store, ObservableObject {
     private let logger = Logger()
     private var category: String? = nil
     private let eventSubject = PassthroughSubject<SwipingViewEvent, Never>()
-    private var isChildCoordinator: Bool = false
+    private var isChildCoordinator = false
     
     init(/*joke: Joke? = nil, isChildCoordinator: Bool = false,*/ storage: StorageManaging, keychainSevice: KeychainServicing, jokeService: JokeServicing) {
         self.storage = storage

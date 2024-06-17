@@ -13,11 +13,13 @@ enum ServiceRegistration {
         container.autoregister(
             type: KeychainServicing.self,
             in: .shared,
-            initializer: KeychainService.init)
+            initializer: KeychainService.init
+        )
         
         container.autoregister(
             type: JokeServicing.self,
             in: .shared,
-            initializer: JokeService.init)
+            initializer: JokeService.init
+        )
     }
 }

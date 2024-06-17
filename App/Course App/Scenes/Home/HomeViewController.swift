@@ -6,9 +6,9 @@
 //
 
 import Combine
+import DesignSystem
 import os
 import SwiftUI
-import DesignSystem
 import UIKit
 
 final class HomeViewController: UIViewController {

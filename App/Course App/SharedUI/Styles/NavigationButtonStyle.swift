@@ -5,8 +5,8 @@
 //  Created by Tomáš Duchoslav on 01.06.2024.
 //
 
-import SwiftUI
 import DesignSystem
+import SwiftUI
 
 struct NavigationButtonStyle: ButtonStyle {
     private enum StyleConstant {
