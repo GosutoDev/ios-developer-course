@@ -53,12 +53,12 @@ private extension SignInNavigationCoordinator {
     }
     
     func makeSignInView() -> UIViewController {
-        let signInView = SignInView()
-        signInView.eventPublisher.sink { [weak self] event in
+        let store = container.resolve(type: SignInViewStore.self)
+        store.eventPublisher.sink { [weak self] event in
             self?.handle(event)
         }
         .store(in: &cancellables)
-        return UIHostingController(rootView: signInView)
+        return UIHostingController(rootView: SignInView(store: store))
     }
 }
 

@@ -110,6 +110,7 @@ private extension SwipingViewStore {
     }
     
     // MARK: Remove joke
+    @MainActor
     func removeCard(of joke: Joke) {
         if let index = viewState.jokes.firstIndex(of: joke) {
             loggerInfo(message: "INFO: Card number \(index) removed from Jokes array")
