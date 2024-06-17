@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DesignSystem
 
 private struct TextStyle: ViewModifier {
     let textType: TextType

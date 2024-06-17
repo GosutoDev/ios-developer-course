@@ -8,6 +8,7 @@
 import Combine
 import os
 import SwiftUI
+import DesignSystem
 import UIKit
 
 final class HomeViewController: UIViewController {

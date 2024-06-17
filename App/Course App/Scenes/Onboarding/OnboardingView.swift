@@ -6,6 +6,7 @@
 //
 
 import Combine
+import DesignSystem
 import SwiftUI
 
 struct OnboardingView: View {

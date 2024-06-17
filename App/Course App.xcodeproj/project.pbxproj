@@ -26,13 +26,6 @@
 		A8830C4F2BEF8565005CAFEA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A8830C4E2BEF8565005CAFEA /* FirebaseAuth */; };
 		A8830C512BEF8565005CAFEA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A8830C502BEF8565005CAFEA /* FirebaseFirestore */; };
 		F1076B532C00FE1000653A6E /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076B522C00FE1000653A6E /* TextStyle.swift */; };
-		F1076B562C00FE4A00653A6E /* TextType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076B552C00FE4A00653A6E /* TextType.swift */; };
-		F1076B582C00FF2400653A6E /* FontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076B572C00FF2400653A6E /* FontSize.swift */; };
-		F1076B5A2C00FF2F00653A6E /* FontType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076B592C00FF2F00653A6E /* FontType.swift */; };
-		F1076B5C2C00FF4100653A6E /* PaddingSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076B5B2C00FF4100653A6E /* PaddingSize.swift */; };
-		F1076B5E2C00FF5200653A6E /* CornerRadiusSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076B5D2C00FF5200653A6E /* CornerRadiusSize.swift */; };
-		F1076B612C00FF7500653A6E /* Font+AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076B602C00FF7500653A6E /* Font+AppFonts.swift */; };
-		F1076B632C00FF8500653A6E /* UIFont+AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076B622C00FF8500653A6E /* UIFont+AppFonts.swift */; };
 		F1076B652C01016B00653A6E /* UINavigationController+NavBarUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076B642C01016B00653A6E /* UINavigationController+NavBarUI.swift */; };
 		F1076B672C0101A700653A6E /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076B662C0101A700653A6E /* CustomNavigationController.swift */; };
 		F1076BB02C08FB5500653A6E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BAF2C08FB5500653A6E /* Coordinator.swift */; };
@@ -49,7 +42,6 @@
 		F1076BCF2C0B552B00653A6E /* NavigationButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BCE2C0B552B00653A6E /* NavigationButtonStyle.swift */; };
 		F1076BD12C0B560E00653A6E /* ButtonStyle+CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BD02C0B560E00653A6E /* ButtonStyle+CustomButtonStyle.swift */; };
 		F1076BD32C0B5CAA00653A6E /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BD22C0B5CAA00653A6E /* OnboardingPage.swift */; };
-		F1076BD52C0D9A7800653A6E /* OpacityVisibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BD42C0D9A7800653A6E /* OpacityVisibility.swift */; };
 		F1076BD72C0D9F2200653A6E /* DeeplinkHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BD62C0D9F2200653A6E /* DeeplinkHandling.swift */; };
 		F1076BD92C0D9F5400653A6E /* Deeplink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BD82C0D9F5400653A6E /* Deeplink.swift */; };
 		F1076BDB2C0DA2EA00653A6E /* EventEmitting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1076BDA2C0DA2EA00653A6E /* EventEmitting.swift */; };
@@ -95,6 +87,7 @@
 		F13089282C202D2B00FA83EC /* SignInViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13089272C202D2B00FA83EC /* SignInViewStore.swift */; };
 		F130892B2C202D3E00FA83EC /* SignInViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130892A2C202D3E00FA83EC /* SignInViewAction.swift */; };
 		F130892D2C202D4500FA83EC /* SignInViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F130892C2C202D4500FA83EC /* SignInViewState.swift */; };
+		F13089342C205C3300FA83EC /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = F13089332C205C3300FA83EC /* DesignSystem */; };
 		F18F1A792C107591005364B7 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A782C107591005364B7 /* KeychainAccess */; };
 		F18F1A7B2C1075C7005364B7 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7A2C1075C7005364B7 /* FirebaseFirestoreCombine-Community */; };
 		F18F1A7D2C1075C7005364B7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F18F1A7C2C1075C7005364B7 /* FirebaseFirestoreSwift */; };
@@ -160,13 +153,6 @@
 		A8830C472BEF80FA005CAFEA /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
 		A8830C4B2BEF84BC005CAFEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F1076B522C00FE1000653A6E /* TextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyle.swift; sourceTree = "<group>"; };
-		F1076B552C00FE4A00653A6E /* TextType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextType.swift; sourceTree = "<group>"; };
-		F1076B572C00FF2400653A6E /* FontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSize.swift; sourceTree = "<group>"; };
-		F1076B592C00FF2F00653A6E /* FontType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontType.swift; sourceTree = "<group>"; };
-		F1076B5B2C00FF4100653A6E /* PaddingSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingSize.swift; sourceTree = "<group>"; };
-		F1076B5D2C00FF5200653A6E /* CornerRadiusSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusSize.swift; sourceTree = "<group>"; };
-		F1076B602C00FF7500653A6E /* Font+AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+AppFonts.swift"; sourceTree = "<group>"; };
-		F1076B622C00FF8500653A6E /* UIFont+AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+AppFonts.swift"; sourceTree = "<group>"; };
 		F1076B642C01016B00653A6E /* UINavigationController+NavBarUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+NavBarUI.swift"; sourceTree = "<group>"; };
 		F1076B662C0101A700653A6E /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		F1076BAF2C08FB5500653A6E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -183,7 +169,6 @@
 		F1076BCE2C0B552B00653A6E /* NavigationButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButtonStyle.swift; sourceTree = "<group>"; };
 		F1076BD02C0B560E00653A6E /* ButtonStyle+CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonStyle+CustomButtonStyle.swift"; sourceTree = "<group>"; };
 		F1076BD22C0B5CAA00653A6E /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
-		F1076BD42C0D9A7800653A6E /* OpacityVisibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpacityVisibility.swift; sourceTree = "<group>"; };
 		F1076BD62C0D9F2200653A6E /* DeeplinkHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkHandling.swift; sourceTree = "<group>"; };
 		F1076BD82C0D9F5400653A6E /* Deeplink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deeplink.swift; sourceTree = "<group>"; };
 		F1076BDA2C0DA2EA00653A6E /* EventEmitting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEmitting.swift; sourceTree = "<group>"; };
@@ -257,6 +242,7 @@
 			files = (
 				F18F1A7D2C1075C7005364B7 /* FirebaseFirestoreSwift in Frameworks */,
 				A8830C4F2BEF8565005CAFEA /* FirebaseAuth in Frameworks */,
+				F13089342C205C3300FA83EC /* DesignSystem in Frameworks */,
 				F18F1A7B2C1075C7005364B7 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				F13089132C1C55AF00FA83EC /* DependencyInjection in Frameworks */,
 				A8830C512BEF8565005CAFEA /* FirebaseFirestore in Frameworks */,
@@ -290,6 +276,7 @@
 				A8830C1C2BED0315005CAFEA /* Course App UnitTests */,
 				A8830C292BED03BB005CAFEA /* Course App UITests */,
 				A81F21F12BDC1DB700A8A301 /* Products */,
+				F13089322C205C3300FA83EC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -420,24 +407,9 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		F1076B542C00FE4000653A6E /* DesignSystem */ = {
-			isa = PBXGroup;
-			children = (
-				F1076B5D2C00FF5200653A6E /* CornerRadiusSize.swift */,
-				F1076B572C00FF2400653A6E /* FontSize.swift */,
-				F1076B592C00FF2F00653A6E /* FontType.swift */,
-				F1076BD42C0D9A7800653A6E /* OpacityVisibility.swift */,
-				F1076B5B2C00FF4100653A6E /* PaddingSize.swift */,
-				F1076B552C00FE4A00653A6E /* TextType.swift */,
-			);
-			path = DesignSystem;
-			sourceTree = "<group>";
-		};
 		F1076B5F2C00FF6600653A6E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F1076B602C00FF7500653A6E /* Font+AppFonts.swift */,
-				F1076B622C00FF8500653A6E /* UIFont+AppFonts.swift */,
 				F1076B642C01016B00653A6E /* UINavigationController+NavBarUI.swift */,
 				F1076BD02C0B560E00653A6E /* ButtonStyle+CustomButtonStyle.swift */,
 			);
@@ -695,6 +667,13 @@
 			path = Store;
 			sourceTree = "<group>";
 		};
+		F13089322C205C3300FA83EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F18F1A7E2C107639005364B7 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -753,7 +732,6 @@
 		F190AB262BFDDB68001AF32D /* SharedUI */ = {
 			isa = PBXGroup;
 			children = (
-				F1076B542C00FE4000653A6E /* DesignSystem */,
 				F1076B5F2C00FF6600653A6E /* Extensions */,
 				F190AB272BFDDB89001AF32D /* Styles */,
 				F190AB2C2BFDDD87001AF32D /* ViewModifiers */,
@@ -806,6 +784,7 @@
 				F18F1A7A2C1075C7005364B7 /* FirebaseFirestoreCombine-Community */,
 				F18F1A7C2C1075C7005364B7 /* FirebaseFirestoreSwift */,
 				F13089122C1C55AF00FA83EC /* DependencyInjection */,
+				F13089332C205C3300FA83EC /* DesignSystem */,
 			);
 			productName = "Course App";
 			productReference = A81F21F02BDC1DB700A8A301 /* App Course Dev.app */;
@@ -944,10 +923,8 @@
 				F1076BDD2C0DA40000653A6E /* OnboardingViewEvent.swift in Sources */,
 				F1076BF92C0DDB2800653A6E /* ProfileNavigationCoordinatorEvent.swift in Sources */,
 				F13088F22C14A79600FA83EC /* JokeService.swift in Sources */,
-				F1076B582C00FF2400653A6E /* FontSize.swift in Sources */,
 				F1076B532C00FE1000653A6E /* TextStyle.swift in Sources */,
 				F13088EB2C130A1500FA83EC /* HTTPResponseStatusCode.swift in Sources */,
-				F1076B632C00FF8500653A6E /* UIFont+AppFonts.swift in Sources */,
 				F18F1A922C108CCB005364B7 /* Endpoint.swift in Sources */,
 				F13088E42C11F08000FA83EC /* APIManager.swift in Sources */,
 				F18F1A992C11B400005364B7 /* HTTPMethod.swift in Sources */,
@@ -955,17 +932,13 @@
 				F13089232C1DCB0C00FA83EC /* SwipingViewEvent.swift in Sources */,
 				F18F1A892C107725005364B7 /* KeychainServicing.swift in Sources */,
 				F1076BCF2C0B552B00653A6E /* NavigationButtonStyle.swift in Sources */,
-				F1076BD52C0D9A7800653A6E /* OpacityVisibility.swift in Sources */,
 				F1076BB22C08FC4700653A6E /* ViewControllerCoordinator.swift in Sources */,
-				F1076B562C00FE4A00653A6E /* TextType.swift in Sources */,
-				F1076B5C2C00FF4100653A6E /* PaddingSize.swift in Sources */,
 				F1076BE12C0DAB1C00653A6E /* CustomNavigationControllerEvent.swift in Sources */,
 				F13089022C17146600FA83EC /* StorageManaging.swift in Sources */,
 				F1076BD32C0B5CAA00653A6E /* OnboardingPage.swift in Sources */,
 				F1076BB02C08FB5500653A6E /* Coordinator.swift in Sources */,
 				F1076BF32C0DC55200653A6E /* SignInNavigationCoordinatorEvent.swift in Sources */,
 				F13088E22C11F05300FA83EC /* APIManaging.swift in Sources */,
-				F1076B5E2C00FF5200653A6E /* CornerRadiusSize.swift in Sources */,
 				F18F1A9B2C11B413005364B7 /* Endpoint+Convenience.swift in Sources */,
 				F1076BCD2C0B475A00653A6E /* OnboardingNavigationCoordinator.swift in Sources */,
 				F18F1A8D2C107AFE005364B7 /* OnboardingCoordinatorPresenting.swift in Sources */,
@@ -988,7 +961,6 @@
 				F13089182C1C5E0300FA83EC /* ServiceRegistration.swift in Sources */,
 				F13089042C1714AF00FA83EC /* StorageManager.swift in Sources */,
 				F1076BBD2C09027100653A6E /* CoordinatorView.swift in Sources */,
-				F1076B612C00FF7500653A6E /* Font+AppFonts.swift in Sources */,
 				A845D94C2BF3711D0039AA1D /* DataProvider.swift in Sources */,
 				F190AB342BFDE2D0001AF32D /* SwipingView.swift in Sources */,
 				F18F1A8B2C10774C005364B7 /* KeychainService.swift in Sources */,
@@ -1008,7 +980,6 @@
 				F190AB2E2BFDDDA1001AF32D /* BorderedModifier.swift in Sources */,
 				F18F1A812C107656005364B7 /* KeychainManaging.swift in Sources */,
 				F130891F2C1DA84A00FA83EC /* SwipingViewState.swift in Sources */,
-				F1076B5A2C00FF2F00653A6E /* FontType.swift in Sources */,
 				F130890E2C19B78700FA83EC /* SwipingViewCoordinating.swift in Sources */,
 				F18F1A852C1076A8005364B7 /* KeychainManagerError.swift in Sources */,
 				F18F1A952C11B3DB005364B7 /* NetworkingError.swift in Sources */,
@@ -1718,6 +1689,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F13089112C1C55AF00FA83EC /* XCRemoteSwiftPackageReference "ios-dependency-injection" */;
 			productName = DependencyInjection;
+		};
+		F13089332C205C3300FA83EC /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignSystem;
 		};
 		F18F1A782C107591005364B7 /* KeychainAccess */ = {
 			isa = XCSwiftPackageProductDependency;

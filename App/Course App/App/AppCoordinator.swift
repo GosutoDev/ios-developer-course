@@ -7,6 +7,7 @@
 
 import Combine
 import DependencyInjection
+import DesignSystem
 import UIKit
 
 final class AppCoordinator: ObservableObject, ViewControllerCoordinator, CancellablesContaining {
@@ -18,6 +19,7 @@ final class AppCoordinator: ObservableObject, ViewControllerCoordinator, Cancell
             makeSignInFlow().rootViewController
         }
     }()
+    
     
     // MARK: Public properties
     var cancellables = Set<AnyCancellable>()

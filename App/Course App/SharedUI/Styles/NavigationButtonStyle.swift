@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DesignSystem
 
 struct NavigationButtonStyle: ButtonStyle {
     private enum StyleConstant {
