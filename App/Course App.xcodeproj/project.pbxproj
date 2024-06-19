@@ -294,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				F1076B682C0101C300653A6E /* App */,
+				F13089142C1C59EB00FA83EC /* DIRegistration */,
 				A845D9502BF376860039AA1D /* Common */,
 				A8830C3E2BED0E80005CAFEA /* Course-App-Info.plist */,
 				A845D9482BF36F070039AA1D /* DataAPI */,
@@ -422,7 +423,6 @@
 				F1076BBE2C09052900653A6E /* AppCoordinator.swift */,
 				A8830C3F2BED0EE0005CAFEA /* BuildConfiguration.swift */,
 				A81F21F32BDC1DB700A8A301 /* Course_AppApp.swift */,
-				F13089142C1C59EB00FA83EC /* DIRegistration */,
 				A8830C4B2BEF84BC005CAFEA /* GoogleService-Info.plist */,
 				A845D9402BF364410039AA1D /* Resources */,
 			);
