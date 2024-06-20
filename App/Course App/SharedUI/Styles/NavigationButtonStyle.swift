@@ -5,6 +5,7 @@
 //  Created by Tomáš Duchoslav on 01.06.2024.
 //
 
+import DesignSystem
 import SwiftUI
 
 struct NavigationButtonStyle: ButtonStyle {

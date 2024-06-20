@@ -5,21 +5,29 @@
 //  Created by Tomáš Duchoslav on 30.05.2024.
 //
 
+import Combine
+import DependencyInjection
 import os
 import SwiftUI
 import UIKit
 
-final class SwipingViewNavigationCoordinator: NavigationControllerCoordinator {
+final class SwipingViewNavigationCoordinator: NavigationControllerCoordinator, CancellablesContaining, SwipingViewCoordinating {
     // MARK: Private properties
     private(set) lazy var navigationController: UINavigationController = CustomNavigationController()
     private let logger = Logger()
     
     // MARK: Public Properties
     var childCoordinators = [Coordinator]()
+    var container: Container
+    var cancellables = Set<AnyCancellable>()
     
     // MARK: Lifecycle
     deinit {
         logger.info("Deinit SwipingViewNavigationCoordinator")
+    }
+    
+    init(container: Container) {
+        self.container = container
     }
 }
 
@@ -27,12 +35,5 @@ final class SwipingViewNavigationCoordinator: NavigationControllerCoordinator {
 extension SwipingViewNavigationCoordinator {
     func start() {
         navigationController.setViewControllers([makeSwipingView()], animated: false)
-    }
-}
-
-// MARK: - Factory methods
-private extension SwipingViewNavigationCoordinator {
-    func makeSwipingView() -> UIViewController {
-        UIHostingController(rootView: SwipingView())
     }
 }

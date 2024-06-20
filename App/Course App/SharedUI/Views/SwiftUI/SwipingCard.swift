@@ -5,6 +5,7 @@
 //  Created by Tomáš Duchoslav on 22.05.2024.
 //
 
+import DesignSystem
 import SwiftUI
 
 struct SwipingCard: View {

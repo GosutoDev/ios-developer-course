@@ -6,6 +6,7 @@
 //
 
 import Combine
+import DependencyInjection
 import os
 import SwiftUI
 import UIKit
@@ -19,10 +20,15 @@ final class MainTabBarCoordinator: NSObject, TabBarControllerCoordinator, Cancel
     // MARK: Public Properties
     var cancellables = Set<AnyCancellable>()
     var childCoordinators = [Coordinator]()
+    var container: Container
     
     // MARK: Lifecycle
     deinit {
         logger.info("Deinit MainTabBarCoordinator")
+    }
+    
+    init(container: Container) {
+        self.container = container
     }
 }
 
@@ -68,7 +74,7 @@ private extension MainTabBarCoordinator {
     }
     
     func makeHomeFlow() -> ViewControllerCoordinator {
-        let homeViewCoordinator = HomeNavigationCoordinator()
+        let homeViewCoordinator = HomeNavigationCoordinator(container: container)
         startChildCoordinator(homeViewCoordinator)
         homeViewCoordinator.rootViewController.tabBarItem = UITabBarItem(
             title: "Categories",
@@ -79,14 +85,14 @@ private extension MainTabBarCoordinator {
     }
 
     func makeSwipingFlow() -> ViewControllerCoordinator {
-        let swipingNavigationCoordinator = SwipingViewNavigationCoordinator()
+        let swipingNavigationCoordinator = SwipingViewNavigationCoordinator(container: container)
         startChildCoordinator(swipingNavigationCoordinator)
         swipingNavigationCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "Random", image: UIImage(systemName: "switch.2"), tag: 1)
         return swipingNavigationCoordinator
     }
     
     func makeProfileFlow() -> ViewControllerCoordinator {
-        let profileNavigationCoordinator = ProfileNavigationCoordinator()
+        let profileNavigationCoordinator = ProfileNavigationCoordinator(container: container)
         startChildCoordinator(profileNavigationCoordinator)
         profileNavigationCoordinator.eventPublisher.sink { [weak self] event in
             self?.handle(event)

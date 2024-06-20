@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum FontType: String {
+public enum FontType: String {
     case regular = "Poppins-Regular"
     case bold = "Poppins-Bold"
     case mediumItalic = "Poppins-MediumItalic"

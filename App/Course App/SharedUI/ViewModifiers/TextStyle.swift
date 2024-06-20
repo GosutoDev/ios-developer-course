@@ -5,6 +5,7 @@
 //  Created by Tomáš Duchoslav on 24.05.2024.
 //
 
+import DesignSystem
 import SwiftUI
 
 private struct TextStyle: ViewModifier {

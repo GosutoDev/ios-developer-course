@@ -10,53 +10,27 @@ import os
 import SwiftUI
 
 struct SignInView: View {
-    // MARK: Private properties
-    @State private var emailField: String
-    @State private var passwordField: String
-    private let eventSubject = PassthroughSubject<SignInViewEvent, Never>()
-    private let authManager = FirebaseAuthManager()
-    private let logger = Logger()
+    @StateObject private var store: SignInViewStore
     
-    // MARK: Lifecycle
-    init(emailField: String = "Test@test.test", passwordField: String = "test123") {
-        self.emailField = emailField
-        self.passwordField = passwordField
+    init(store: SignInViewStore) {
+        _store = .init(wrappedValue: store)
     }
     
     var body: some View {
         Form {
-            TextField("Email", text: $emailField)
-            SecureField("password", text: $passwordField)
+            TextField("Email", text: $store.viewState.emailField)
+            SecureField("password", text: $store.viewState.passwordField)
             Button("SignIn") {
-                signIn()
+                store.send(action: .signInButtonTapped)
             }
         }
         .navigationTitle("SignIn")
-    }
-}
-
-// MARK: - Event emitter
-extension SignInView: EventEmitting {
-    var eventPublisher: AnyPublisher<SignInViewEvent, Never> {
-        eventSubject.eraseToAnyPublisher()
-    }
-}
-
-// MARK: - Functions
-private extension SignInView {
-    @MainActor
-    func signIn() {
-        Task {
-            do {
-                try await authManager.signIn(Credentials(email: emailField, password: passwordField))
-                eventSubject.send(.signedIn)
-            } catch {
-                logger.info("ERROR: \(error)")
-            }
+        .onFirstAppear {
+            store.send(action: .viewDidLoad)
         }
     }
 }
 
 #Preview {
-    SignInView()
+    SignInView(store: SignInViewStore(authManager: FirebaseAuthManager()))
 }

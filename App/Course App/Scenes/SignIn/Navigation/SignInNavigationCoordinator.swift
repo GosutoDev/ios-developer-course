@@ -6,6 +6,7 @@
 //
 
 import Combine
+import DependencyInjection
 import os
 import SwiftUI
 import UIKit
@@ -19,9 +20,15 @@ final class SignInNavigationCoordinator: NavigationControllerCoordinator, Cancel
     // MARK: Public properties
     var childCoordinators = [Coordinator]()
     var cancellables = Set<AnyCancellable>()
+    var container: Container
     
+    // MARK: Lifecycle
     deinit {
         logger.info("Deinit SignInVIew")
+    }
+    
+    init(container: Container) {
+        self.container = container
     }
 }
 
@@ -46,12 +53,12 @@ private extension SignInNavigationCoordinator {
     }
     
     func makeSignInView() -> UIViewController {
-        let signInView = SignInView()
-        signInView.eventPublisher.sink { [weak self] event in
+        let store = container.resolve(type: SignInViewStore.self)
+        store.eventPublisher.sink { [weak self] event in
             self?.handle(event)
         }
         .store(in: &cancellables)
-        return UIHostingController(rootView: signInView)
+        return UIHostingController(rootView: SignInView(store: store))
     }
 }
 

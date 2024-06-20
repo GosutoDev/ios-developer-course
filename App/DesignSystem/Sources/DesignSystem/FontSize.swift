@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum FontSize: CGFloat {
+public enum FontSize: CGFloat {
     case size28 = 28
     case size22 = 22
     case size18 = 18

@@ -8,7 +8,7 @@
 import SwiftUI
 import UIKit
 
-enum TextType {
+public enum TextType {
     case navigationTitle
     case sectionTitle
     case baseText
@@ -16,7 +16,7 @@ enum TextType {
 }
 
 // MARK: - TextType attributes SwiftUI
-extension TextType {
+public extension TextType {
     var font: Font {
         switch self {
         case .navigationTitle:
@@ -36,7 +36,7 @@ extension TextType {
 }
 
 // MARK: - TextType attributes UIKit
-extension TextType {
+public extension TextType {
     var uiFont: UIFont {
         switch self {
         case .navigationTitle:

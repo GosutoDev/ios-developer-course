@@ -6,6 +6,8 @@
 //
 
 import Combine
+import DependencyInjection
+import DesignSystem
 import UIKit
 
 final class AppCoordinator: ObservableObject, ViewControllerCoordinator, CancellablesContaining {
@@ -18,9 +20,11 @@ final class AppCoordinator: ObservableObject, ViewControllerCoordinator, Cancell
         }
     }()
     
+    
     // MARK: Public properties
     var cancellables = Set<AnyCancellable>()
     var childCoordinators = [Coordinator]()
+    var container = Container()
     @Published var isSignedIn = false
 }
 
@@ -28,13 +32,23 @@ final class AppCoordinator: ObservableObject, ViewControllerCoordinator, Cancell
 extension AppCoordinator {
     func start() {
         setupAppUI()
+        assembleDependencyInjectionRegistration()
+    }
+}
+
+// MARK: - Dependency injection registration
+private extension AppCoordinator {
+    func assembleDependencyInjectionRegistration() {
+        ManagerRegistration.registerDependencies(to: container)
+        ServiceRegistration.registerDependecies(to: container)
+        StoreRegistration.registerDependencies(to: container)
     }
 }
 
 // MARK: - Factory Methods
 private extension AppCoordinator {
     func makeTabBarFlow() -> ViewControllerCoordinator {
-        let mainTabBarCoordinator = MainTabBarCoordinator()
+        let mainTabBarCoordinator = MainTabBarCoordinator(container: container)
         startChildCoordinator(mainTabBarCoordinator)
         mainTabBarCoordinator.eventPublisher.sink { [weak self] event in
             self?.handle(event)
@@ -44,7 +58,7 @@ private extension AppCoordinator {
     }
     
     func makeSignInFlow() -> ViewControllerCoordinator {
-        let signInCoordinator = SignInNavigationCoordinator()
+        let signInCoordinator = SignInNavigationCoordinator(container: container)
         startChildCoordinator(signInCoordinator)
         signInCoordinator.eventPublisher.sink { [weak self] event in
             self?.handle(event)

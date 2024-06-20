@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension Font {
+public extension Font {
     static func regular(with size: FontSize) -> Font {
         Font.custom(FontType.regular.rawValue, size: size.rawValue)
     }

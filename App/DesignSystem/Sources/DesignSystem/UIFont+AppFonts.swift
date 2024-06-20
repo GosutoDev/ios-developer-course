@@ -7,7 +7,7 @@
 
 import UIKit
 // swiftlint:disable force_unwrapping
-extension UIFont {
+public extension UIFont {
     static func regular(with size: FontSize) -> UIFont {
         UIFont(name: FontType.regular.rawValue, size: size.rawValue)!
     }

@@ -6,6 +6,7 @@
 //
 
 import Combine
+import DependencyInjection
 import os
 import SwiftUI
 import UIKit
@@ -19,10 +20,15 @@ final class ProfileNavigationCoordinator: NSObject, NavigationControllerCoordina
     // MARK: Public properties
     var cancellables = Set<AnyCancellable>()
     var childCoordinators = [Coordinator]()
+    var container: Container
     
     // MARK: Lifecycle
     deinit {
         logger.info("Deinit ProfileNavigationCoordinator")
+    }
+    
+    init(container: Container) {
+        self.container = container
     }
 }
 

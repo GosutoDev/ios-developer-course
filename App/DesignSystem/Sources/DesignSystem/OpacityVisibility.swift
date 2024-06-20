@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum OpacityVisibility: CGFloat {
+public enum OpacityVisibility: CGFloat {
     case `default` = 1
     case half = 0.5
 }

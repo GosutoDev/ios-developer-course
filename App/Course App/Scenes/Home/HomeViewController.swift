@@ -6,6 +6,7 @@
 //
 
 import Combine
+import DesignSystem
 import os
 import SwiftUI
 import UIKit
@@ -109,7 +110,7 @@ extension HomeViewController {
                 
                 for sectionIndex in dataProvider.data.indices {
                     for jokeIndex in dataProvider.data[sectionIndex].jokes.indices {
-                        let isLiked = try await storage.liked(jokeId: dataProvider.data[sectionIndex].jokes[jokeIndex].jokeID)
+                        let isLiked = try await storage.loadLiked(jokeId: dataProvider.data[sectionIndex].jokes[jokeIndex].jokeID)
                         dataProvider.data[sectionIndex].jokes[jokeIndex].isLiked = isLiked
                     }
                 }
